@@ -1,18 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField]
+    private float _speed = 10f;
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        transform.Translate(new(Input.GetAxis("Horizontal") * _speed *
+            Time.deltaTime, Input.GetAxis("Vertical") * _speed *
+            Time.deltaTime, 0f));
     }
 }
