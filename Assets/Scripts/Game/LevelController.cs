@@ -15,14 +15,14 @@ public class LevelController : MonoBehaviour
         public float Position;
     }
 
-    [field: Header("LevelController Dependencies")]
+    [Header("LevelController Dependencies")]
+
+    [SerializeField]
+    private LevelSelectionSharedData _selectionSharedData;
 
     [field: Tooltip("Leave this empty if there is no level to debug")]
     [field: SerializeField]
     private Level _debugLevel;
-
-    // TODO (Chris): To be set from the selection screen, or a manager
-    public Level CurrentLevel { get; set; }
 
     private bool _isRunning = false;
     private int _waveIndex; 
@@ -30,6 +30,7 @@ public class LevelController : MonoBehaviour
 
     private float _lastNodeTime = 0.0f;
 
+    private Level _currentLevel; 
     private Wave _currentWave;
     private readonly List<EntitySpawn> _currentEntitySpawns = new();
 
@@ -37,17 +38,26 @@ public class LevelController : MonoBehaviour
     {
         if (_debugLevel)
         {
-            CurrentLevel = _debugLevel;
+            // For debugging purposes, prioritise the debug level
+            _currentLevel = _debugLevel;
+        }
+        else if (_selectionSharedData && _selectionSharedData.Level)
+        {
+            _currentLevel = _selectionSharedData.Level; 
+        }
+        else
+        {
+            Fatal("No level data to initialize with");
         }
 
-        AssertNotNull(CurrentLevel, "Current level is null");
-        Assert(!CurrentLevel.Waves.IsEmpty(), "Current level waves are empty");
+        AssertNotNull(_currentLevel, "Current level is null");
+        Assert(!_currentLevel.Waves.IsEmpty(), "Current level waves are empty");
 
         // Init gameplay variables
         _waveIndex = 0;
         _timer = 0.0f;
 
-        _currentWave = CurrentLevel.Waves[0];
+        _currentWave = _currentLevel.Waves[0];
         OnNextWave(_currentWave);
     }
     
@@ -137,7 +147,7 @@ public class LevelController : MonoBehaviour
             // Reset the timer
             _timer = 0.0f;
 
-            if (_waveIndex == CurrentLevel.Waves.Count - 1)
+            if (_waveIndex == _currentLevel.Waves.Count - 1)
             {
                 // Stop
                 _isRunning = false;
@@ -145,7 +155,7 @@ public class LevelController : MonoBehaviour
             else
             {
                 // Go to the next wave if exists
-                _currentWave = CurrentLevel.Waves[++_waveIndex];
+                _currentWave = _currentLevel.Waves[++_waveIndex];
                 OnNextWave(_currentWave);
             }
         }
