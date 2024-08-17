@@ -5,8 +5,6 @@ using TMPro;
 
 public class ScaleController : MonoBehaviour
 {
-    [SerializeField] private List<PlaceholderEntity> _entities = new();
-
     [SerializeField] private Transform _pivotPosition;
     [SerializeField] private Transform _bar;
 
@@ -16,14 +14,9 @@ public class ScaleController : MonoBehaviour
     [SerializeField] private float _baseLerpSpeed;
 
     private Coroutine _calculateRoutine;
-    private Coroutine _rotateRotuine;
+    private Coroutine _rotateRoutine;
 
     [SerializeField] private TextMeshProUGUI _angleText;
-
-    private void Start()
-    {
-        StartCalculation();
-    }
 
     public void StartCalculation()
     {
@@ -43,7 +36,7 @@ public class ScaleController : MonoBehaviour
         float totalLeftResultant = 0;
         float totalRightResultant = 0;
 
-        foreach (PlaceholderEntity entity in _entities)
+        foreach (BaseEntity entity in EntityController.Instance.GetAllEntities())
         {
             bool isRight = false;
 
@@ -53,7 +46,7 @@ public class ScaleController : MonoBehaviour
             }
 
             // M = F x d
-            float moment = entity.weight * Mathf.Abs(entity.transform.position.x - _pivotPosition.position.x);
+            float moment = entity.GetStats().weight * Mathf.Abs(entity.transform.position.x - _pivotPosition.position.x);
 
             if (isRight)
             {
@@ -77,9 +70,9 @@ public class ScaleController : MonoBehaviour
         Quaternion targetAngle = Quaternion.Euler(0, 0, angle);
         float rotationSpeed = Mathf.Abs(resultant) * _baseLerpSpeed;
 
-        if (_rotateRotuine != null)
-            StopCoroutine(_rotateRotuine);
-        _rotateRotuine = StartCoroutine(LerpRotation(targetAngle, rotationSpeed));
+        if (_rotateRoutine != null)
+            StopCoroutine(_rotateRoutine);
+        _rotateRoutine = StartCoroutine(LerpRotation(targetAngle, rotationSpeed));
 
         _angleText.text = "Angle: " + angle;
     }

@@ -9,13 +9,9 @@ public class EntityController : MonoBehaviour
 
     public GameObject enemyPrefab1;
 
-
-
-
     //list of entities
     public List<BaseEntity> allyEntities;
     public List<BaseEntity> enemyEntities;
-
 
     //Singleton
     private EntityController instance;
@@ -33,18 +29,6 @@ public class EntityController : MonoBehaviour
         {
             Instance = this;
         }
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        Init();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        HandleUpdate();
     }
 
     public void Init()
@@ -73,7 +57,6 @@ public class EntityController : MonoBehaviour
             SpawnEntity(enemyPrefab1, true);
         }
 
-
         //loop through all entities and update
         List<BaseEntity> deadAllyEntity = new List<BaseEntity>();
 
@@ -89,7 +72,7 @@ public class EntityController : MonoBehaviour
             }
             //check to init
             if (!entity.hasInit)
-                entity.Init();
+                entity.Init(enemyEntities[0].transform);
             //Range check for ally entities to attack
             foreach (var entity2 in enemyEntities)
             {
@@ -131,7 +114,7 @@ public class EntityController : MonoBehaviour
             }
             //check to init
             if (!entity.hasInit)
-                entity.Init();
+                entity.Init(allyEntities[0].transform);
             //Range check for ally entities to attack
             foreach (var entity2 in allyEntities)
             {
@@ -214,6 +197,7 @@ public class EntityController : MonoBehaviour
         //spawn at own base
         newEntity.transform.position = isEnemyEntity ? enemyEntities[0].transform.position : allyEntities[0].transform.position;
         newEntity.transform.parent = isEnemyEntity ? enemyEntities[0].transform.parent : allyEntities[0].transform.parent;
+        newEntity.transform.rotation = newEntity.transform.parent.rotation;
         newEntity.GetComponent<BaseEntity>().isEnemy = isEnemyEntity;
         //add to own list
         if (isEnemyEntity )
@@ -230,30 +214,54 @@ public class EntityController : MonoBehaviour
     {
         if (enemyWin)
         {
-            //destroy all ally units
-            for (int i = 1; i < allyEntities.Count; i++)
+            int i = -1;
+            //destroy all ally entity
+            foreach (var e in allyEntities)
             {
-                BaseEntity entityToDestroy = allyEntities[i];
+                i++;
+                if (i == 0) continue;
+
+                //BaseEntity entityToDestroy = allyEntities[i];
                 //remove from list
-                allyEntities.Remove(entityToDestroy);
+                allyEntities.Remove(e);
                 //destroy entity
-                Destroy(entityToDestroy.gameObject);
+                Destroy(e.gameObject);
             }
             Debug.Log("Enemy Wins");
         }
         else
         {
-            //destroy all enemy units
-            for (int i = 1; i < enemyEntities.Count; i++)
+            int i = -1;
+            //destroy all enemy entity
+            foreach (var e in enemyEntities)
             {
-                BaseEntity entityToDestroy = enemyEntities[i];
+                i++;
+                if (i == 0) continue;
+                //BaseEntity entityToDestroy = enemyEntities[i];
                 //remove from list
-                enemyEntities.Remove(entityToDestroy);
+                enemyEntities.Remove(e);
                 //destroy entity
-                Destroy(entityToDestroy.gameObject);
+                Destroy(e.gameObject);
             }
 
             Debug.Log("Player Wins");
         }
+    }
+
+    public List<BaseEntity> GetAllEntities()
+    {
+        List<BaseEntity> allEntities = new();
+
+        for (int i = 1; i < allyEntities.Count; i++)
+        {
+            allEntities.Add(allyEntities[i]);
+        }
+
+        for (int i = 1; i < enemyEntities.Count; i++)
+        {
+            allEntities.Add(enemyEntities[i]);
+        }
+
+        return allEntities;
     }
 }
