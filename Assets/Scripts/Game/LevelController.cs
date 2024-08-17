@@ -4,9 +4,17 @@ using System.Collections.Generic;
 using UnityEngine;
 
 using static DebugUtility;
+using UnityEditor;
 
 public class LevelController : MonoBehaviour
 {
+    private struct EntitySpawn 
+    {
+        public GameObject Prefab;
+        public float SpawnTime;
+        public float Position;
+    }
+
     [field: Header("LevelController Dependencies")]
     [field: SerializeField]
     private Level _debugLevel;
@@ -14,14 +22,14 @@ public class LevelController : MonoBehaviour
     // TODO (Chris): To be set from the selection screen, or a manager
     public Level CurrentLevel { get; set; }
 
+    private bool _isRunning = false;
     private int _waveIndex; 
     private float _timer;
 
     private float _lastNodeTime = 0.0f;
 
-    private bool _isRunning = false;
     private Wave _currentWave;
-    private List<WaveNode> _currentWaveNodes;
+    private readonly List<EntitySpawn> _currentEntitySpawns = new();
 
     public void Init()
     {
@@ -48,15 +56,40 @@ public class LevelController : MonoBehaviour
         _isRunning = true;
     }
 
+    private float GetEntitySpawnTime(WaveNode node)
+    {
+        return (Mathf.Max(node.SequenceAmount, 1) - 1) * 
+            Mathf.Max(node.SequenceTimeGap, 0.1f) +
+            node.SpawnAfterStartSeconds;
+    }
+
     private void OnNextWave(Wave wave)
     {
-        // NOTE (Chris): This will definitely change once we have sequence nodes
+        Assert(_currentEntitySpawns.IsEmpty(), 
+            "Current entity spawns not cleared before next wave");
+
         // Calculate the total time taken for the last node
         _lastNodeTime = wave.Nodes.IsEmpty() ? 0.0f :
-            wave.Nodes.Select(node => node.SpawnAfterStartSeconds).Max();
+            wave.Nodes
+                .Select(node => GetEntitySpawnTime(node))
+                .Max();
 
         // Shallow copy the nodes
-        _currentWaveNodes = new(wave.Nodes);
+        foreach (var node in wave.Nodes)
+        {
+            int sequenceAmount = Mathf.Max(node.SequenceAmount, 1);
+            float timeGap = Mathf.Max(node.SequenceTimeGap, 0.1f);
+
+            for (int i = 0; i < sequenceAmount; ++i)
+            {
+                _currentEntitySpawns.Add(new() 
+                {
+                    Prefab = node.EntityPrefab,
+                    SpawnTime = node.SpawnAfterStartSeconds + i * timeGap,
+                    Position = node.PositionSpawn
+                });
+            }
+        }
     }
 
     private void Awake()
@@ -76,15 +109,15 @@ public class LevelController : MonoBehaviour
 
     private void QueryAndSpawnNodes()
     {
-        for (int i = 0; i < _currentWaveNodes.Count; ++i)
+        for (int i = 0; i < _currentEntitySpawns.Count; ++i)
         {
-            WaveNode node = _currentWaveNodes[i];
-            if (node.SpawnAfterStartSeconds <= _timer)
+            EntitySpawn entitySpawn = _currentEntitySpawns[i];
+            if (entitySpawn.SpawnTime <= _timer)
             {
                 // Spawn the node
-                EntityController.Instance.SpawnEntity(node.EntityPrefab, true);
+                EntityController.Instance.SpawnEntity(entitySpawn.Prefab, true);
 
-                _currentWaveNodes.RemoveAt(i);
+                _currentEntitySpawns.RemoveAt(i);
                 --i;
             }
         }

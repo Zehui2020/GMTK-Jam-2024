@@ -17,4 +17,14 @@ public struct WaveNode
 
     [field: SerializeField]
     public float PositionSpawn { get; private set; }
+
+    [field: Header("WaveNode Sequence Settings")]
+
+    [field: SerializeField]
+    [field: Range(1, 200)]
+    public int SequenceAmount { get; private set; }
+
+    [field: SerializeField]
+    [field: Range(0.1f, 100.0f)]
+    public float SequenceTimeGap { get; private set; }
 }
