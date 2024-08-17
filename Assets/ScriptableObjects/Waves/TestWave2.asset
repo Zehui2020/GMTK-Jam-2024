@@ -13,13 +13,19 @@ MonoBehaviour:
   m_Name: TestWave2
   m_EditorClassIdentifier: 
   <Nodes>k__BackingField:
-  - <EntityPrefab>k__BackingField: {fileID: 327878811592103016, guid: f30a985ace86fb042b2ddd0b3840244b, type: 3}
+  - <EntityPrefab>k__BackingField: {fileID: 4617329641929948581, guid: 14d0de20f8ac5d34f911d7a981d1f7c1, type: 3}
     <SpawnAfterStartSeconds>k__BackingField: 1
     <PositionSpawn>k__BackingField: 0
-  - <EntityPrefab>k__BackingField: {fileID: 327878811592103016, guid: f30a985ace86fb042b2ddd0b3840244b, type: 3}
+    <SequenceAmount>k__BackingField: 0
+    <SequenceTimeGap>k__BackingField: 0
+  - <EntityPrefab>k__BackingField: {fileID: 4617329641929948581, guid: 14d0de20f8ac5d34f911d7a981d1f7c1, type: 3}
     <SpawnAfterStartSeconds>k__BackingField: 1.2
     <PositionSpawn>k__BackingField: 0
-  - <EntityPrefab>k__BackingField: {fileID: 327878811592103016, guid: f30a985ace86fb042b2ddd0b3840244b, type: 3}
+    <SequenceAmount>k__BackingField: 0
+    <SequenceTimeGap>k__BackingField: 0
+  - <EntityPrefab>k__BackingField: {fileID: 4617329641929948581, guid: 0f7fc83e4d6841145ba0298eaee96572, type: 3}
     <SpawnAfterStartSeconds>k__BackingField: 1.4
     <PositionSpawn>k__BackingField: 0
+    <SequenceAmount>k__BackingField: 0
+    <SequenceTimeGap>k__BackingField: 0
   <LastNodeBuffer>k__BackingField: 0
