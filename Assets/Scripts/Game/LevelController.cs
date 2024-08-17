@@ -16,6 +16,8 @@ public class LevelController : MonoBehaviour
     }
 
     [field: Header("LevelController Dependencies")]
+
+    [field: Tooltip("Leave this empty if there is no level to debug")]
     [field: SerializeField]
     private Level _debugLevel;
 
