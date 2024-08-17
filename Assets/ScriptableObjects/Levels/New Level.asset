@@ -12,3 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c72b9fed60e414644abe8e6500d0339f, type: 3}
   m_Name: New Level
   m_EditorClassIdentifier: 
+  <Waves>k__BackingField:
+  - {fileID: 11400000, guid: 7e1f38439f00a454c8894722d77e414d, type: 2}
