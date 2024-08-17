@@ -5,6 +5,7 @@ using UnityEngine;
 
 using static DebugUtility;
 using UnityEditor;
+using UnityEngine.Events;
 
 public class LevelController : MonoBehaviour
 {
@@ -23,6 +24,10 @@ public class LevelController : MonoBehaviour
     [field: Tooltip("Leave this empty if there is no level to debug")]
     [field: SerializeField]
     private Level _debugLevel;
+
+    [Header("LevelController Events")]
+    [SerializeField]
+    private UnityEvent _onNextWave;
 
     private bool _isRunning = false;
     private int _waveIndex; 
@@ -102,6 +107,8 @@ public class LevelController : MonoBehaviour
                 });
             }
         }
+
+        _onNextWave.Invoke();
     }
 
     private void Awake()
