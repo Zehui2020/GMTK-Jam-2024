@@ -56,7 +56,7 @@ public class LevelController : MonoBehaviour
             wave.Nodes.Select(node => node.SpawnAfterStartSeconds).Max();
 
         // Shallow copy the nodes
-        _currentWaveNodes = wave.Nodes;
+        _currentWaveNodes = new(wave.Nodes);
     }
 
     private void Awake()
