@@ -13,27 +13,35 @@ public class LoadScene : MonoBehaviour
 
     private bool _isLoading;
 
+    private float _currTime;
+
     private void Start()
     {
         _isLoading = false;
         _blackScreen.color = new Color(0, 0, 0, 1);
+        _currTime = 0;
     }
     private void Update()
     {
-        if (_isLoading)
+        if (_currTime < 1)
         {
-            _blackScreen.color = Color.Lerp(_blackScreen.color,
-                new(0, 0, 0, 1), Time.deltaTime * 7.5f);
-        }
-        else
-        {
-            _blackScreen.color = Color.Lerp(_blackScreen.color,
-                            new(0, 0, 0, 0), Time.deltaTime);
+            if (_isLoading)
+            {
+                _blackScreen.color = Color.Lerp(new(0, 0, 0, 0),
+                    new(0, 0, 0, 1), _currTime);
+            }
+            else
+            {
+                _blackScreen.color = Color.Lerp(new(0, 0, 0, 1),
+                    new(0, 0, 0, 0), _currTime);
+            }
+            _currTime += Time.deltaTime;
         }
     }
     public void Load()
     {
         _isLoading = true;
+        _currTime = 0;
         Invoke(nameof(LoadNewScene), 1.25f);
     }
 
