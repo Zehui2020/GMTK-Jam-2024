@@ -16,10 +16,16 @@ MonoBehaviour:
   - <EntityPrefab>k__BackingField: {fileID: 327878811592103016, guid: f30a985ace86fb042b2ddd0b3840244b, type: 3}
     <SpawnAfterStartSeconds>k__BackingField: 1
     <PositionSpawn>k__BackingField: 0
+    <SequenceAmount>k__BackingField: 0
+    <SequenceTimeGap>k__BackingField: 0
   - <EntityPrefab>k__BackingField: {fileID: 327878811592103016, guid: f30a985ace86fb042b2ddd0b3840244b, type: 3}
     <SpawnAfterStartSeconds>k__BackingField: 3
     <PositionSpawn>k__BackingField: 0
+    <SequenceAmount>k__BackingField: 3
+    <SequenceTimeGap>k__BackingField: 0
   - <EntityPrefab>k__BackingField: {fileID: 327878811592103016, guid: f30a985ace86fb042b2ddd0b3840244b, type: 3}
     <SpawnAfterStartSeconds>k__BackingField: 5
     <PositionSpawn>k__BackingField: 0
-  <LastNodeBuffer>k__BackingField: 5
+    <SequenceAmount>k__BackingField: 0
+    <SequenceTimeGap>k__BackingField: 0
+  <LastNodeBuffer>k__BackingField: 1
