@@ -30,8 +30,10 @@ public class BaseEntity : MonoBehaviour
     //attack counter
     private float attackCounter;
 
+    private Transform _targetPoint;
+
     // Start is called before the first frame update
-    public void Init()
+    public void Init(Transform targetPoint)
     {
         hasInit = true;
         entityStats = new EntityStats();
@@ -39,6 +41,7 @@ public class BaseEntity : MonoBehaviour
         entityState = EntityState.Walk;
         attackCounter = 0;
         isDead = false;
+        _targetPoint = targetPoint;
     }
 
     // Update is called once per frame
@@ -62,10 +65,7 @@ public class BaseEntity : MonoBehaviour
         switch (entityState)
         {
             case EntityState.Walk:
-                //if enemy, move towards base (left), else move towards enemy base (right)
-                Vector3 dir = (isEnemy ? -1: 1) * transform.right;
-                //move
-                transform.position += dir * entityStats.movementSpeed * Time.deltaTime;
+                transform.position = Vector3.MoveTowards(transform.position, _targetPoint.position, entityStats.movementSpeed * Time.deltaTime);
                 break;
             case EntityState.Idle:
                 break;
