@@ -2003,6 +2003,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _selectionSharedData: {fileID: 11400000, guid: 5b7f22cb3a9882b4a876de8eabda565a, type: 2}
   _debugLevel: {fileID: 0}
+  _loop: 1
+  _onNextWave:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &1510928018
 Transform:
   m_ObjectHideFlags: 0
