@@ -9,4 +9,9 @@ public class Level : ScriptableObject
 
     [field: SerializeField]
     public List<Wave> Waves { get; private set; }
+    
+    private void OnEnable()
+    {
+        hideFlags = HideFlags.DontUnloadUnusedAsset;
+    }
 }
