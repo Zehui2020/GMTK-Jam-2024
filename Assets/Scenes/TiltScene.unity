@@ -615,12 +615,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dc465c911034f5409d0c0b3b3b740d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _entities: []
   _pivotPosition: {fileID: 22058274}
   _bar: {fileID: 1725174716}
   _rotationSensitivity: 1
   _clampRotation: 10
-  _calculateInterval: 0.5
+  _calculateInterval: 0
   _baseLerpSpeed: 1
   _angleText: {fileID: 515180774}
 --- !u!4 &280544688
@@ -860,7 +859,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _xBounds: {x: -3.5, y: 3.5}
   _yBounds: {x: -5, y: 5}
-  _speed: 10
+  _minZoom: 3
+  _maxZoom: 5
+  _movementSpeed: 10
+  _zoomSpeed: 1
 --- !u!1 &413273544
 GameObject:
   m_ObjectHideFlags: 0
@@ -1243,10 +1245,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
