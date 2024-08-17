@@ -65,7 +65,7 @@ public class BaseEntity : MonoBehaviour
         switch (entityState)
         {
             case EntityState.Walk:
-                transform.position = Vector3.MoveTowards(transform.position, _targetPoint.position, entityStats.movementSpeed * Time.deltaTime);
+                transform.position = Vector2.MoveTowards(transform.position, _targetPoint.position, entityStats.movementSpeed * Time.deltaTime);
                 break;
             case EntityState.Idle:
                 break;

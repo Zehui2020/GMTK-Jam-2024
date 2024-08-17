@@ -210,6 +210,20 @@ public class EntityController : MonoBehaviour
         }
     }
 
+    public void SpawnPlayerEntity(GameObject _entityToSpawnPrefab, Vector3 position)
+    {
+        //instantiate new player entity
+        GameObject newEntity = Instantiate(_entityToSpawnPrefab);
+        //spawn at set position
+        newEntity.transform.position = new Vector3(position.x, 0, 0);
+        newEntity.transform.parent = allyEntities[0].transform.parent;
+        newEntity.transform.localPosition = new Vector3(newEntity.transform.localPosition.x, 0, 0);
+        newEntity.transform.rotation = newEntity.transform.parent.rotation;
+        newEntity.GetComponent<BaseEntity>().isEnemy = false;
+
+        allyEntities.Add(newEntity.GetComponent<BaseEntity>());
+    }
+
     public void EndGame(bool enemyWin)
     {
         if (enemyWin)
