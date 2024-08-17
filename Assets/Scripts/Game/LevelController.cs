@@ -25,7 +25,13 @@ public class LevelController : MonoBehaviour
     [field: SerializeField]
     private Level _debugLevel;
 
+    [Header("LevelController Settings")]
+
+    [SerializeField]
+    private bool _loop = false;
+
     [Header("LevelController Events")]
+
     [SerializeField]
     private UnityEvent _onNextWave;
 
@@ -58,12 +64,7 @@ public class LevelController : MonoBehaviour
         AssertNotNull(_currentLevel, "Current level is null");
         Assert(!_currentLevel.Waves.IsEmpty(), "Current level waves are empty");
 
-        // Init gameplay variables
-        _waveIndex = 0;
-        _timer = 0.0f;
-
-        _currentWave = _currentLevel.Waves[0];
-        OnNextWave(_currentWave);
+        InitValues();
     }
     
     public void Play()
@@ -71,6 +72,16 @@ public class LevelController : MonoBehaviour
         Init();
 
         _isRunning = true;
+    }
+
+    private void InitValues()
+    {
+        // Init gameplay variables
+        _waveIndex = 0;
+        _timer = 0.0f;
+
+        _currentWave = _currentLevel.Waves[0];
+        OnNextWave(_currentWave);
     }
 
     private float GetEntitySpawnTime(WaveNode node)
@@ -157,7 +168,14 @@ public class LevelController : MonoBehaviour
             if (_waveIndex == _currentLevel.Waves.Count - 1)
             {
                 // Stop
-                _isRunning = false;
+                if (!_loop)
+                {
+                    _isRunning = false;
+                }
+                else
+                {
+                    InitValues();
+                }
             }
             else
             {
