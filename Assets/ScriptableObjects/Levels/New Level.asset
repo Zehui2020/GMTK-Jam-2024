@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Waves>k__BackingField:
   - {fileID: 11400000, guid: 7e1f38439f00a454c8894722d77e414d, type: 2}
+  - {fileID: 11400000, guid: a1cb600022085054b9c0ea10f0f24715, type: 2}
