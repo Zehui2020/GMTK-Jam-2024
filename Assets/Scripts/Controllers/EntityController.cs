@@ -226,40 +226,16 @@ public class EntityController : MonoBehaviour
 
     public void EndGame(bool enemyWin)
     {
-        if (enemyWin)
-        {
-            int i = -1;
-            //destroy all ally entity
-            foreach (var e in allyEntities)
-            {
-                i++;
-                if (i == 0) continue;
+        var entities = enemyWin ? allyEntities : enemyEntities;
 
-                //BaseEntity entityToDestroy = allyEntities[i];
-                //remove from list
-                allyEntities.Remove(e);
-                //destroy entity
-                Destroy(e.gameObject);
-            }
-            Debug.Log("Enemy Wins");
-        }
-        else
+        for (int i = 1; i < entities.Count; ++i)
         {
-            int i = -1;
-            //destroy all enemy entity
-            foreach (var e in enemyEntities)
-            {
-                i++;
-                if (i == 0) continue;
-                //BaseEntity entityToDestroy = enemyEntities[i];
-                //remove from list
-                enemyEntities.Remove(e);
-                //destroy entity
-                Destroy(e.gameObject);
-            }
-
-            Debug.Log("Player Wins");
+            Destroy(entities[i].gameObject);
+            entities.RemoveAt(i);
+            i--;
         }
+
+        Debug.Log(enemyWin ? "Enemy wins" : "Player wins");
     }
 
     public List<BaseEntity> GetAllEntities()
