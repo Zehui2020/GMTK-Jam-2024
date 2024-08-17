@@ -615,7 +615,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dc465c911034f5409d0c0b3b3b740d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _entities: []
   _pivotPosition: {fileID: 22058274}
   _bar: {fileID: 1725174716}
   _rotationSensitivity: 1
@@ -1698,7 +1697,7 @@ Transform:
   m_GameObject: {fileID: 1278904576}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.4, y: 1, z: 0}
+  m_LocalPosition: {x: 0.4, y: 0.54, z: 0}
   m_LocalScale: {x: 0.06013229, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1963,7 +1962,7 @@ Transform:
   m_GameObject: {fileID: 1467404605}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.4, y: 1, z: 0}
+  m_LocalPosition: {x: -0.4, y: 0.53, z: 0}
   m_LocalScale: {x: -0.06013229, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
