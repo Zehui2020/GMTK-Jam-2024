@@ -9,6 +9,7 @@ public class LevelController : MonoBehaviour
 
     private int _waveIndex; 
     private float _timer;
+    private bool _isRunning = false;
 
     public void Init()
     {
@@ -22,6 +23,16 @@ public class LevelController : MonoBehaviour
     
     public void Play()
     {
-
+        _isRunning = true;
     }
+
+    private void Update()
+    {
+        if (!_isRunning)
+        {
+            return;
+        }
+
+        _timer += Time.deltaTime;
+    } 
 }
