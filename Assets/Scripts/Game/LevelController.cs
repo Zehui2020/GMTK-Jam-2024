@@ -7,6 +7,10 @@ using static DebugUtility;
 
 public class LevelController : MonoBehaviour
 {
+    [field: Header("LevelController Dependencies")]
+    [field: SerializeField]
+    private Level _debugLevel;
+
     // TODO (Chris): To be set from the selection screen, or a manager
     public Level CurrentLevel { get; set; }
 
@@ -21,16 +25,26 @@ public class LevelController : MonoBehaviour
 
     public void Init()
     {
+        if (_debugLevel)
+        {
+            CurrentLevel = _debugLevel;
+        }
+
         AssertNotNull(CurrentLevel, "Current level is null");
-        Assert(CurrentLevel.Waves.IsEmpty(), "Current level waves are empty");
+        Assert(!CurrentLevel.Waves.IsEmpty(), "Current level waves are empty");
 
         // Init gameplay variables
         _waveIndex = 0;
         _timer = 0.0f;
+
+        _currentWave = CurrentLevel.Waves[0];
+        OnNextWave(_currentWave);
     }
     
     public void Play()
     {
+        Init();
+
         _isRunning = true;
     }
 
@@ -43,6 +57,11 @@ public class LevelController : MonoBehaviour
 
         // Shallow copy the nodes
         _currentWaveNodes = wave.Nodes;
+    }
+
+    private void Awake()
+    {
+        Play();
     }
 
     private void Update()
@@ -63,6 +82,8 @@ public class LevelController : MonoBehaviour
             if (node.SpawnAfterStartSeconds <= _timer)
             {
                 // Spawn the node
+                EntityController.Instance.SpawnEntity(node.EntityPrefab, true);
+
                 _currentWaveNodes.RemoveAt(i);
                 --i;
             }

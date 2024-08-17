@@ -13,6 +13,13 @@ MonoBehaviour:
   m_Name: New Wave
   m_EditorClassIdentifier: 
   <Nodes>k__BackingField:
-  - <EntityPrefab>k__BackingField: {fileID: 0}
-    <SpawnAfterStartSeconds>k__BackingField: 0
+  - <EntityPrefab>k__BackingField: {fileID: 327878811592103016, guid: f30a985ace86fb042b2ddd0b3840244b, type: 3}
+    <SpawnAfterStartSeconds>k__BackingField: 1
     <PositionSpawn>k__BackingField: 0
+  - <EntityPrefab>k__BackingField: {fileID: 327878811592103016, guid: f30a985ace86fb042b2ddd0b3840244b, type: 3}
+    <SpawnAfterStartSeconds>k__BackingField: 3
+    <PositionSpawn>k__BackingField: 0
+  - <EntityPrefab>k__BackingField: {fileID: 327878811592103016, guid: f30a985ace86fb042b2ddd0b3840244b, type: 3}
+    <SpawnAfterStartSeconds>k__BackingField: 5
+    <PositionSpawn>k__BackingField: 0
+  <LastNodeBuffer>k__BackingField: 0
