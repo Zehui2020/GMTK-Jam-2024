@@ -15,6 +15,12 @@ public class LoadScene : MonoBehaviour
 
     private float _currTime;
 
+    public void Load()
+    {
+        _isLoading = true;
+        _currTime = 0;
+        Invoke(nameof(LoadNewScene), 0.625f);
+    }
     private void Start()
     {
         _isLoading = false;
@@ -23,7 +29,7 @@ public class LoadScene : MonoBehaviour
     }
     private void Update()
     {
-        if (_currTime < 1)
+        if (_currTime <= 1.25)
         {
             if (_isLoading)
             {
@@ -35,18 +41,12 @@ public class LoadScene : MonoBehaviour
                 _blackScreen.color = Color.Lerp(new(0, 0, 0, 1),
                     new(0, 0, 0, 0), _currTime);
             }
-            _currTime += Time.deltaTime;
+            _currTime += Time.deltaTime * 2;
         }
     }
-    public void Load()
-    {
-        _isLoading = true;
-        _currTime = 0;
-        Invoke(nameof(LoadNewScene), 1.25f);
-    }
-
     private void LoadNewScene()
     {
+        _blackScreen.color = new Color(0, 0, 0, 1);
         SceneManager.LoadSceneAsync(_sceneName);
     }
 }
