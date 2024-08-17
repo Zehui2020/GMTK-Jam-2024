@@ -33,7 +33,7 @@ public class LevelController : MonoBehaviour
     [Header("LevelController Events")]
 
     [SerializeField]
-    private UnityEvent _onNextWave;
+    private UnityEvent<int> _onNextWave;
 
     private bool _isRunning = false;
     private int _waveIndex; 
@@ -119,7 +119,7 @@ public class LevelController : MonoBehaviour
             }
         }
 
-        _onNextWave.Invoke();
+        _onNextWave.Invoke(_waveIndex);
     }
 
     private void Awake()
