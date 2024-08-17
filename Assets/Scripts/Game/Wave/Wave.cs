@@ -10,4 +10,6 @@ public class Wave : ScriptableObject
     [field: SerializeField]
     public List<WaveNode> Nodes { get; private set; } 
 
+    [field: SerializeField]
+    public float LastNodeBuffer { get; private set; } = 0.0f;
 }
