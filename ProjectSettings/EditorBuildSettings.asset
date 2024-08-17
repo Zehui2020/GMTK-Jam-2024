@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LevelControllerTest.unity
     guid: c07070f5667dc7a42931bbd0a0f4365d
+  - enabled: 1
+    path: Assets/Scenes/MenuSceneLevelSelectionLoad.unity
+    guid: f2a85979362b2ec48a1bca9de79fcbc0
   m_configObjects: {}
