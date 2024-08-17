@@ -615,7 +615,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dc465c911034f5409d0c0b3b3b740d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _entities: []
   _pivotPosition: {fileID: 22058274}
   _bar: {fileID: 1725174716}
   _rotationSensitivity: 1
@@ -860,7 +859,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _xBounds: {x: -3.5, y: 3.5}
   _yBounds: {x: -5, y: 5}
-  _speed: 10
+  _minZoom: 3
+  _maxZoom: 5
+  _movementSpeed: 10
+  _zoomSpeed: 1
 --- !u!1 &413273544
 GameObject:
   m_ObjectHideFlags: 0
