@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "ScriptableObjects/EntityStatsScriptableObject")]
+[CreateAssetMenu(menuName = "Scriptable Object/EntityStatsScriptableObject")]
 public class EntityStats : ScriptableObject
 {
     public string entityName;
