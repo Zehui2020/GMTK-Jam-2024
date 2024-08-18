@@ -1855,6 +1855,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  _onEntitySpawn:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1975638417}
+        m_TargetAssemblyTypeName: TutorialController, Assembly-CSharp
+        m_MethodName: CheckEnemyPlaced
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &1115625917
 Transform:
   m_ObjectHideFlags: 0
@@ -3286,6 +3301,7 @@ MonoBehaviour:
   _troopsButtons:
   - {fileID: 385920866}
   - {fileID: 1827340076}
+  _endlessLevelSwap: {fileID: 11400000, guid: a9265c9a81067b9479ca3aa251627dda, type: 2}
 --- !u!4 &1975638418
 Transform:
   m_ObjectHideFlags: 0

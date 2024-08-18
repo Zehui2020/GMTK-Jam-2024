@@ -24,6 +24,9 @@ public class TutorialController : MonoBehaviour
     [SerializeField]
     private List<Button> _troopsButtons;
 
+    [SerializeField]
+    private Level _endlessLevelSwap;
+
     private int _currentTutorialNumber;
     private int _currentTutorialSet;
     private TutorialData _currentTutorialData;
@@ -31,6 +34,7 @@ public class TutorialController : MonoBehaviour
     private bool _hasClicked;
     private int _currentWave;
     private int _mantisPlaced;
+    private List<BaseEntity> _enemyEntities;
     public void CheckNewWave(int newWave)
     {
         _currentWave = newWave;
@@ -60,6 +64,11 @@ public class TutorialController : MonoBehaviour
             }
         }
     }
+
+    public void CheckEnemyPlaced(BaseEntity newEnemy)
+    {
+        _enemyEntities.Add(newEnemy);
+    }
     private void Start()
     {
         _currentTutorialNumber = 0;
@@ -72,6 +81,7 @@ public class TutorialController : MonoBehaviour
         {
             button.enabled = false;
         }
+        _enemyEntities = new();
     }
     private void Update()
     {
@@ -147,10 +157,6 @@ public class TutorialController : MonoBehaviour
                     NextTutorial();
                 }
                 break;
-            case 1:
-                //TODO (Vincent): Check for enemy tent cat death
-                _levelController.Play();
-                break;
             case 2:
                 if (_currentWave == 1)
                 {
@@ -160,11 +166,19 @@ public class TutorialController : MonoBehaviour
                         NextTutorial();
                     }
                 }
+                else
+                {
+                    if (_enemyEntities.Count > 0 && _enemyEntities[0] == null)
+                    {
+                        _enemyEntities.Clear();
+                        _levelController.Play();
+                    }
+                }
                 break;
             case 3:
-                //TODO (Vincent): Check for both enemy mantis deaths
-                if (_mantisPlaced == 2)
+                if (_enemyEntities.Count > 1 && _enemyEntities[0] == null && _enemyEntities[1] == null)
                 {
+                    _enemyEntities.Clear();
                     NextTutorial();
                 }
                 break;
@@ -203,7 +217,7 @@ public class TutorialController : MonoBehaviour
                 {
                     button.enabled = true;
                 }
-                _levelController.Play();
+                _levelController.SetLevel(_endlessLevelSwap);
                 break;
         }
     }
