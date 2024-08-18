@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3238665a2b064104f86e291be46c69b0, type: 3}
   m_Name: EnemyMantisStat1
   m_EditorClassIdentifier: 
-  entityName: AllyRangeEntity1
+  entityName: EnemyMantis1
   level: 1
   cost: 0
   upgradeCost: 0
