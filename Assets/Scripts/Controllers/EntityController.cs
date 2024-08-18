@@ -88,6 +88,12 @@ public class EntityController : MonoBehaviour
             }
             entity.HandleUpdate();
         }
+
+        if (!deadAllyEntity.IsEmpty())
+        {
+            _entitiesDirty = true;
+        }
+
         //remove dead entities
         foreach (BaseEntity entityToDestroy in deadAllyEntity)
         {
@@ -99,10 +105,11 @@ public class EntityController : MonoBehaviour
                 break;
             }
 
-            //destroy entity
-            Destroy(entityToDestroy.gameObject);
             //remove from list
             allyEntities.Remove(entityToDestroy);
+
+            //destroy entity
+            Destroy(entityToDestroy.gameObject);
         }
 
 
@@ -132,6 +139,11 @@ public class EntityController : MonoBehaviour
         }
 
         //remove dead entities
+        if (!deadEnemyEntity.IsEmpty())
+        {
+            _entitiesDirty = true;
+        }
+
         foreach (BaseEntity entityToDestroy in deadEnemyEntity)
         {
             //check if is base entity
@@ -142,10 +154,11 @@ public class EntityController : MonoBehaviour
                 break;
             }
 
-            //destroy entity
-            Destroy(entityToDestroy.gameObject);
             //remove from list
             enemyEntities.Remove(entityToDestroy);
+
+            //destroy entity
+            Destroy(entityToDestroy.gameObject);
         }
     }
 
@@ -234,6 +247,8 @@ public class EntityController : MonoBehaviour
             entities.RemoveAt(i);
             i--;
         }
+
+        _entitiesDirty = true;
 
         Debug.Log(enemyWin ? "Enemy wins" : "Player wins");
     }
