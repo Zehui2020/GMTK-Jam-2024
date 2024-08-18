@@ -17,9 +17,12 @@ public class LoadScene : MonoBehaviour
 
     public void Load()
     {
-        _isLoading = true;
-        _currTime = 0;
-        Invoke(nameof(LoadNewScene), 0.625f);
+        if (!_isLoading)
+        {
+            _isLoading = true;
+            _currTime = 0;
+            Invoke(nameof(LoadNewScene), 0.625f);
+        }
     }
     private void Start()
     {

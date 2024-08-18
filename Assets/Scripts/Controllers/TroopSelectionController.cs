@@ -1,14 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.Events;
 public class TroopSelectionController : MonoBehaviour
 {
-    private Entity _selectedEntity;
     [SerializeField] private SpriteRenderer placeholderSprite;
 
     [SerializeField] private Transform minSpawnPoint;
+
     [SerializeField] private Transform maxSpawnPoint;
+
+    [Header("TroopSelectionController Events")]
+
+    [SerializeField] private UnityEvent<Entity> _onTroopSpawned;
+
+    private Entity _selectedEntity;
 
     public void SelectTroop(Entity entityToSpawn)
     {
@@ -26,6 +30,7 @@ public class TroopSelectionController : MonoBehaviour
 
         EntityController.Instance.SpawnPlayerEntity(_selectedEntity._entityPrefab, position);
         _selectedEntity = null;
+        _onTroopSpawned.Invoke(_selectedEntity);
     }
 
     private void Update()
