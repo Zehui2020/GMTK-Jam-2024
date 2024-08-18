@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class EntityController : MonoBehaviour
@@ -12,6 +13,10 @@ public class EntityController : MonoBehaviour
     //list of entities
     public List<BaseEntity> allyEntities;
     public List<BaseEntity> enemyEntities;
+
+    // Cached list of all entities
+    private List<BaseEntity> _allEntities = new();
+    private bool _entitiesDirty = true;
 
     //Singleton
     private EntityController instance;
@@ -94,10 +99,10 @@ public class EntityController : MonoBehaviour
                 break;
             }
 
-            //remove from list
-            allyEntities.Remove(entityToDestroy);
             //destroy entity
             Destroy(entityToDestroy.gameObject);
+            //remove from list
+            allyEntities.Remove(entityToDestroy);
         }
 
 
@@ -137,12 +142,10 @@ public class EntityController : MonoBehaviour
                 break;
             }
 
-
-
-            //remove from list
-            enemyEntities.Remove(entityToDestroy);
             //destroy entity
             Destroy(entityToDestroy.gameObject);
+            //remove from list
+            enemyEntities.Remove(entityToDestroy);
         }
     }
 
@@ -198,16 +201,13 @@ public class EntityController : MonoBehaviour
         newEntity.transform.position = isEnemyEntity ? enemyEntities[0].transform.position : allyEntities[0].transform.position;
         newEntity.transform.parent = isEnemyEntity ? enemyEntities[0].transform.parent : allyEntities[0].transform.parent;
         newEntity.transform.rotation = newEntity.transform.parent.rotation;
-        newEntity.GetComponent<BaseEntity>().isEnemy = isEnemyEntity;
+
+        BaseEntity baseEntity = newEntity.GetComponent<BaseEntity>();
+        baseEntity.isEnemy = isEnemyEntity;
+
         //add to own list
-        if (isEnemyEntity )
-        {
-            enemyEntities.Add(newEntity.GetComponent<BaseEntity>());
-        }
-        else
-        {
-           allyEntities.Add(newEntity.GetComponent<BaseEntity>());
-        }
+        (isEnemyEntity ? enemyEntities : allyEntities).Add(baseEntity);
+        _entitiesDirty = true;
     }
 
     public void SpawnPlayerEntity(GameObject _entityToSpawnPrefab, Vector3 position)
@@ -240,18 +240,14 @@ public class EntityController : MonoBehaviour
 
     public List<BaseEntity> GetAllEntities()
     {
-        List<BaseEntity> allEntities = new();
-
-        for (int i = 1; i < allyEntities.Count; i++)
+        if (_entitiesDirty)
         {
-            allEntities.Add(allyEntities[i]);
+            _allEntities = allyEntities
+                .GetRange(1, allyEntities.Count - 1)
+                .Concat(enemyEntities.GetRange(1, enemyEntities.Count - 1))
+                .ToList();
         }
 
-        for (int i = 1; i < enemyEntities.Count; i++)
-        {
-            allEntities.Add(enemyEntities[i]);
-        }
-
-        return allEntities;
+        return _allEntities;
     }
 }
