@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BaseEntity : MonoBehaviour
@@ -36,7 +34,7 @@ public class BaseEntity : MonoBehaviour
     public void Init(Transform targetPoint)
     {
         hasInit = true;
-        entityStats = new EntityStats();
+        entityStats = ScriptableObject.CreateInstance<EntityStats>(); 
         SetStats(_inputStats);
         entityState = EntityState.Walk;
         attackCounter = 0;
@@ -100,6 +98,7 @@ public class BaseEntity : MonoBehaviour
 
     public EntityStats GetStats()
     { 
+        DebugUtility.AssertNotNull(entityStats, "Entity stats was null");
         return entityStats; 
     }
 
