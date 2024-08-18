@@ -63,6 +63,13 @@ public class BaseEntity : MonoBehaviour
     // Update is called once per frame
     public void HandleUpdate()
     {
+        //DEBUGGING ONLY
+        //Draw Attack Range
+        Vector3 dir = _targetPoint.position - transform.position;
+        dir.Normalize();
+        Debug.DrawRay(transform.position + dir * entityStats.minAttackRange, dir * entityStats.maxAttackRange, Color.green, 0.01f);
+
+
         //attack counter countdown
         if (attackCounter > 0)
         {

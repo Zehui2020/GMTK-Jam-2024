@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3238665a2b064104f86e291be46c69b0, type: 3}
-  m_Name: EnemyTentCatStat
+  m_Name: AllyTentCatStat1
   m_EditorClassIdentifier: 
-  entityName: EnemyTest1
+  entityName: AllyMeleeEntity1
   level: 1
   cost: 0
   upgradeCost: 0
   attackDamage: 1
-  health: 3
+  health: 5
   movementSpeed: 1
-  detectRange: 1
+  detectRange: 0.3
   minAttackRange: 0
-  maxAttackRange: 1
+  maxAttackRange: 0.35
   weight: 1
   isAreaOfEffect: 0
-  attackCooldown: 5
+  attackCooldown: 4

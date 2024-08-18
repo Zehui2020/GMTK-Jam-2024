@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3238665a2b064104f86e291be46c69b0, type: 3}
-  m_Name: AllyMantisStat
+  m_Name: EnemyTentCatStat1
   m_EditorClassIdentifier: 
-  entityName: AllyRangeEntity1
+  entityName: EnemyTest1
   level: 1
   cost: 0
   upgradeCost: 0
   attackDamage: 1
   health: 3
-  movementSpeed: 1.5
-  detectRange: 3
+  movementSpeed: 1
+  detectRange: 0.3
   minAttackRange: 0
-  maxAttackRange: 3
+  maxAttackRange: 0.3
   weight: 1
   isAreaOfEffect: 0
   attackCooldown: 5

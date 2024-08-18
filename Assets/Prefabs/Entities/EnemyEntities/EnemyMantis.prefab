@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8649d535578a86943a41e0bfcf04f487, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _inputStats: {fileID: 11400000, guid: ebf1164ea6a656348bb40b5e306d5e51, type: 2}
+  _inputStats: {fileID: 11400000, guid: 017964ee8026cdc489b95ebb29c131ca, type: 2}
   isEnemy: 0
   isDead: 0
   hasInit: 0
