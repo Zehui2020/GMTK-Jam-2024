@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 59cfd46ebd307e843a4d57d5202cb56f
+guid: ad3fd9ac00f35894f983cf1ed8a4cde2
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,7 +110,49 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Troop1_Range_Idle_0
+      name: Troop1_Range_Attack_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 083ea63389e6aa44487effd1c207c8df
+      internalID: 1620918944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troop1_Range_Attack_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 64
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8365f76d81e66084fbd7457ffe503b39
+      internalID: -263891172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troop1_Range_Attack_2
       rect:
         serializedVersion: 2
         x: 0
@@ -124,14 +166,35 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 11d1c36c1e7df004f821ab0f82b1903c
-      internalID: -1714299249
+      spriteID: f75ffae5336fedb48bc7e252ef4a4e11
+      internalID: -1287351578
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Troop1_Range_Idle_1
+      name: Troop1_Range_Attack_3
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fafba3405267a1c4aa0a3d72926a06de
+      internalID: 1968865789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Troop1_Range_Attack_4
       rect:
         serializedVersion: 2
         x: 0
@@ -145,8 +208,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eb98b926d496589408438aa7764158eb
-      internalID: 1652627652
+      spriteID: d9c769765694e0741bbf22169e95949d
+      internalID: -1794352816
       vertices: []
       indices: 
       edges: []
@@ -162,8 +225,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Troop1_Range_Idle_0: -1714299249
-      Troop1_Range_Idle_1: 1652627652
+      Troop1_Range_Attack_0: 1620918944
+      Troop1_Range_Attack_1: -263891172
+      Troop1_Range_Attack_2: -1287351578
+      Troop1_Range_Attack_3: 1968865789
+      Troop1_Range_Attack_4: -1794352816
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

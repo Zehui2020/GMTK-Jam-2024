@@ -24,4 +24,4 @@ MonoBehaviour:
   maxAttackRange: 0.35
   weight: 1
   isAreaOfEffect: 0
-  attackCooldown: 5
+  attackCooldown: 6

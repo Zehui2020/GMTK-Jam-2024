@@ -2492,6 +2492,7 @@ MonoBehaviour:
   _clampRotation: 10
   _calculateInterval: 0.5
   _baseLerpSpeed: 1
+  _decelerationFactor: 0
   _angleText: {fileID: 1554357366}
 --- !u!4 &1623743179
 Transform:
