@@ -36,6 +36,8 @@ public class BaseEntity : MonoBehaviour
 
     private Transform _targetPoint;
 
+    protected float activeMovementValue;
+
     // Start is called before the first frame update
     public void Init(Transform targetPoint)
     {
@@ -52,6 +54,7 @@ public class BaseEntity : MonoBehaviour
         deathCounter = 0;
         isDead = false;
         _targetPoint = targetPoint;
+        activeMovementValue = 1;
 
         //Rotate Image
         spriteRenderer.flipX = !isEnemy;
@@ -87,7 +90,7 @@ public class BaseEntity : MonoBehaviour
         switch (entityState)
         {
             case EntityState.Walk:
-                transform.position = Vector2.MoveTowards(transform.position, _targetPoint.position, entityStats.movementSpeed * Time.deltaTime);
+                transform.position = Vector2.MoveTowards(transform.position, _targetPoint.position, entityStats.movementSpeed * 1 * Time.deltaTime);
                 break;
             case EntityState.Idle:
                 break;
@@ -187,5 +190,15 @@ public class BaseEntity : MonoBehaviour
 
 
         return hasDetectedEnemy;
+    }
+
+    public virtual void HandlePassiveTrait()
+    {
+
+    }
+
+    public virtual void HandleActiveTrait(float _scaleAngle)
+    {
+
     }
 }

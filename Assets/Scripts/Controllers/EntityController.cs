@@ -36,7 +36,7 @@ public class EntityController : MonoBehaviour
 
     }
 
-    public void HandleUpdate()
+    public void HandleUpdate(float _scaleAngle)
     {
         //DEBUGGING ONLY
         //spawn ally
@@ -73,6 +73,10 @@ public class EntityController : MonoBehaviour
             //check to init
             if (!entity.hasInit)
                 entity.Init(enemyEntities[0].transform);
+
+            //handle active traits
+            entity.HandleActiveTrait(_scaleAngle);
+
             //Range check for ally entities to attack
             foreach (var entity2 in enemyEntities)
             {
@@ -119,6 +123,10 @@ public class EntityController : MonoBehaviour
             //check to init
             if (!entity.hasInit)
                 entity.Init(allyEntities[0].transform);
+
+            //handle active traits
+            entity.HandleActiveTrait(_scaleAngle);
+
             //Range check for ally entities to attack
             foreach (var entity2 in allyEntities)
             {

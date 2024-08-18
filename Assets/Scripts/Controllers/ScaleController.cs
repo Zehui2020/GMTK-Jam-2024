@@ -16,6 +16,7 @@ public class ScaleController : MonoBehaviour
 
     private Coroutine _calculateRoutine;
     private Coroutine _rotateRoutine;
+    private float angle;
 
     [SerializeField] private TextMeshProUGUI _angleText;
 
@@ -71,7 +72,7 @@ public class ScaleController : MonoBehaviour
     private void CalculateRotation()
     {
         float resultant = CalculateResultant();
-        float angle = resultant * _rotationSensitivity;
+        angle = resultant * _rotationSensitivity;
         angle = Mathf.Clamp(angle, -_clampRotation, _clampRotation);
 
         Quaternion targetAngle = Quaternion.Euler(0, 0, angle);
@@ -111,5 +112,10 @@ public class ScaleController : MonoBehaviour
             CalculateRotation();
             yield return new WaitForSeconds(_calculateInterval);
         }
+    }
+
+    public float GetAngle()
+    {
+        return angle;
     }
 }

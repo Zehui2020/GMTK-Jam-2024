@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4908172224569523342}
   - component: {fileID: 6193861427105000360}
-  - component: {fileID: 7530176478760881614}
   - component: {fileID: 1755450260749004639}
+  - component: {fileID: 1034963938559669231}
   m_Layer: 0
   m_Name: AllyTentCat1
   m_TagString: Untagged
@@ -86,22 +86,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7530176478760881614
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4617329641929948581}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8649d535578a86943a41e0bfcf04f487, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _inputStats: {fileID: 11400000, guid: 6654f18ffe3f1314887030840d8412da, type: 2}
-  isEnemy: 0
-  isDead: 0
-  hasInit: 0
 --- !u!95 &1755450260749004639
 Animator:
   serializedVersion: 5
@@ -123,3 +107,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1034963938559669231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4617329641929948581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c602184235de94b42a42c8b67a1e8243, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _inputStats: {fileID: 11400000, guid: 6654f18ffe3f1314887030840d8412da, type: 2}
+  isEnemy: 0
+  isDead: 0
+  hasInit: 0
