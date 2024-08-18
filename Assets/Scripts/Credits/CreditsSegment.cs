@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class CreditsSegment : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public bool IsShared;
 
-    // Update is called once per frame
-    void Update()
+    [SerializeField]
+    private CreditsMove.SEGMENT_TYPE segmentType;
+
+    public CreditsMove.SEGMENT_TYPE GetSegment()
     {
-        
+        return segmentType;
     }
 }
