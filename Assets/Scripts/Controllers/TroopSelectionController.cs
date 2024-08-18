@@ -54,10 +54,16 @@ public class TroopSelectionController : MonoBehaviour
             placeholderSprite.transform.localPosition.y, 
             placeholderSprite.transform.localPosition.z);
 
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetMouseButtonDown(0))
         {
             SpawnTroop(cursorWorldPosition);
             placeholderSprite.gameObject.SetActive(false);
+        }
+
+        if (Input.GetMouseButtonDown(1))
+        {
+            placeholderSprite.gameObject.SetActive(false);
+            _selectedEntity = null;
         }
     }
 }

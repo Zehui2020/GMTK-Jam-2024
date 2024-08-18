@@ -45,15 +45,9 @@ public class ScaleController : MonoBehaviour
                 continue;
             }
 
-            bool isRight = false;
-
-            if (entity.transform.position.x > _pivotPosition.transform.position.x)
-            {
-                isRight = true;
-            }
-
             // M = F x d
             float moment = entity.GetStats().weight * Mathf.Abs(entity.transform.position.x - _pivotPosition.position.x);
+            bool isRight = entity.transform.position.x > _pivotPosition.transform.position.x;
 
             if (isRight)
             {
