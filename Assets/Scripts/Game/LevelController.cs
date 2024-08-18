@@ -35,6 +35,9 @@ public class LevelController : MonoBehaviour
     [SerializeField]
     private UnityEvent<int> _onNextWave;
 
+    [SerializeField]
+    private UnityEvent<BaseEntity> _onEntitySpawn;
+
     private bool _isRunning = false;
     private int _waveIndex; 
     private float _timer;
@@ -45,21 +48,20 @@ public class LevelController : MonoBehaviour
     private Wave _currentWave;
     private readonly List<EntitySpawn> _currentEntitySpawns = new();
 
-    public void Init()
+    public void SetLevel(Level level, bool play = true)
     {
-        if (_debugLevel)
+        Init(level);
+
+        if (play)
         {
-            // For debugging purposes, prioritise the debug level
-            _currentLevel = _debugLevel;
+            Play();
         }
-        else if (_selectionSharedData && _selectionSharedData.Level)
-        {
-            _currentLevel = _selectionSharedData.Level; 
-        }
-        else
-        {
-            Fatal("No level data to initialize with");
-        }
+    }
+
+    public void Init(Level level)
+    {
+        _currentEntitySpawns.Clear();
+        _currentLevel = level; 
 
         AssertNotNull(_currentLevel, "Current level is null");
         Assert(!_currentLevel.Waves.IsEmpty(), "Current level waves are empty");
@@ -76,6 +78,7 @@ public class LevelController : MonoBehaviour
     {
         _isRunning = false;
     }
+
     private void InitValues()
     {
         // Init gameplay variables
@@ -126,7 +129,23 @@ public class LevelController : MonoBehaviour
 
     private void Awake()
     {
-        Init();
+        // NOTE (Chris): To be removed, should be 
+        // started from the `GameController`
+        if (_debugLevel)
+        {
+            // For debugging purposes, prioritise the debug level
+            Init(_debugLevel);
+        }
+        else if (_selectionSharedData && _selectionSharedData.Level)
+        {
+            Init(_currentLevel);
+        }
+        else
+        {
+            Fatal("No level data to initialize with");
+            return;
+        }
+
         Play();
     }
 
@@ -148,7 +167,8 @@ public class LevelController : MonoBehaviour
             if (entitySpawn.SpawnTime <= _timer)
             {
                 // Spawn the node
-                EntityController.Instance.SpawnEntity(entitySpawn.Prefab, true);
+                _onEntitySpawn.Invoke(EntityController.Instance.SpawnEntity(
+                    entitySpawn.Prefab, true));
 
                 _currentEntitySpawns.RemoveAt(i);
                 --i;
