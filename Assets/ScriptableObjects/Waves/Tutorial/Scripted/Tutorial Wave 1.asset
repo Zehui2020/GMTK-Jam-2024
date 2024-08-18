@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Tutorial Wave 1
   m_EditorClassIdentifier: 
   <Nodes>k__BackingField:
-  - <EntityPrefab>k__BackingField: {fileID: 4617329641929948581, guid: 0f7fc83e4d6841145ba0298eaee96572, type: 3}
+  - <EntityPrefab>k__BackingField: {fileID: 4617329641929948581, guid: 46d1ba65b631cda4cbadd40a2fdcbf28, type: 3}
     <SpawnAfterStartSeconds>k__BackingField: 5
     <PositionSpawn>k__BackingField: 0
     <SequenceAmount>k__BackingField: 0

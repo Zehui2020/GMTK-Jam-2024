@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3238665a2b064104f86e291be46c69b0, type: 3}
+  m_Name: TutorialEnemyTentCatStat
+  m_EditorClassIdentifier: 
+  entityName: TutorialEnemyTentCat
+  level: 1
+  cost: 0
+  upgradeCost: 0
+  attackDamage: 1
+  health: 2
+  movementSpeed: 1
+  detectRange: 1
+  minAttackRange: 0
+  maxAttackRange: 1
+  weight: 1
+  isAreaOfEffect: 0
+  attackCooldown: 5

@@ -1838,7 +1838,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _selectionSharedData: {fileID: 11400000, guid: 5b7f22cb3a9882b4a876de8eabda565a, type: 2}
-  _debugLevel: {fileID: 11400000, guid: 6b27863b562f15a42a2451985b37db22, type: 2}
+  _debugLevel: {fileID: 0}
   _loop: 1
   _onNextWave:
     m_PersistentCalls:
