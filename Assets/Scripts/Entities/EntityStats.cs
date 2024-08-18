@@ -18,4 +18,5 @@ public class EntityStats : ScriptableObject
     public float weight;
     public bool isAreaOfEffect;
     public float attackCooldown;
+    public float attackTraitCooldown;
 }

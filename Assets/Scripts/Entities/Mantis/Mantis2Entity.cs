@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Mantis2Entity : BaseEntity
 {
+
     public override void HandlePassiveTrait()
     {
-
     }
 
     public override void HandleActiveTrait(float _scaleAngle)
@@ -15,12 +15,12 @@ public class Mantis2Entity : BaseEntity
         //Tilt towards ally base
         if (_scaleAngle >= 5)
         {
-            activeMovementValue = isEnemy ? 1.2f : 0.8f;
+            activeMovementValue = isEnemy ? 1.2f : 1f;
         }
         //tilt towards enemy
         else if (_scaleAngle <= -5)
         {
-            activeMovementValue = isEnemy ? 0.8f : 1.2f;
+            activeMovementValue = isEnemy ? 1f : 1.2f;
         }
         //neutral
         else

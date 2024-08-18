@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static BaseEntity;
 
 public class EntityController : MonoBehaviour
 {
@@ -270,5 +271,51 @@ public class EntityController : MonoBehaviour
         }
 
         return allEntities;
+    }
+
+    public void ApplyStatusEffect(BaseEntity _entity, EntityStatusEffect _effect, int totalEntitiesAffected)
+    {
+        Vector3 _entityPos = _entity.transform.position;
+        EntityStats _entityStats = _entity.GetStats();
+        //check attack dist between troops
+        if (_entity.isEnemy)
+        {
+            foreach (BaseEntity e in allyEntities)
+            {
+                //distance check
+                float dist = Vector3.Distance(_entityPos, e.transform.position);
+                if (_entityStats.minAttackRange <= dist && dist <= _entityStats.maxAttackRange)
+                {
+                    //apply
+                    e.Damage(_entityStats.attackDamage);
+                    totalEntitiesAffected--;
+                    //check if not area of effect
+                    if (totalEntitiesAffected == 0)
+                    {
+                        break; //only hit one enemy
+                    }
+                }
+            }
+        }
+        //check attack dist between enemy
+        else
+        {
+            foreach (BaseEntity e in enemyEntities)
+            {
+                //distance check
+                float dist = Vector3.Distance(_entityPos, e.transform.position);
+                if (_entityStats.minAttackRange <= dist && dist <= _entityStats.maxAttackRange)
+                {
+                    //apply
+                    e.Damage(_entityStats.attackDamage);
+                    totalEntitiesAffected--;
+                    //check if not area of effect
+                    if (totalEntitiesAffected == 0)
+                    {
+                        break; //only hit one enemy
+                    }
+                }
+            }
+        }
     }
 }
