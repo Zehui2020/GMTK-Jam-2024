@@ -3265,7 +3265,7 @@ MonoBehaviour:
   - ContainerPosition:
     - {x: 260, y: 0, z: 0}
     - {x: 0, y: 0, z: 0}
-    - {x: -20, y: -100, z: 0}
+    - {x: 0, y: -100, z: 0}
     InstructionsText:
     - Oh no! An enemy<color=#FF0000> Tent Cat </color>has appeared!
     - As troops begin to enter the field,<br>The scale will tilt towards the heavier
@@ -3282,7 +3282,7 @@ MonoBehaviour:
   - ContainerPosition:
     - {x: 0, y: 0, z: 0}
     - {x: 0, y: 0, z: 0}
-    - {x: 20, y: -100, z: 0}
+    - {x: 0, y: -100, z: 0}
     InstructionsText:
     - Be careful! Having too many troops on the enemy side<br> will drastically decrease
       the enemies movement,<br>stacking them together and increases yours!

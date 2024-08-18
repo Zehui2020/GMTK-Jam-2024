@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Nodes>k__BackingField:
   - <EntityPrefab>k__BackingField: {fileID: 4617329641929948581, guid: 46d1ba65b631cda4cbadd40a2fdcbf28, type: 3}
-    <SpawnAfterStartSeconds>k__BackingField: 5
+    <SpawnAfterStartSeconds>k__BackingField: 3
     <PositionSpawn>k__BackingField: 0
     <SequenceAmount>k__BackingField: 0
     <SequenceTimeGap>k__BackingField: 0
