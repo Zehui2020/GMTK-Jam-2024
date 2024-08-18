@@ -12,6 +12,7 @@ public class ScaleController : MonoBehaviour
     [SerializeField] private float _clampRotation;
     [SerializeField] private float _calculateInterval;
     [SerializeField] private float _baseLerpSpeed;
+    [SerializeField] private float _decelerationFactor;
 
     private Coroutine _calculateRoutine;
     private Coroutine _rotateRoutine;
@@ -36,8 +37,14 @@ public class ScaleController : MonoBehaviour
         float totalLeftResultant = 0;
         float totalRightResultant = 0;
 
-        foreach (BaseEntity entity in EntityController.Instance.GetAllEntities())
+        List<BaseEntity> entities = EntityController.Instance.GetAllEntities();
+        foreach (BaseEntity entity in entities)
         {
+            if (entity == null)
+            {
+                continue;
+            }
+
             bool isRight = false;
 
             if (entity.transform.position.x > _pivotPosition.transform.position.x)
@@ -72,17 +79,22 @@ public class ScaleController : MonoBehaviour
 
         if (_rotateRoutine != null)
             StopCoroutine(_rotateRoutine);
-        _rotateRoutine = StartCoroutine(LerpRotation(targetAngle, rotationSpeed));
+        _rotateRoutine = StartCoroutine(LerpRotation(targetAngle, rotationSpeed, _decelerationFactor));
 
         _angleText.text = "Angle: " + angle;
     }
 
-    private IEnumerator LerpRotation(Quaternion targetRotation, float rotationSpeed)
+    private IEnumerator LerpRotation(Quaternion targetRotation, float initialRotationSpeed, float decelerationFactor)
     {
         Quaternion initialRotation = _bar.rotation;
+        float rotationSpeed = initialRotationSpeed;
 
         while (Quaternion.Angle(_bar.rotation, targetRotation) > 0.01f)
         {
+            float angleDifference = Quaternion.Angle(_bar.rotation, targetRotation);
+
+            rotationSpeed = Mathf.Lerp(0, initialRotationSpeed, angleDifference / decelerationFactor);
+
             float angle = rotationSpeed * Time.deltaTime;
             _bar.rotation = Quaternion.RotateTowards(_bar.rotation, targetRotation, angle);
             yield return null;
@@ -90,6 +102,7 @@ public class ScaleController : MonoBehaviour
 
         _bar.rotation = targetRotation;
     }
+
 
     private IEnumerator CalculateRoutine()
     {
