@@ -1,6 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using System.Linq;
+using System.Collections.Generic;
+
 using UnityEngine;
 
 public class EntityController : MonoBehaviour
@@ -38,7 +38,11 @@ public class EntityController : MonoBehaviour
 
     public void Init()
     {
+        DebugUtility.Assert(!enemyEntities.IsEmpty(), "There is no enemy base");
+        DebugUtility.Assert(!allyEntities.IsEmpty(), "There is no ally base");
 
+        enemyEntities[0].Init(allyEntities[0].transform);
+        allyEntities[0].Init(enemyEntities[0].transform);
     }
 
     public void HandleUpdate()
@@ -75,9 +79,7 @@ public class EntityController : MonoBehaviour
                 deadAllyEntity.Add(entity);
                 continue;
             }
-            //check to init
-            if (!entity.hasInit)
-                entity.Init(enemyEntities[0].transform);
+
             //Range check for ally entities to attack
             foreach (var entity2 in enemyEntities)
             {
@@ -124,9 +126,7 @@ public class EntityController : MonoBehaviour
                 deadEnemyEntity.Add(entity);
                 continue;
             }
-            //check to init
-            if (!entity.hasInit)
-                entity.Init(allyEntities[0].transform);
+
             //Range check for ally entities to attack
             foreach (var entity2 in allyEntities)
             {
@@ -206,7 +206,7 @@ public class EntityController : MonoBehaviour
         }
     }
 
-    public void SpawnEntity(GameObject _entityToSpawnPrefab, bool isEnemyEntity)
+    public BaseEntity SpawnEntity(GameObject _entityToSpawnPrefab, bool isEnemyEntity)
     {
         //instantiate new entity
         GameObject newEntity = Instantiate(_entityToSpawnPrefab);
@@ -220,7 +220,11 @@ public class EntityController : MonoBehaviour
 
         //add to own list
         (isEnemyEntity ? enemyEntities : allyEntities).Add(baseEntity);
+        baseEntity.Init(
+            (isEnemyEntity ? allyEntities : enemyEntities).First().transform);
         _entitiesDirty = true;
+
+        return baseEntity;
     }
 
     public void SpawnPlayerEntity(GameObject _entityToSpawnPrefab, Vector3 position)
@@ -232,9 +236,15 @@ public class EntityController : MonoBehaviour
         newEntity.transform.parent = allyEntities[0].transform.parent;
         newEntity.transform.localPosition = new Vector3(newEntity.transform.localPosition.x, 0, 0);
         newEntity.transform.rotation = newEntity.transform.parent.rotation;
-        newEntity.GetComponent<BaseEntity>().isEnemy = false;
 
-        allyEntities.Add(newEntity.GetComponent<BaseEntity>());
+        BaseEntity baseEntity = newEntity.GetComponent<BaseEntity>();
+        baseEntity.isEnemy = false;
+
+        allyEntities.Add(baseEntity);
+        DebugUtility.Assert(!enemyEntities.IsEmpty(), "There is no enemy base");
+        baseEntity.Init(enemyEntities[0].transform);
+
+        _entitiesDirty = true;
     }
 
     public void EndGame(bool enemyWin)
