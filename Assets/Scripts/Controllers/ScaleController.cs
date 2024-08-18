@@ -47,7 +47,6 @@ public class ScaleController : MonoBehaviour
 
             // M = F x d
             float moment = entity.GetStats().weight * Mathf.Abs(entity.transform.position.x - _pivotPosition.position.x);
-
             bool isRight = entity.transform.position.x > _pivotPosition.transform.position.x;
 
             if (isRight)
