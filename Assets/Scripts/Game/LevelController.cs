@@ -138,7 +138,7 @@ public class LevelController : MonoBehaviour
         }
         else if (_selectionSharedData && _selectionSharedData.Level)
         {
-            Init(_currentLevel);
+            Init(_selectionSharedData.Level);
         }
         else
         {
