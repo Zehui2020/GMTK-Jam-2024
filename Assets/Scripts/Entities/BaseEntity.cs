@@ -18,6 +18,8 @@ public class BaseEntity : MonoBehaviour
 
     //Animation controller
     private Animator animator;
+    //sprite renderer
+    private SpriteRenderer spriteRenderer;
 
     private EntityStats entityStats;
 
@@ -29,19 +31,30 @@ public class BaseEntity : MonoBehaviour
 
     //attack counter
     private float attackCounter;
+    //private float attackAnimCounter;
+    private float deathCounter;
 
     private Transform _targetPoint;
 
     // Start is called before the first frame update
     public void Init(Transform targetPoint)
     {
+        //GetComponent
+        animator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        
+        //Stats Initialization
         hasInit = true;
         entityStats = new EntityStats();
         SetStats(_inputStats);
         entityState = EntityState.Walk;
         attackCounter = 0;
+        deathCounter = 0;
         isDead = false;
         _targetPoint = targetPoint;
+
+        //Rotate Image
+        spriteRenderer.flipX = !isEnemy;
     }
 
     // Update is called once per frame
@@ -51,6 +64,13 @@ public class BaseEntity : MonoBehaviour
         if (attackCounter > 0)
         {
             attackCounter -= Time.deltaTime;
+            
+            //DEBUGGING ONLY
+            if (entityState == EntityState.Attack && !animator)
+            {
+                Attack();
+                entityState = EntityState.Idle;
+            }
         }
         //if countdown reach zero and entity is Idling
         if (attackCounter <= 0 && entityState == EntityState.Idle)
@@ -58,8 +78,10 @@ public class BaseEntity : MonoBehaviour
             //change to attack
             entityState = EntityState.Attack;
             attackCounter = entityStats.attackCooldown;
-            Debug.Log(entityStats.attackCooldown);
             //activate animations
+            if (animator)
+                animator.SetBool("IsAttacking", true);
+            
         }
 
         switch (entityState)
@@ -70,10 +92,20 @@ public class BaseEntity : MonoBehaviour
             case EntityState.Idle:
                 break;
             case EntityState.Attack:
-                Attack();
-                SetState(EntityState.Idle);
+                //DEBUGGING ONLY
+                if (!animator)
+                    break;
+                if (entityStats.attackCooldown - attackCounter >= animator.GetCurrentAnimatorClipInfo(0).Length)
+                {
+                    //change back after animation finish
+                    animator.SetBool("IsAttacking", false);
+                    entityState = EntityState.Idle;
+                }
                 break;
             case EntityState.Death:
+                deathCounter -= Time.deltaTime;
+                if (deathCounter <= 0)
+                    isDead = true;
                 break;
             default:
                 break;
@@ -103,10 +135,14 @@ public class BaseEntity : MonoBehaviour
         return entityStats; 
     }
 
+    public EntityState GetState()
+    {
+        return entityState;
+    }
+
     public void Attack()
     {
         EntityController.Instance.HandleEntityAttack(this);
-        Debug.Log((isEnemy? "Enemy" : "Ally") + " Attack");
     }
 
     public void SetState(EntityState _newState)
@@ -123,8 +159,13 @@ public class BaseEntity : MonoBehaviour
         if (entityStats.health < 0)
         {
             entityState = EntityState.Death;
-            isDead = true;
-            Debug.Log((isEnemy ? "Enemy" : "Ally") + " Die");
+            //animation change to death
+            if (animator)
+            {
+                animator.SetBool("IsDead", true);
+                //set counter
+                deathCounter = animator.GetCurrentAnimatorClipInfo(0).Length;
+            }
         }
     }
 
@@ -140,6 +181,10 @@ public class BaseEntity : MonoBehaviour
         {
             entityState = EntityState.Walk;
         }
+
+        if (animator)
+            animator.SetBool("IsWalking", entityState == EntityState.Walk);
+
 
         return hasDetectedEnemy;
     }

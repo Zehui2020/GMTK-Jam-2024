@@ -76,6 +76,10 @@ public class EntityController : MonoBehaviour
             //Range check for ally entities to attack
             foreach (var entity2 in enemyEntities)
             {
+                //check if entity is dead
+                if (entity2.GetState() == BaseEntity.EntityState.Death)
+                    continue;
+
                 if (entity.DetectedEnemy(Vector3.Distance(entity.transform.position, entity2.transform.position) <= entity.GetStats().detectRange))
                 {
                     break;
@@ -118,6 +122,11 @@ public class EntityController : MonoBehaviour
             //Range check for ally entities to attack
             foreach (var entity2 in allyEntities)
             {
+                //check if entity is dead
+                if (entity2.GetState() == BaseEntity.EntityState.Death)
+                    continue;
+
+
                 if (entity.DetectedEnemy(Vector3.Distance(entity.transform.position, entity2.transform.position) <= entity.GetStats().detectRange))
                 {
                     break;
