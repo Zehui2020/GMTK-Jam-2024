@@ -621,6 +621,7 @@ MonoBehaviour:
   _clampRotation: 10
   _calculateInterval: 0.5
   _baseLerpSpeed: 1
+  _decelerationFactor: 0
   _angleText: {fileID: 515180774}
 --- !u!4 &280544688
 Transform:
@@ -1589,6 +1590,9 @@ MonoBehaviour:
   placeholderSprite: {fileID: 1100190885}
   minSpawnPoint: {fileID: 2127918022}
   maxSpawnPoint: {fileID: 22058274}
+  _onTroopSpawned:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1090087211
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1642,6 +1646,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1100190884}
   - component: {fileID: 1100190885}
+  - component: {fileID: 1100190886}
   m_Layer: 0
   m_Name: PlaceholderSprite
   m_TagString: Untagged
@@ -1716,6 +1721,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1100190886
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1100190883}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 49d37205ffc37c142ad957acd5bdb149, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1258590748
 GameObject:
   m_ObjectHideFlags: 0
