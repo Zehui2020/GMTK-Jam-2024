@@ -69,11 +69,13 @@ public class LevelController : MonoBehaviour
     
     public void Play()
     {
-        Init();
-
         _isRunning = true;
     }
 
+    public void Stop()
+    {
+        _isRunning = false;
+    }
     private void InitValues()
     {
         // Init gameplay variables
@@ -124,6 +126,7 @@ public class LevelController : MonoBehaviour
 
     private void Awake()
     {
+        Init();
         Play();
     }
 

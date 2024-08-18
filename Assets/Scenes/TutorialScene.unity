@@ -502,6 +502,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1975638417}
+        m_TargetAssemblyTypeName: TutorialController, Assembly-CSharp
+        m_MethodName: CheckTroopClcked
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &385920867
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -763,18 +775,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 0
-    m_Right: 0
-    m_Top: 0
-    m_Bottom: 0
+    m_Left: 10
+    m_Right: 10
+    m_Top: 10
+    m_Bottom: 10
   m_ChildAlignment: 1
   m_Spacing: 0
-  m_ChildForceExpandWidth: 1
-  m_ChildForceExpandHeight: 1
+  m_ChildForceExpandWidth: 0
+  m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 0
   m_ChildControlHeight: 0
-  m_ChildScaleWidth: 0
-  m_ChildScaleHeight: 0
+  m_ChildScaleWidth: 1
+  m_ChildScaleHeight: 1
   m_ReverseArrangement: 0
 --- !u!1 &653715599
 GameObject:
@@ -1013,7 +1025,6 @@ GameObject:
   - component: {fileID: 800581335}
   - component: {fileID: 800581337}
   - component: {fileID: 800581336}
-  - component: {fileID: 800581338}
   m_Layer: 5
   m_Name: Control
   m_TagString: Untagged
@@ -1035,10 +1046,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 619800945}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 188.2, y: -100.56}
-  m_SizeDelta: {x: 376.4, y: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 376.4, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &800581336
 MonoBehaviour:
@@ -1095,7 +1106,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 1
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 512
+  m_VerticalAlignment: 1024
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -1137,20 +1148,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 800581334}
   m_CullTransparentMesh: 1
---- !u!114 &800581338
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 800581334}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_HorizontalFit: 2
-  m_VerticalFit: 2
 --- !u!1 &847004081
 GameObject:
   m_ObjectHideFlags: 0
@@ -1188,7 +1185,19 @@ MonoBehaviour:
   maxSpawnPoint: {fileID: 890515777}
   _onTroopSpawned:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1975638417}
+        m_TargetAssemblyTypeName: TutorialController, Assembly-CSharp
+        m_MethodName: CheckTroopPlaced
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &847004083
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1814,7 +1823,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _selectionSharedData: {fileID: 11400000, guid: 5b7f22cb3a9882b4a876de8eabda565a, type: 2}
-  _debugLevel: {fileID: 0}
+  _debugLevel: {fileID: 11400000, guid: 6b27863b562f15a42a2451985b37db22, type: 2}
   _loop: 1
   _onNextWave:
     m_PersistentCalls:
@@ -1822,7 +1831,7 @@ MonoBehaviour:
       - m_Target: {fileID: 1975638417}
         m_TargetAssemblyTypeName: TutorialController, Assembly-CSharp
         m_MethodName: CheckNewWave
-        m_Mode: 3
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2040,7 +2049,6 @@ GameObject:
   - component: {fileID: 1364106514}
   - component: {fileID: 1364106516}
   - component: {fileID: 1364106515}
-  - component: {fileID: 1364106517}
   m_Layer: 5
   m_Name: Title
   m_TagString: Untagged
@@ -2062,10 +2070,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 619800945}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 188.2, y: -26.815}
-  m_SizeDelta: {x: 95.48, y: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 95.48, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1364106515
 MonoBehaviour:
@@ -2122,7 +2130,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 1
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 512
+  m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -2164,20 +2172,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1364106513}
   m_CullTransparentMesh: 1
---- !u!114 &1364106517
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1364106513}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_HorizontalFit: 2
-  m_VerticalFit: 2
 --- !u!1 &1384806009
 GameObject:
   m_ObjectHideFlags: 0
@@ -2702,7 +2696,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 188.2, y: -70.39}
+  m_AnchoredPosition: {x: 198.2, y: -106.76}
   m_SizeDelta: {x: 159.84, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1795372236
@@ -2908,6 +2902,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 11400000, guid: 3262f6d7823099348b33c7dd90c8834a, type: 2}
           m_ObjectArgumentAssemblyTypeName: Entity, Assembly-CSharp
           m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1975638417}
+        m_TargetAssemblyTypeName: TutorialController, Assembly-CSharp
+        m_MethodName: CheckTroopClcked
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -3206,10 +3212,50 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dataList:
-  - ContainerPosition: []
-    InstructionsText: []
-  _textboxContainer: {fileID: 619800944}
+  - ContainerPosition:
+    - {x: 0, y: 0, z: 0}
+    InstructionsText:
+    - Welcome to Tip The Scales!<br>To prepare you for the Carnival Of Scales,<br>this
+      tutorial will guide you through<br>with the in's and out's of the game!
+  - ContainerPosition:
+    - {x: 625, y: 0, z: 0}
+    - {x: 0, y: 0, z: 0}
+    - {x: -60, y: -260, z: 0}
+    InstructionsText:
+    - Oh no! An enemy<color=#FF0000> Tent Cat </color>has appeared!
+    - As troops begin to enter the field,<br>The scale will tilt towards the heavier
+      side.
+    - Lets try deploying a <color=#00FFFF>troop</color>!<br>Press on troop button
+      below to spawn a troop!
+  - ContainerPosition:
+    - {x: 0, y: 0, z: 0}
+    - {x: 0, y: 0, z: 0}
+    InstructionsText:
+    - You can only place your troops<br>on your side of the field.
+    - There will be an indication on where<br>you can place the troop down.<br>Try
+      clicking again to deploy the troop!
+  - ContainerPosition:
+    - {x: 0, y: 0, z: 0}
+    - {x: 0, y: 0, z: 0}
+    - {x: 60, y: -260, z: 0}
+    InstructionsText:
+    - Be careful! Having too many troops on the enemy side<br> will drastically decrease
+      the enemies movement,<br>stacking them together and increases yours!
+    - Every unit gains different effects <br>based on the current angle the scale
+      is tilted at.
+    - Try placing some <color=#00FFFF>Mantises</color> to counter them!
+  - ContainerPosition:
+    - {x: 0, y: 0, z: 0}
+    InstructionsText:
+    - That's all for the tutorial!<br>Now, go on to defeat the enemy's base!<br>Have
+      fun!
+  _textboxContainer: {fileID: 619800945}
   _instructionsText: {fileID: 1795372236}
+  _troopSelectionController: {fileID: 847004082}
+  _levelController: {fileID: 1115625916}
+  _troopsButtons:
+  - {fileID: 385920866}
+  - {fileID: 1827340076}
 --- !u!4 &1975638418
 Transform:
   m_ObjectHideFlags: 0

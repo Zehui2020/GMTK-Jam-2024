@@ -29,8 +29,8 @@ public class TroopSelectionController : MonoBehaviour
         }
 
         EntityController.Instance.SpawnPlayerEntity(_selectedEntity._entityPrefab, position);
-        _selectedEntity = null;
         _onTroopSpawned.Invoke(_selectedEntity);
+        _selectedEntity = null;
     }
 
     private void Update()

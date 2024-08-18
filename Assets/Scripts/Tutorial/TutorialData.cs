@@ -8,5 +8,6 @@ public class TutorialData
 {
     public List<Vector3> ContainerPosition;
 
+    [TextArea(5,5)]
     public List<string> InstructionsText;
 }
