@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c72b9fed60e414644abe8e6500d0339f, type: 3}
-  m_Name: Tutorial
+  m_Name: TutorialScripted
   m_EditorClassIdentifier: 
   <Waves>k__BackingField:
   - {fileID: 11400000, guid: 8c0b237532eeab64a8e744533c7660e1, type: 2}

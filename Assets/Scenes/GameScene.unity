@@ -2614,6 +2614,9 @@ MonoBehaviour:
   _onNextWave:
     m_PersistentCalls:
       m_Calls: []
+  _onEntitySpawn:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &1956069995
 Transform:
   m_ObjectHideFlags: 0

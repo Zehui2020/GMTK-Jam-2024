@@ -24,6 +24,9 @@ public class TutorialController : MonoBehaviour
     [SerializeField]
     private List<Button> _troopsButtons;
 
+    [SerializeField]
+    private Level _endlessLevelSwap;
+
     private int _currentTutorialNumber;
     private int _currentTutorialSet;
     private TutorialData _currentTutorialData;
@@ -31,6 +34,7 @@ public class TutorialController : MonoBehaviour
     private bool _hasClicked;
     private int _currentWave;
     private int _mantisPlaced;
+    private List<BaseEntity> _enemyEntities;
     public void CheckNewWave(int newWave)
     {
         _currentWave = newWave;
@@ -57,8 +61,19 @@ public class TutorialController : MonoBehaviour
             if (_mantisPlaced >= 2 && _currentTutorialSet == 3)
             {
                 _troopsButtons[1].enabled = false;
+                _troopsButtons[1].gameObject.SetActive(false);
             }
         }
+    }
+
+    public void CheckEnemyPlaced(BaseEntity newEnemy)
+    {
+        Debug.Log(newEnemy._inputStats.entityName);
+        if (newEnemy._inputStats.entityName.Equals("TutorialEnemyTentCat"))
+        {
+            NextTutorial();
+        }
+        _enemyEntities.Add(newEnemy);
     }
     private void Start()
     {
@@ -71,7 +86,9 @@ public class TutorialController : MonoBehaviour
         foreach(Button button in _troopsButtons)
         {
             button.enabled = false;
+            button.gameObject.SetActive(false);
         }
+        _enemyEntities = new();
     }
     private void Update()
     {
@@ -134,22 +151,10 @@ public class TutorialController : MonoBehaviour
         switch (_currentTutorialSet) {
             case -1:
                 _currentTime += Time.deltaTime;
-                if (_currentTime >= 2)
+                if (_currentTime >= 0)
                 {
-                    NextTutorial();
-                    
+                    NextTutorial();    
                 }
-                break;
-            case 0:
-                _currentTime += Time.deltaTime;
-                if (_currentTime >= 3)
-                {
-                    NextTutorial();
-                }
-                break;
-            case 1:
-                //TODO (Vincent): Check for enemy tent cat death
-                _levelController.Play();
                 break;
             case 2:
                 if (_currentWave == 1)
@@ -160,11 +165,19 @@ public class TutorialController : MonoBehaviour
                         NextTutorial();
                     }
                 }
+                else
+                {
+                    if (_enemyEntities.Count > 0 && _enemyEntities[0] == null)
+                    {
+                        _enemyEntities.Clear();
+                        _levelController.Play();
+                    }
+                }
                 break;
             case 3:
-                //TODO (Vincent): Check for both enemy mantis deaths
-                if (_mantisPlaced == 2)
+                if (_enemyEntities.Count > 1 && _enemyEntities[0] == null && _enemyEntities[1] == null)
                 {
+                    _enemyEntities.Clear();
                     NextTutorial();
                 }
                 break;
@@ -176,13 +189,14 @@ public class TutorialController : MonoBehaviour
         {
             case 1:
                 _levelController.Stop();
+                _troopsButtons[0].gameObject.SetActive(true);
                 break;
             case 2:
                 _troopSelectionController.enabled = false;
                 break;
             case 3:
                 _levelController.Stop();
-                _troopsButtons[1].enabled = true;
+                _troopsButtons[1].gameObject.SetActive(true);
                 _mantisPlaced = 0;
                 break;
         }
@@ -197,13 +211,18 @@ public class TutorialController : MonoBehaviour
             case 2:
                 _troopSelectionController.enabled = true;
                 _troopsButtons[0].enabled = false;
+                _troopsButtons[0].gameObject.SetActive(false);
+                break;
+            case 3:
+                _troopsButtons[1].enabled = true;
                 break;
             case 4:
                 foreach(Button button in _troopsButtons)
                 {
                     button.enabled = true;
+                    button.gameObject.SetActive(true);
                 }
-                _levelController.Play();
+                _levelController.SetLevel(_endlessLevelSwap);
                 break;
         }
     }
