@@ -16,12 +16,12 @@ MonoBehaviour:
   level: 1
   cost: 0
   upgradeCost: 0
-  attackDamage: 1
-  health: 3
+  attackDamage: 5
+  health: 10
   movementSpeed: 1.2
   detectRange: 2
   minAttackRange: 0
-  maxAttackRange: 2
-  weight: 1
+  maxAttackRange: 2.05
+  weight: 0.5
   isAreaOfEffect: 0
-  attackCooldown: 5
+  attackCooldown: 3
