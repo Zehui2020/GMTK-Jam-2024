@@ -14,14 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   entityName: AllyMantis1
   level: 1
-  cost: 0
-  upgradeCost: 0
-  attackDamage: 1
-  health: 3
-  movementSpeed: 1.2
+  cost: 125
+  upgradeCost: 300
+  attackDamage: 5
+  health: 15
+  movementSpeed: 1.4
   detectRange: 2
   minAttackRange: 0
-  maxAttackRange: 2
-  weight: 1
+  maxAttackRange: 2.1
+  weight: 0.5
   isAreaOfEffect: 0
-  attackCooldown: 5
+  attackCooldown: 3
