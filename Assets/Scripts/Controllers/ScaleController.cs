@@ -5,6 +5,13 @@ using TMPro;
 
 public class ScaleController : MonoBehaviour
 {
+    public enum ScaleType
+    {
+        GameScale,
+        MenuScale
+    }
+    [SerializeField] private ScaleType _scaleType;
+
     [SerializeField] private Transform _pivotPosition;
     [SerializeField] private Transform _bar;
 
@@ -14,10 +21,22 @@ public class ScaleController : MonoBehaviour
     [SerializeField] private float _baseLerpSpeed;
     [SerializeField] private float _decelerationFactor;
 
+    [SerializeField] private List<BaseEntity> _entityList;
+
+    [SerializeField] private bool _startOnAwake;
+
     private Coroutine _calculateRoutine;
     private Coroutine _rotateRoutine;
 
     [SerializeField] private TextMeshProUGUI _angleText;
+
+    private void Start()
+    {
+        if (_startOnAwake)
+        {
+            StartCalculation();
+        }
+    }
 
     public void StartCalculation()
     {
@@ -37,7 +56,17 @@ public class ScaleController : MonoBehaviour
         float totalLeftResultant = 0;
         float totalRightResultant = 0;
 
-        List<BaseEntity> entities = EntityController.Instance.GetAllEntities();
+        List<BaseEntity> entities = new();
+        switch (_scaleType)
+        {
+            case ScaleType.GameScale:
+                entities = EntityController.Instance.GetAllEntities();
+                break;
+            case ScaleType.MenuScale:
+                entities = _entityList;
+                break;
+        }
+
         foreach (BaseEntity entity in entities)
         {
             if (entity == null)
@@ -75,7 +104,10 @@ public class ScaleController : MonoBehaviour
             StopCoroutine(_rotateRoutine);
         _rotateRoutine = StartCoroutine(LerpRotation(targetAngle, rotationSpeed, _decelerationFactor));
 
-        _angleText.text = "Angle: " + angle;
+        if (_angleText != null)
+        {
+            _angleText.text = "Angle: " + angle;
+        }
     }
 
     private IEnumerator LerpRotation(Quaternion targetRotation, float initialRotationSpeed, float decelerationFactor)
@@ -105,5 +137,18 @@ public class ScaleController : MonoBehaviour
             CalculateRotation();
             yield return new WaitForSeconds(_calculateInterval);
         }
+    }
+
+    public void AddEntity(BaseEntity entityToAdd)
+    {
+        if (!_entityList.Contains(entityToAdd))
+        {
+            _entityList.Add(entityToAdd);
+        }
+    }
+
+    public void RemoveEntity(BaseEntity entityToAdd)
+    {
+        _entityList.Remove(entityToAdd);
     }
 }
