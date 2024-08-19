@@ -7,6 +7,7 @@ public class GameController : MonoBehaviour
     private GameController _instance;
     private EntityController _entityController;
     [SerializeField] private ScaleController _scaleController;
+    [SerializeField] private GameObject _pauseMenu;
 
     private void Awake()
     {
@@ -35,5 +36,16 @@ public class GameController : MonoBehaviour
     private void Update()
     {
         _entityController.HandleUpdate(_scaleController.GetAngle());
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            _pauseMenu.SetActive(true);
+            Time.timeScale = 0;
+        }
+    }
+
+    public void ResumeGame()
+    {
+        Time.timeScale = 1;
     }
 }
