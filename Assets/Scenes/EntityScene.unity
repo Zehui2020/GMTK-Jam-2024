@@ -831,6 +831,8 @@ MonoBehaviour:
   _unavailableColor: {r: 0.5176471, g: 0.5176471, b: 0.5176471, a: 1}
   _entityCost: {fileID: 837128071}
   _entityLevel: {fileID: 1479198650}
+  _tooltipPosition: {fileID: 0}
+  _animator: {fileID: 0}
   _upgradeHoldDelay: 0.3
   _upgradeHoldDuration: 0.7
   _entityList:
@@ -2083,6 +2085,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scaleController: {fileID: 1418952084}
+  _pauseMenu: {fileID: 0}
 --- !u!114 &1090087209
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2095,7 +2098,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c713aff8c63fe542beac397f320c56f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  allyPrefab1: {fileID: 4617329641929948581, guid: 81e2c6313bff57e44a7553b7cad96bd4, type: 3}
+  allyPrefab1: {fileID: 4617329641929948581, guid: 64b3b565887ce484bb1a9b73efe4bfd8, type: 3}
   allyPrefab2: {fileID: 4617329641929948581, guid: 9fe2d861587da614dbde1a8619caf539, type: 3}
   enemyPrefab1: {fileID: 4617329641929948581, guid: 14d0de20f8ac5d34f911d7a981d1f7c1, type: 3}
   allyEntities:
@@ -2135,6 +2138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   money: 0
+  increaseRate: 0
   _costText: {fileID: 171394381}
 --- !u!1 &1103289378
 GameObject:
@@ -4214,6 +4218,8 @@ MonoBehaviour:
   _unavailableColor: {r: 0.5176471, g: 0.5176471, b: 0.5176471, a: 1}
   _entityCost: {fileID: 1314309577}
   _entityLevel: {fileID: 901513504}
+  _tooltipPosition: {fileID: 0}
+  _animator: {fileID: 0}
   _upgradeHoldDelay: 0.3
   _upgradeHoldDuration: 0.7
   _entityList:
@@ -4279,6 +4285,8 @@ MonoBehaviour:
   _unavailableColor: {r: 0.5176471, g: 0.5176471, b: 0.5176471, a: 1}
   _entityCost: {fileID: 1266383668}
   _entityLevel: {fileID: 123969209}
+  _tooltipPosition: {fileID: 0}
+  _animator: {fileID: 0}
   _upgradeHoldDelay: 0.3
   _upgradeHoldDuration: 0.7
   _entityList:

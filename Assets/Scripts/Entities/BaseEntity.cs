@@ -58,6 +58,8 @@ public class BaseEntity : MonoBehaviour
         //GetComponent
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+
+        spriteRenderer.sortingOrder = 100 + Random.Range(0, 6);
         
         //Stats Initialization
         hasInit = true;
