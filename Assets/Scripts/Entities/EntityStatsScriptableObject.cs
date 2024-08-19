@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EntityStats : MonoBehaviour 
+[CreateAssetMenu(menuName = "Scriptable Object/EntityStatsScriptableObject")]
+public class EntityStatsScriptableObject : ScriptableObject
 {
     public string entityName;
     public int level;

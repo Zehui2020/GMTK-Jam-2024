@@ -100,4 +100,6 @@ MonoBehaviour:
   _inputStats: {fileID: 11400000, guid: fca025dd548fd9248a527212c5b9fc2c, type: 2}
   isEnemy: 0
   isDead: 0
+  isTargetable: 0
   hasInit: 0
+  _clonePrefab: {fileID: 4617329641929948581, guid: 1882cd7529801194b8e99dbd201ffcce, type: 3}

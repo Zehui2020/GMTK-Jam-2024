@@ -10,21 +10,22 @@ public class BaseEntity : MonoBehaviour
         Death,
         TotalStates
     }
-    private EntityState entityState;
+    protected EntityState entityState;
 
     public enum EntityStatusEffect
     {
         None,
         Fear,
+        Sleep,
         TotalStatus
     }
     private EntityStatusEffect entityStatusEffect;
     private float statusCounter;
 
-    public EntityStats _inputStats;
+    public EntityStatsScriptableObject _inputStats;
 
     //Animation controller
-    private Animator animator;
+    protected Animator animator;
     //sprite renderer
     private SpriteRenderer spriteRenderer;
 
@@ -32,6 +33,7 @@ public class BaseEntity : MonoBehaviour
 
     public bool isEnemy;
     public bool isDead;
+    public bool isTargetable;
 
     //check if entity has been initialize
     public bool hasInit = false;
@@ -40,12 +42,14 @@ public class BaseEntity : MonoBehaviour
     private float attackCounter;
     //private float attackAnimCounter;
 
-    private Transform _targetPoint;
+    protected Transform _targetPoint;
 
     //Active attributes/multiplier
     protected float activeMovementValue;
     protected float activeAttackMult;
     protected float activeDamageTakenMult;
+
+    protected float currWeight;
 
     // Start is called before the first frame update
     public void Init(Transform targetPoint)
@@ -56,12 +60,14 @@ public class BaseEntity : MonoBehaviour
         
         //Stats Initialization
         hasInit = true;
-        entityStats = ScriptableObject.CreateInstance<EntityStats>(); 
+        entityStats = new EntityStats();
         SetStats(_inputStats);
         entityState = EntityState.Walk;
         attackCounter = 0;
         isDead = false;
         _targetPoint = targetPoint;
+        isTargetable = true;
+        currWeight = entityStats.weight;
 
         entityStatusEffect = EntityStatusEffect.None;
         statusCounter = 0;
@@ -71,12 +77,13 @@ public class BaseEntity : MonoBehaviour
         activeAttackMult = 1;
         activeDamageTakenMult = 1;
 
+
         //Rotate Image
         spriteRenderer.flipX = !isEnemy;
     }
 
     // Update is called once per frame
-    public void HandleUpdate()
+    public virtual void HandleUpdate()
     {
         //DEBUGGING ONLY
         //Draw Attack Range
@@ -85,6 +92,7 @@ public class BaseEntity : MonoBehaviour
         Debug.DrawRay(transform.position + dir * entityStats.minAttackRange, dir * entityStats.maxAttackRange, Color.green, 0.01f);
 
         HandleStatusEffect();
+        HandlePassiveTrait();
 
         //attack counter countdown
         if (attackCounter > 0)
@@ -139,7 +147,7 @@ public class BaseEntity : MonoBehaviour
     }
 
     //assign stats
-    private void SetStats(EntityStats _newStats)
+    protected void SetStats(EntityStatsScriptableObject _newStats)
     {
         entityStats.entityName = _newStats.entityName;
         entityStats.level = _newStats.level;
@@ -154,11 +162,14 @@ public class BaseEntity : MonoBehaviour
         entityStats.weight = _newStats.weight;
         entityStats.isAreaOfEffect = _newStats.isAreaOfEffect;
         entityStats.attackCooldown = _newStats.attackCooldown;
-    }
+        entityStats.attackTraitCooldown = _newStats.attackTraitCooldown;
+        entityStats.passiveTraitTriggerDuration = _newStats.passiveTraitTriggerDuration;
+        entityStats.passiveTraitDuration = _newStats.passiveTraitDuration;
+}
 
     public EntityStats GetStats()
     { 
-        DebugUtility.AssertNotNull(entityStats, "Entity stats was null");
+        //DebugUtility.AssertNotNull(entityStats, "Entity stats was null");
         return entityStats; 
     }
 
@@ -170,6 +181,21 @@ public class BaseEntity : MonoBehaviour
     public void SetState(EntityState _newState)
     {
         entityState = _newState;
+    }
+
+    public EntityStatusEffect GetStatusEffect()
+    {
+        return entityStatusEffect;
+    }
+
+    public float GetWeight()
+    {
+        return currWeight;
+    }
+
+    public void SetWeight(float newWeight)
+    {
+        currWeight = newWeight;
     }
 
     public void Damage(int _amt)
@@ -191,6 +217,13 @@ public class BaseEntity : MonoBehaviour
 
     public bool DetectedEnemy(bool hasDetectedEnemy)
     {
+
+        if (entityStatusEffect != EntityStatusEffect.None)
+        {
+            return true;
+        }
+        
+
         //go into idle if detected enemy
         if (hasDetectedEnemy && entityState == EntityState.Walk)
         {
@@ -219,7 +252,7 @@ public class BaseEntity : MonoBehaviour
 
     }
 
-    public void ApplyStatusEffect(EntityStatusEffect _effect)
+    public void ApplyStatusEffect(EntityStatusEffect _effect, float _duration = 0)
     {
         if (entityStatusEffect != EntityStatusEffect.None)
             return;
@@ -230,6 +263,13 @@ public class BaseEntity : MonoBehaviour
                 statusCounter = 1f;
                 //flip character
                 spriteRenderer.flipX = isEnemy;
+                entityStatusEffect = EntityStatusEffect.Fear;
+                break;
+
+            case EntityStatusEffect.Sleep:
+                statusCounter = (_duration == 0) ? 4f : _duration;
+
+                entityStatusEffect |= EntityStatusEffect.Sleep;
                 break;
             default:
                 break;
@@ -238,7 +278,7 @@ public class BaseEntity : MonoBehaviour
 
     protected void DealStatusEffect(EntityStatusEffect _effect, int totalEntitiesAffected)
     {
-
+        EntityController.Instance.ApplyStatusEffect(this, _effect, totalEntitiesAffected);
     }
 
     protected virtual void HandleAttackTrait()
@@ -248,21 +288,36 @@ public class BaseEntity : MonoBehaviour
 
     private void HandleStatusEffect()
     {
-        statusCounter -= Time.deltaTime;
-        //status time end
-        if (statusCounter <= 0)
+        if (entityStatusEffect != EntityStatusEffect.None)
         {
-            //reset
-            entityStatusEffect = EntityStatusEffect.None;
-            spriteRenderer.flipX = !isEnemy;
+            Debug.Log("Effect No: " + entityStats.entityName);
+            return;
         }
+            
 
+        if (statusCounter > 0)
+        {
+            statusCounter -= Time.deltaTime;
+
+            //status time end
+            if (statusCounter <= 0)
+            {
+                //reset
+                entityStatusEffect = EntityStatusEffect.None;
+                spriteRenderer.flipX = !isEnemy;
+            }
+        }
 
         if (entityStatusEffect == EntityStatusEffect.Fear)
         {
             activeMovementValue = -0.8f;
             //set to walk
             entityState = EntityState.Walk;
+        }
+
+        if (entityStatusEffect == EntityStatusEffect.Sleep)
+        {
+            entityState = EntityState.Idle;
         }
     }
 

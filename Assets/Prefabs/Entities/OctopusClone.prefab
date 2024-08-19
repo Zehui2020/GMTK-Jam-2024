@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4908172224569523342}
   - component: {fileID: 6193861427105000360}
-  - component: {fileID: 3938823646035245721}
+  - component: {fileID: 4475592688628827812}
   m_Layer: 0
-  m_Name: AllyOctopus3
+  m_Name: OctopusClone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 100
   m_Sprite: {fileID: 21300000, guid: 5b253109ef4f7b34ba6df9e19b8c430d, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.16994548, g: 1, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -85,7 +85,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3938823646035245721
+--- !u!114 &4475592688628827812
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -94,12 +94,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 4617329641929948581}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2259429b39d9efc4e8b4c36538deca8b, type: 3}
+  m_Script: {fileID: 11500000, guid: 900fcc415f5e311408c929ae883b5926, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _inputStats: {fileID: 11400000, guid: 175342995a462af459aa385905e6d4b2, type: 2}
+  _inputStats: {fileID: 11400000, guid: 130f6c81385439e40a3ac969447af1e5, type: 2}
   isEnemy: 0
   isDead: 0
   isTargetable: 0
   hasInit: 0
-  _clonePrefab: {fileID: 4617329641929948581, guid: 1882cd7529801194b8e99dbd201ffcce, type: 3}
+  counter: 0

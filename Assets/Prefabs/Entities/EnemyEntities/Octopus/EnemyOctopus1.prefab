@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4908172224569523342}
   - component: {fileID: 6193861427105000360}
-  - component: {fileID: 3938823646035245721}
+  - component: {fileID: 5943738197343423560}
   m_Layer: 0
-  m_Name: AllyOctopus3
+  m_Name: EnemyOctopus1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -85,7 +85,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3938823646035245721
+--- !u!114 &5943738197343423560
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -94,10 +94,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 4617329641929948581}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2259429b39d9efc4e8b4c36538deca8b, type: 3}
+  m_Script: {fileID: 11500000, guid: 2b5b70f26cbc9b94195a1636485ed612, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _inputStats: {fileID: 11400000, guid: 175342995a462af459aa385905e6d4b2, type: 2}
+  _inputStats: {fileID: 11400000, guid: aa9f2357ea115b24cb6d34c4732d12e8, type: 2}
   isEnemy: 0
   isDead: 0
   isTargetable: 0
