@@ -17,6 +17,7 @@ public class BaseEntity : MonoBehaviour
         None,
         Fear,
         Sleep,
+        Stun,
         TotalStatus
     }
     private EntityStatusEffect entityStatusEffect;
@@ -270,8 +271,14 @@ public class BaseEntity : MonoBehaviour
             case EntityStatusEffect.Sleep:
                 statusCounter = (_duration == 0) ? 4f : _duration;
 
-                entityStatusEffect |= EntityStatusEffect.Sleep;
+                entityStatusEffect = EntityStatusEffect.Sleep;
                 break;
+
+            case EntityStatusEffect.Stun:
+                statusCounter = (_duration == 0) ? 2f : _duration;
+                entityStatusEffect = EntityStatusEffect.Stun;
+                break;
+
             default:
                 break;
         }
@@ -311,13 +318,15 @@ public class BaseEntity : MonoBehaviour
 
         if (entityStatusEffect == EntityStatusEffect.Fear)
         {
+            //walk backwards
             activeMovementValue = -0.8f;
             //set to walk
             entityState = EntityState.Walk;
         }
 
-        if (entityStatusEffect == EntityStatusEffect.Sleep)
+        else if (entityStatusEffect == EntityStatusEffect.Sleep || entityStatusEffect == EntityStatusEffect.Stun)
         {
+            //cannot move
             entityState = EntityState.Idle;
         }
     }
