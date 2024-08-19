@@ -55,10 +55,10 @@ public class TutorialController : MonoBehaviour
 
     public void CheckTroopPlaced(Entity troop)
     {
-        if (troop._stats.entityName.Equals("AllyRangeEntity1"))
+        if (_currentTutorialSet == 3)
         {
             _mantisPlaced++;
-            if (_mantisPlaced >= 2 && _currentTutorialSet == 3)
+            if (_mantisPlaced >= 2)
             {
                 _troopsButtons[1].enabled = false;
                 _troopsButtons[1].gameObject.SetActive(false);
