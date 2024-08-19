@@ -39,7 +39,6 @@ public class BaseEntity : MonoBehaviour
     //attack counter
     private float attackCounter;
     //private float attackAnimCounter;
-    private float deathCounter;
 
     private Transform _targetPoint;
 
@@ -58,7 +57,6 @@ public class BaseEntity : MonoBehaviour
         SetStats(_inputStats);
         entityState = EntityState.Walk;
         attackCounter = 0;
-        deathCounter = 0;
         isDead = false;
         _targetPoint = targetPoint;
         activeMovementValue = 1;
@@ -113,18 +111,18 @@ public class BaseEntity : MonoBehaviour
                 break;
             case EntityState.Attack:
                 //DEBUGGING ONLY
-                if (!animator)
+                /*if (!animator)
                     break;
                 if (entityStats.attackCooldown - attackCounter >= animator.GetCurrentAnimatorClipInfo(0).Length)
                 {
                     //change back after animation finish
                     animator.SetBool("IsAttacking", false);
                     entityState = EntityState.Idle;
-                }
+                }*/
                 break;
             case EntityState.Death:
-                deathCounter -= Time.deltaTime;
-                if (deathCounter <= 0)
+                //DEBUGGING ONLY
+                if (!animator)
                     isDead = true;
                 break;
             default:
@@ -161,12 +159,6 @@ public class BaseEntity : MonoBehaviour
         return entityState;
     }
 
-    public void Attack()
-    {
-        EntityController.Instance.HandleEntityAttack(this);
-        HandleAttackTrait();
-    }
-
     public void SetState(EntityState _newState)
     {
         entityState = _newState;
@@ -185,8 +177,6 @@ public class BaseEntity : MonoBehaviour
             if (animator)
             {
                 animator.SetBool("IsDead", true);
-                //set counter
-                deathCounter = animator.GetCurrentAnimatorClipInfo(0).Length;
             }
         }
     }
@@ -266,5 +256,23 @@ public class BaseEntity : MonoBehaviour
             //set to walk
             entityState = EntityState.Walk;
         }
+    }
+
+    //Animation Events
+    public void Attack()
+    {
+        EntityController.Instance.HandleEntityAttack(this);
+        HandleAttackTrait();
+    }
+
+    public void AttackAnimEnd()
+    {
+        animator.SetBool("IsAttacking", false);
+        entityState = EntityState.Idle;
+    }
+
+    public void DeathAnimEnd()
+    {
+        isDead = true;
     }
 }

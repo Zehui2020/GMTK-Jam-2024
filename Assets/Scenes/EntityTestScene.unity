@@ -615,6 +615,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dc465c911034f5409d0c0b3b3b740d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _scaleType: 0
   _pivotPosition: {fileID: 22058274}
   _bar: {fileID: 819669835}
   _rotationSensitivity: 1
@@ -622,6 +623,8 @@ MonoBehaviour:
   _calculateInterval: 0.5
   _baseLerpSpeed: 1
   _decelerationFactor: 0
+  _entityList: []
+  _startOnAwake: 0
   _angleText: {fileID: 515180774}
 --- !u!4 &280544688
 Transform:
@@ -2590,6 +2593,9 @@ MonoBehaviour:
   _debugLevel: {fileID: 11400000, guid: 7ea134c301eb02645b55e89d4cbf7daa, type: 2}
   _loop: 1
   _onNextWave:
+    m_PersistentCalls:
+      m_Calls: []
+  _onEntitySpawn:
     m_PersistentCalls:
       m_Calls: []
 --- !u!4 &1956069995
