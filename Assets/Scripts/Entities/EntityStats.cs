@@ -10,6 +10,7 @@ public class EntityStats
     public int upgradeCost;
     public int attackDamage;
     public int health;
+    public int maxHealth;
     public float movementSpeed;
     public float detectRange;
     public float minAttackRange;

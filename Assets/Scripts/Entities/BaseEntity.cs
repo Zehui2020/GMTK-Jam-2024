@@ -156,6 +156,7 @@ public class BaseEntity : MonoBehaviour
         entityStats.upgradeCost = _newStats.upgradeCost;
         entityStats.attackDamage = _newStats.attackDamage;
         entityStats.health = _newStats.health;
+        entityStats.maxHealth = _newStats.health;
         entityStats.movementSpeed = _newStats.movementSpeed;
         entityStats.detectRange = _newStats.detectRange;
         entityStats.minAttackRange = _newStats.minAttackRange;
