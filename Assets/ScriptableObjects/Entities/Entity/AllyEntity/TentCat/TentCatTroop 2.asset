@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f118cd2f3ba170348813f506bb5426b9, type: 3}
   m_Name: TentCatTroop 2
   m_EditorClassIdentifier: 
-  _stats: {fileID: 11400000, guid: 65190516f9c5e1a40a9791d0e11e0bcc, type: 2}
+  _stats: {fileID: 11400000, guid: e758c9e10b5f5ef4481c65e69c39c8b3, type: 2}
   _entityPrefab: {fileID: 4617329641929948581, guid: 2ca5e9bce2ca8804084523b722ca5864, type: 3}
   placeholderSprite: {fileID: 323939268, guid: 2acf42a8657aac64ea544e46f71e5b22, type: 3}
   selectionIcon: {fileID: 21300000, guid: bd583e65f6b60554da3f6ded15cd45bf, type: 3}
+  entityName: Tent Cat Lvl 3
+  abilities: 
