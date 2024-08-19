@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -109,5 +110,15 @@ public class TooltipManager : MonoBehaviour
         }
 
         return finalString;
+    }
+
+    public void SetUpgradeAnimation(bool active)
+    {
+        _animator.SetBool("upgrading", active);
+    }
+
+    public void FinishUpgrading()
+    {
+        _animator.SetTrigger("finish");
     }
 }

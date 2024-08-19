@@ -17,6 +17,7 @@ public class TroopSelectionButton : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _entityCost;
     [SerializeField] private TextMeshProUGUI _entityLevel;
     [SerializeField] private RectTransform _tooltipPosition;
+    [SerializeField] private Animator _animator;
 
     [SerializeField] private float _upgradeHoldDelay;
     [SerializeField] private float _upgradeHoldDuration;
@@ -80,7 +81,12 @@ public class TroopSelectionButton : MonoBehaviour
             StopCoroutine(_checkUpgradeRoutine);
 
         if (_holdUpgradeRoutine != null)
+        {
             StopCoroutine(_holdUpgradeRoutine);
+        }
+
+        _animator.SetBool("upgrading", false);
+        TooltipManager.Instance.SetUpgradeAnimation(false);
 
         _upgradeSlider.value = 0;
     }
@@ -88,6 +94,15 @@ public class TroopSelectionButton : MonoBehaviour
     private IEnumerator CheckUpgradeRoutine()
     {
         yield return new WaitForSeconds(_upgradeHoldDelay);
+
+        if (_hoverRoutine != null)
+            StopCoroutine(_hoverRoutine);
+        _hoverRoutine = null;
+
+        if (currentEntityLevel < _entityList.Count - 1)
+            TooltipManager.Instance.ShowTooltip(_entityList[currentEntityLevel], _entityList[currentEntityLevel + 1], _tooltipPosition);
+        else
+            TooltipManager.Instance.ShowTooltip(_entityList[currentEntityLevel], null, _tooltipPosition);
 
         _holdUpgradeRoutine = StartCoroutine(HoldUpgradeRoutine());
         _checkUpgradeRoutine = null;
@@ -97,6 +112,8 @@ public class TroopSelectionButton : MonoBehaviour
     {
         _upgradeSlider.value = 0;
         _upgradeSlider.maxValue = _upgradeHoldDuration;
+        _animator.SetBool("upgrading", true);
+        TooltipManager.Instance.SetUpgradeAnimation(true);
 
         float timer = 0;
         while (timer < _upgradeHoldDuration)
@@ -106,9 +123,13 @@ public class TroopSelectionButton : MonoBehaviour
             yield return null;
         }
 
+        _animator.SetBool("upgrading", false);
+        TooltipManager.Instance.FinishUpgrading();
+        TooltipManager.Instance.SetUpgradeAnimation(false);
         _upgradeSlider.value = 0;
-        UpgradeSelection();
+
         _holdUpgradeRoutine = null;
+        UpgradeSelection();
     }
 
     public void StartHoverRoutine()
