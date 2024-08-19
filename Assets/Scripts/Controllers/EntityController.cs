@@ -356,9 +356,17 @@ public class EntityController : MonoBehaviour
                 if (e.GetState() == BaseEntity.EntityState.Death || !e.isTargetable)
                     continue;
 
+                bool pass = true;
+                //check if effect is stun
+                if (_effect == EntityStatusEffect.Stun)
+                {
+                    //chance
+                    pass = Random.Range(0.0f, 1.0f) <= _entity.GetStats().attackTraitPercentage;
+                }
+
                 //distance check
                 float dist = Vector3.Distance(_entityPos, e.transform.position);
-                if (_entityStats.minAttackRange <= dist && dist <= _entityStats.maxAttackRange)
+                if (_entityStats.minAttackRange <= dist && dist <= _entityStats.maxAttackRange && pass)
                 {
                     //apply
                     e.Damage(_entity.GetAttackDamage());
@@ -366,7 +374,7 @@ public class EntityController : MonoBehaviour
                     //check if not area of effect
                     if (totalEntitiesAffected == 0)
                     {
-                        break; //only hit one enemy
+                        break; //hit max enemy
                     }
                 }
             }
@@ -380,9 +388,17 @@ public class EntityController : MonoBehaviour
                 if (e.GetState() == BaseEntity.EntityState.Death || !e.isTargetable)
                     continue;
 
+                bool pass = true;
+                //check if effect is stun
+                if (_effect == EntityStatusEffect.Stun)
+                {
+                    //chance
+                    pass = Random.Range(0.0f, 1.0f) <= _entity.GetStats().attackTraitPercentage;
+                }
+
                 //distance check
                 float dist = Vector3.Distance(_entityPos, e.transform.position);
-                if (_entityStats.minAttackRange <= dist && dist <= _entityStats.maxAttackRange)
+                if (_entityStats.minAttackRange <= dist && dist <= _entityStats.maxAttackRange && pass)
                 {
                     //apply
                     e.Damage(_entity.GetAttackDamage());
@@ -390,7 +406,7 @@ public class EntityController : MonoBehaviour
                     //check if not area of effect
                     if (totalEntitiesAffected == 0)
                     {
-                        break; //only hit one enemy
+                        break; //hit max enemy
                     }
                 }
             }

@@ -62,6 +62,9 @@ public class Octopus1Entity : BaseEntity
                 EntityController.Instance.AddEntity(newEntity, isEnemy);
 
                 currWeight = 0;
+
+                //Increase defense
+                activeDamageTakenMult = 0.6f;
             }
         }
         else
@@ -73,11 +76,10 @@ public class Octopus1Entity : BaseEntity
 
         if (GetStatusEffect() != EntityStatusEffect.Sleep)
         {
+            //reset
             currWeight = entityStats.weight;
+            activeDamageTakenMult = 1.0f;
         }
-        else
-        {
-            Debug.Log("Octo Sleeping");
-        }
+
     }
 }

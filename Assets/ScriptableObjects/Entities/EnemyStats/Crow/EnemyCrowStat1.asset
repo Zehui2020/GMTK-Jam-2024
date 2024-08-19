@@ -10,21 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3238665a2b064104f86e291be46c69b0, type: 3}
-  m_Name: EnemyOctopus1
+  m_Name: EnemyCrowStat1
   m_EditorClassIdentifier: 
-  entityName: EnemyOctopus1
-  level: 0
+  entityName: EnemyCrow1
+  level: 1
   cost: 0
   upgradeCost: 0
-  attackDamage: 20
-  health: 100
-  movementSpeed: 0.7
-  detectRange: 0.5
-  minAttackRange: 0
-  maxAttackRange: 0.7
-  weight: 5
+  attackDamage: 4
+  health: 8
+  movementSpeed: 1.6
+  detectRange: 2.3
+  minAttackRange: 1.8
+  maxAttackRange: 3.2
+  weight: 0.8
   isAreaOfEffect: 1
-  attackCooldown: 6
+  attackCooldown: 3.8
   attackTraitCooldown: 0
-  passiveTraitTriggerDuration: 15
-  passiveTraitDuration: 3
+  passiveTraitTriggerDuration: 0
+  passiveTraitDuration: 0
+  attackTraitPercentage: 0.1

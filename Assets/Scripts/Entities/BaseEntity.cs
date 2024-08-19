@@ -17,6 +17,7 @@ public class BaseEntity : MonoBehaviour
         None,
         Fear,
         Sleep,
+        Stun,
         TotalStatus
     }
     private EntityStatusEffect entityStatusEffect;
@@ -157,6 +158,7 @@ public class BaseEntity : MonoBehaviour
         entityStats.upgradeCost = _newStats.upgradeCost;
         entityStats.attackDamage = _newStats.attackDamage;
         entityStats.health = _newStats.health;
+        entityStats.maxHealth = _newStats.health;
         entityStats.movementSpeed = _newStats.movementSpeed;
         entityStats.detectRange = _newStats.detectRange;
         entityStats.minAttackRange = _newStats.minAttackRange;
@@ -167,6 +169,7 @@ public class BaseEntity : MonoBehaviour
         entityStats.attackTraitCooldown = _newStats.attackTraitCooldown;
         entityStats.passiveTraitTriggerDuration = _newStats.passiveTraitTriggerDuration;
         entityStats.passiveTraitDuration = _newStats.passiveTraitDuration;
+        entityStats.attackTraitPercentage = _newStats.attackTraitPercentage;
 }
 
     public EntityStats GetStats()
@@ -271,8 +274,14 @@ public class BaseEntity : MonoBehaviour
             case EntityStatusEffect.Sleep:
                 statusCounter = (_duration == 0) ? 4f : _duration;
 
-                entityStatusEffect |= EntityStatusEffect.Sleep;
+                entityStatusEffect = EntityStatusEffect.Sleep;
                 break;
+
+            case EntityStatusEffect.Stun:
+                statusCounter = (_duration == 0) ? 2f : _duration;
+                entityStatusEffect = EntityStatusEffect.Stun;
+                break;
+
             default:
                 break;
         }
@@ -312,13 +321,15 @@ public class BaseEntity : MonoBehaviour
 
         if (entityStatusEffect == EntityStatusEffect.Fear)
         {
+            //walk backwards
             activeMovementValue = -0.8f;
             //set to walk
             entityState = EntityState.Walk;
         }
 
-        if (entityStatusEffect == EntityStatusEffect.Sleep)
+        else if (entityStatusEffect == EntityStatusEffect.Sleep || entityStatusEffect == EntityStatusEffect.Stun)
         {
+            //cannot move
             entityState = EntityState.Idle;
         }
     }

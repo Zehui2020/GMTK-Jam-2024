@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EntityStats : MonoBehaviour 
+public class EntityStats
 {
     public string entityName;
     public int level;
@@ -10,6 +10,7 @@ public class EntityStats : MonoBehaviour
     public int upgradeCost;
     public int attackDamage;
     public int health;
+    public int maxHealth;
     public float movementSpeed;
     public float detectRange;
     public float minAttackRange;
@@ -20,4 +21,5 @@ public class EntityStats : MonoBehaviour
     public float attackTraitCooldown;
     public float passiveTraitTriggerDuration;
     public float passiveTraitDuration;
+    public float attackTraitPercentage;
 }

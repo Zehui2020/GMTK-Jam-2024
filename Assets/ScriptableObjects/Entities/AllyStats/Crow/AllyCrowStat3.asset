@@ -10,21 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3238665a2b064104f86e291be46c69b0, type: 3}
-  m_Name: EnemyOctopus1
+  m_Name: AllyCrowStat3
   m_EditorClassIdentifier: 
-  entityName: EnemyOctopus1
-  level: 0
-  cost: 0
+  entityName: AllyCrow3
+  level: 3
+  cost: 700
   upgradeCost: 0
-  attackDamage: 20
-  health: 100
-  movementSpeed: 0.7
-  detectRange: 0.5
-  minAttackRange: 0
-  maxAttackRange: 0.7
-  weight: 5
+  attackDamage: 14
+  health: 20
+  movementSpeed: 1.8
+  detectRange: 3
+  minAttackRange: 2.2
+  maxAttackRange: 4
+  weight: 1.6
   isAreaOfEffect: 1
-  attackCooldown: 6
+  attackCooldown: 3.2
   attackTraitCooldown: 0
-  passiveTraitTriggerDuration: 15
-  passiveTraitDuration: 3
+  passiveTraitTriggerDuration: 0
+  passiveTraitDuration: 0
+  attackTraitPercentage: 0.1

@@ -10,7 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4908172224569523342}
   - component: {fileID: 6193861427105000360}
-  - component: {fileID: 7530176478760881614}
+  - component: {fileID: 1863483478326152836}
+  - component: {fileID: 7513993425396406691}
   m_Layer: 0
   m_Name: EnemyMantis
   m_TagString: Untagged
@@ -74,18 +75,18 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 100
-  m_Sprite: {fileID: 21300000, guid: 1c2dd15ef9992bd4aa9788852c9d03be, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: 1388437236, guid: 9fd441c2e8332554dadd444f1cfc1ea1, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.515625, y: 0.5}
+  m_Size: {x: 0.5, y: 0.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7530176478760881614
+--- !u!114 &1863483478326152836
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -94,10 +95,32 @@ MonoBehaviour:
   m_GameObject: {fileID: 4617329641929948581}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8649d535578a86943a41e0bfcf04f487, type: 3}
+  m_Script: {fileID: 11500000, guid: 2bb091c804553ce439797955d199de24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _inputStats: {fileID: 11400000, guid: 017964ee8026cdc489b95ebb29c131ca, type: 2}
   isEnemy: 0
   isDead: 0
+  isTargetable: 0
   hasInit: 0
+--- !u!95 &7513993425396406691
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4617329641929948581}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 172a40e05271edc468c826584dacb2e0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9fd441c2e8332554dadd444f1cfc1ea1
+guid: b55228a59a6547f45a3ccbadc2857879
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,28 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Enemy1_Range_Idle_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 32
-        width: 32
-        height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a8d34456e9279fc4cb361e1c880f10d6
-      internalID: -1448410728
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Enemy1_Range_Idle_1
+      name: Enemy1_Range_attack_0
       rect:
         serializedVersion: 2
         x: 0
@@ -145,8 +124,92 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 68520b934428e9740abd46ffec4a9c32
-      internalID: 1388437236
+      spriteID: fe062b455de84e5448a8c388f08a41cf
+      internalID: 394767677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy1_Range_attack_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d4f3d4a81e8ac643946fd8fe2ad99d7
+      internalID: 67485329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy1_Range_attack_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f01ffd93a6a6f514b9976abe7746ff64
+      internalID: -1920834111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy1_Range_attack_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b23fc475a8f89214dba6a3b191b46387
+      internalID: -169204427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy1_Range_attack_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c90ae491dce1afc4996f026e92a7b027
+      internalID: 497347853
       vertices: []
       indices: 
       edges: []
@@ -162,8 +225,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Enemy1_Range_Idle_0: -1448410728
-      Enemy1_Range_Idle_1: 1388437236
+      Enemy1_Range_attack_0: 394767677
+      Enemy1_Range_attack_1: 67485329
+      Enemy1_Range_attack_2: -1920834111
+      Enemy1_Range_attack_3: -169204427
+      Enemy1_Range_attack_4: 497347853
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
