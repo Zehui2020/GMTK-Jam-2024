@@ -22,8 +22,8 @@ MonoBehaviour:
   detectRange: 0.5
   minAttackRange: 0
   maxAttackRange: 0.7
-  weight: 4
-  isAreaOfEffect: 0
+  weight: 5
+  isAreaOfEffect: 1
   attackCooldown: 6
   attackTraitCooldown: 0
   passiveTraitTriggerDuration: 15
