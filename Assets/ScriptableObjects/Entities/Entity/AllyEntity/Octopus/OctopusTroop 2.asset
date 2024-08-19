@@ -16,3 +16,5 @@ MonoBehaviour:
   _entityPrefab: {fileID: 4617329641929948581, guid: b4784b2fd086e044688ff20e2a1220e7, type: 3}
   placeholderSprite: {fileID: 21300000, guid: 5b253109ef4f7b34ba6df9e19b8c430d, type: 3}
   selectionIcon: {fileID: 21300000, guid: 5b253109ef4f7b34ba6df9e19b8c430d, type: 3}
+  entityName: Octopus Lvl 3
+  abilities: 

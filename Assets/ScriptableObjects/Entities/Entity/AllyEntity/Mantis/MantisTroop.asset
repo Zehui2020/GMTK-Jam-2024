@@ -16,3 +16,5 @@ MonoBehaviour:
   _entityPrefab: {fileID: 4617329641929948581, guid: 9fe2d861587da614dbde1a8619caf539, type: 3}
   placeholderSprite: {fileID: -1714299249, guid: 59cfd46ebd307e843a4d57d5202cb56f, type: 3}
   selectionIcon: {fileID: 21300000, guid: 86b341f0ddc2c8d428cabde4020940f3, type: 3}
+  entityName: Mantis Lvl 1
+  abilities: 

@@ -16,6 +16,7 @@ public class TroopSelectionButton : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI _entityCost;
     [SerializeField] private TextMeshProUGUI _entityLevel;
+    [SerializeField] private RectTransform _tooltipPosition;
 
     [SerializeField] private float _upgradeHoldDelay;
     [SerializeField] private float _upgradeHoldDuration;
@@ -25,6 +26,7 @@ public class TroopSelectionButton : MonoBehaviour
 
     private Coroutine _checkUpgradeRoutine;
     private Coroutine _holdUpgradeRoutine;
+    private Coroutine _hoverRoutine;
 
     private bool canSelect = false;
     private bool canUpgrade = false;
@@ -57,6 +59,11 @@ public class TroopSelectionButton : MonoBehaviour
         _entityIcon.sprite = _entityList[currentEntityLevel].selectionIcon;
         _entityCost.text = "" + _entityList[currentEntityLevel]._stats.cost;
         _entityLevel.text = "Lvl " + (currentEntityLevel + 1);
+
+        if (currentEntityLevel < _entityList.Count - 1)
+            TooltipManager.Instance.SetupToolip(_entityList[currentEntityLevel], _entityList[currentEntityLevel + 1], _tooltipPosition);
+        else
+            TooltipManager.Instance.SetupToolip(_entityList[currentEntityLevel], null, _tooltipPosition);
     }
 
     public void StartUpgradeProcess()
@@ -102,6 +109,32 @@ public class TroopSelectionButton : MonoBehaviour
         _upgradeSlider.value = 0;
         UpgradeSelection();
         _holdUpgradeRoutine = null;
+    }
+
+    public void StartHoverRoutine()
+    {
+        _hoverRoutine = StartCoroutine(HoverRoutine());
+    }
+
+    public void StopHoverRoutine()
+    {
+        if (_hoverRoutine != null)
+            StopCoroutine(_hoverRoutine);
+
+        TooltipManager.Instance.HideTooltip();
+        _hoverRoutine = null;
+    }
+
+    private IEnumerator HoverRoutine()
+    {
+        yield return new WaitForSeconds(1f);
+
+        if (currentEntityLevel < _entityList.Count - 1)
+            TooltipManager.Instance.ShowTooltip(_entityList[currentEntityLevel], _entityList[currentEntityLevel + 1], _tooltipPosition);
+        else
+            TooltipManager.Instance.ShowTooltip(_entityList[currentEntityLevel], null, _tooltipPosition);
+
+        _hoverRoutine = null;
     }
 
     private void Update()
