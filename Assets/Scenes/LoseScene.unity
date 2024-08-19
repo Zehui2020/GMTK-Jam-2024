@@ -1881,7 +1881,8 @@ MonoBehaviour:
   - {fileID: 2097488506}
   - {fileID: 2071933949}
   _light: {fileID: 2076043910}
-  _tumbleweed: {fileID: 0}
+  _tumbleweed: {fileID: 138708914}
+  _loadScene: {fileID: 1939158458}
 --- !u!1 &1939158456
 GameObject:
   m_ObjectHideFlags: 0
