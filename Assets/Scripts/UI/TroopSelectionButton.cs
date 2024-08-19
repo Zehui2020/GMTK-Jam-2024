@@ -11,6 +11,9 @@ public class TroopSelectionButton : MonoBehaviour
     [SerializeField] private Image _entityIcon;
     [SerializeField] private Slider _upgradeSlider;
 
+    [SerializeField] private Color _availableColor;
+    [SerializeField] private Color _unavailableColor;
+
     [SerializeField] private TextMeshProUGUI _entityCost;
     [SerializeField] private TextMeshProUGUI _entityLevel;
 
@@ -23,6 +26,8 @@ public class TroopSelectionButton : MonoBehaviour
     private Coroutine _checkUpgradeRoutine;
     private Coroutine _holdUpgradeRoutine;
 
+    private bool canSelect = false;
+
     private void Start()
     {
         _entityIcon.sprite = _entityList[currentEntityLevel].selectionIcon;
@@ -32,6 +37,11 @@ public class TroopSelectionButton : MonoBehaviour
 
     public void OnSelectTroop()
     {
+        if (!canSelect)
+        {
+            return;
+        }
+
         _selectionController.SelectTroop(_entityList[currentEntityLevel]);
     }
 
@@ -89,5 +99,19 @@ public class TroopSelectionButton : MonoBehaviour
         _upgradeSlider.value = 0;
         UpgradeSelection();
         _holdUpgradeRoutine = null;
+    }
+
+    private void Update()
+    {
+        if (MoneyController.Instance.money < _entityList[currentEntityLevel]._stats.cost)
+        {
+            canSelect = false;
+            _entityIcon.color = _unavailableColor;
+        }
+        else
+        {
+            canSelect = true;
+            _entityIcon.color = _availableColor;
+        }
     }
 }
