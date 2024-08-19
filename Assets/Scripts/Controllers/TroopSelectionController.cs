@@ -50,6 +50,13 @@ public class TroopSelectionController : MonoBehaviour
             return;
         }
 
+        if (MoneyController.Instance.money < _selectedEntity._stats.cost)
+        {
+            placeholderSprite.gameObject.SetActive(false);
+            _selectedEntity = null;
+            return;
+        }
+
         Vector3 mouseScreenPosition = Input.mousePosition;
         mouseScreenPosition.z = 0;
         Vector3 cursorWorldPosition = Camera.main.ScreenToWorldPoint(mouseScreenPosition);
