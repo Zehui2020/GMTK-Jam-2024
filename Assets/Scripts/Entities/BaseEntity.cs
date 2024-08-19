@@ -52,7 +52,7 @@ public class BaseEntity : MonoBehaviour
     protected float currWeight;
 
     // Start is called before the first frame update
-    public void Init(Transform targetPoint)
+    public virtual void Init(Transform targetPoint)
     {
         //GetComponent
         animator = GetComponent<Animator>();
@@ -288,9 +288,9 @@ public class BaseEntity : MonoBehaviour
 
     private void HandleStatusEffect()
     {
-        if (entityStatusEffect != EntityStatusEffect.None)
+        //if no status, then don't enter
+        if (entityStatusEffect == EntityStatusEffect.None)
         {
-            Debug.Log("Effect No: " + entityStats.entityName);
             return;
         }
             

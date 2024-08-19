@@ -49,7 +49,7 @@ public class Octopus1Entity : BaseEntity
                 //activate trigger
                 ApplyStatusEffect(EntityStatusEffect.Sleep, entityStats.passiveTraitDuration);
 
-                /*//summon clone
+                //summon clone
                 GameObject newEntity = Instantiate(_clonePrefab);
                 //set position
                 newEntity.transform.position = _targetPoint.position;
@@ -61,7 +61,7 @@ public class Octopus1Entity : BaseEntity
                 //add to entitycontroller
                 EntityController.Instance.AddEntity(newEntity, isEnemy);
 
-                currWeight = 0;*/
+                currWeight = 0;
             }
         }
         else

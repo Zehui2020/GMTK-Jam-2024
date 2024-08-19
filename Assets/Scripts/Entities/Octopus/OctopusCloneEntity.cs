@@ -5,14 +5,13 @@ using UnityEngine;
 public class OctopusCloneEntity : BaseEntity
 {
     public float counter;
-    /*public override void Init(Transform _targetPoint)
+    public override void Init(Transform _targetPoint)
     {
         base.Init(_targetPoint);
         //not targetable
         isTargetable = false;
         counter = 0;
-        ApplyStatusEffect(EntityStatusEffect.Sleep);
-    }*/
+    }
 
 
     public override void HandleUpdate()
