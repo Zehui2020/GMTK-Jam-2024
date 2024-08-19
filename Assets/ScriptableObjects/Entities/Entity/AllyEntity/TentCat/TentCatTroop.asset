@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f118cd2f3ba170348813f506bb5426b9, type: 3}
+  m_Name: TentCatTroop
+  m_EditorClassIdentifier: 
+  _stats: {fileID: 11400000, guid: 6654f18ffe3f1314887030840d8412da, type: 2}
+  _entityPrefab: {fileID: 4617329641929948581, guid: 25468d1934b6aae418b328c5d3e4b572, type: 3}
+  placeholderSprite: {fileID: 323939268, guid: 2acf42a8657aac64ea544e46f71e5b22, type: 3}

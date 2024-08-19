@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f118cd2f3ba170348813f506bb5426b9, type: 3}
+  m_Name: OctopusTroop 2
+  m_EditorClassIdentifier: 
+  _stats: {fileID: 11400000, guid: fca025dd548fd9248a527212c5b9fc2c, type: 2}
+  _entityPrefab: {fileID: 4617329641929948581, guid: b4784b2fd086e044688ff20e2a1220e7, type: 3}
+  placeholderSprite: {fileID: 21300000, guid: 5b253109ef4f7b34ba6df9e19b8c430d, type: 3}

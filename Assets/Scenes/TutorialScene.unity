@@ -2597,6 +2597,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dc465c911034f5409d0c0b3b3b740d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _scaleType: 0
   _pivotPosition: {fileID: 890515777}
   _bar: {fileID: 1638918666}
   _rotationSensitivity: 1
@@ -2604,6 +2605,8 @@ MonoBehaviour:
   _calculateInterval: 0.5
   _baseLerpSpeed: 1
   _decelerationFactor: 0
+  _entityList: []
+  _startOnAwake: 0
   _angleText: {fileID: 1554357366}
 --- !u!4 &1623743179
 Transform:
