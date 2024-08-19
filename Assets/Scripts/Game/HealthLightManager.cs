@@ -9,5 +9,9 @@ public class HealthLightManager : MonoBehaviour
 
     private void Update()
     {
+        foreach (HealthLight light in _healthLights)
+        {
+            light.UpdateLight(_base.GetStats().health);
+        }
     }
 }

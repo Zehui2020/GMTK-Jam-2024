@@ -37,6 +37,7 @@ public class ScaleController : MonoBehaviour
         {
             StartCalculation();
         }
+        StartCoroutine(UpdateAngleRoutine());
     }
 
     public void StartCalculation()
@@ -104,11 +105,6 @@ public class ScaleController : MonoBehaviour
         if (_rotateRoutine != null)
             StopCoroutine(_rotateRoutine);
         _rotateRoutine = StartCoroutine(LerpRotation(targetAngle, rotationSpeed, _decelerationFactor));
-
-        if (_angleText != null)
-        {
-            _angleText.text = "Angle: " + angle;
-        }
     }
 
     private IEnumerator LerpRotation(Quaternion targetRotation, float initialRotationSpeed, float decelerationFactor)
@@ -137,6 +133,19 @@ public class ScaleController : MonoBehaviour
         {
             CalculateRotation();
             yield return new WaitForSeconds(_calculateInterval);
+        }
+    }
+
+    private IEnumerator UpdateAngleRoutine()
+    {
+        while (true)
+        {
+            if (_angleText != null)
+            {
+                _angleText.text = Mathf.Round(angle * 10f) / 10f + "°";
+                yield return new WaitForSeconds(0.2f);
+            }
+            yield return null;
         }
     }
 

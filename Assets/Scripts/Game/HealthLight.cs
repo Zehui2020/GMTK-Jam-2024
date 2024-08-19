@@ -1,8 +1,107 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class HealthLight : MonoBehaviour
 {
+    private Light2D _source;
 
+    [SerializeField] private float maximumDim;
+    [SerializeField] private float maximumBoost;
+    [SerializeField] private float speed;
+    [SerializeField] private float strength;
+    [SerializeField] private float blowIntensity;
+
+    [SerializeField] private ParticleSystem flickerSparkPS;
+    [SerializeField] private ParticleSystem blowSparkPS;
+
+    [SerializeField] private int flickerThreshold;
+    [SerializeField] private int blowThreshold;
+
+    private bool noFlicker = false;
+    private float initialIntensity;
+
+    private Coroutine sparksRoutine;
+
+    public void Reset()
+    {
+        maximumDim = 0.2f;
+        maximumBoost = 0.2f;
+        speed = 0.1f;
+        strength = 250;
+    }
+
+    public void Start()
+    {
+        _source = GetComponent<Light2D>();
+        initialIntensity = _source.intensity;
+    }
+
+    public void StartFlicker()
+    {
+        if (sparksRoutine != null)
+            return;
+
+        StartCoroutine(Flicker());
+        sparksRoutine = StartCoroutine(SparksRoutine());
+    }
+
+    private IEnumerator Flicker()
+    {
+        while (!noFlicker)
+        {
+            _source.intensity = Mathf.Lerp(_source.intensity, Random.Range(initialIntensity - maximumDim, initialIntensity + maximumBoost), strength * Time.deltaTime);
+            yield return new WaitForSeconds(speed);
+        }
+    }
+
+    public void BlowLight()
+    {
+        noFlicker = true;
+        if (sparksRoutine != null)
+            StopCoroutine(sparksRoutine);
+        StartCoroutine(BlowRoutine());
+    }
+
+    private IEnumerator SparksRoutine()
+    {
+        while (true)
+        {
+            int randNum = Random.Range(5, 15);
+            flickerSparkPS.Play();
+            yield return new WaitForSeconds(randNum);
+        }
+    }
+
+    private IEnumerator BlowRoutine()
+    {
+        float timer = 0.6f;
+        while (timer > 0)
+        {
+            timer -= Time.deltaTime;
+            _source.intensity = Mathf.Lerp(_source.intensity, blowIntensity, 5f * Time.deltaTime);
+            yield return null;
+        }
+
+        timer = 0.6f;
+        blowSparkPS.Play();
+
+        while (timer > 0)
+        {
+            timer -= Time.deltaTime;
+            _source.intensity = Mathf.Lerp(_source.intensity, 0, 10f * Time.deltaTime);
+            yield return null;
+        }
+
+        _source.enabled = false;
+    }
+
+    public void UpdateLight(int currentHealth)
+    {
+        if (currentHealth <= flickerThreshold)
+            StartFlicker();
+
+        if (currentHealth <= blowThreshold)
+            BlowLight();
+    }
 }
