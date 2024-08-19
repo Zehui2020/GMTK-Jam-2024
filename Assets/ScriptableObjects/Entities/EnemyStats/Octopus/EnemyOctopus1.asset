@@ -25,3 +25,6 @@ MonoBehaviour:
   weight: 16
   isAreaOfEffect: 0
   attackCooldown: 6
+  attackTraitCooldown: 0
+  passiveTraitTriggerDuration: 15
+  passiveTraitDuration: 3

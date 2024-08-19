@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9fd441c2e8332554dadd444f1cfc1ea1
+guid: 34a4534cf0a3c6343bb43efeabd50af9
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Enemy1_Range_Idle_0
+      name: Enemy1_Range_walk_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 320
-        width: 320
-        height: 320
+        y: 0
+        width: 32
+        height: 32
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a8d34456e9279fc4cb361e1c880f10d6
-      internalID: -1448410728
+      spriteID: 9e2e3bdbb95d2694e9ec5d7f310f418e
+      internalID: 1080921819
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Enemy1_Range_Idle_1
+      name: Enemy1_Range_walk_1
       rect:
         serializedVersion: 2
-        x: 0
+        x: 32
         y: 0
-        width: 320
-        height: 320
+        width: 32
+        height: 32
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,8 +145,134 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 68520b934428e9740abd46ffec4a9c32
-      internalID: 1388437236
+      spriteID: fec469e24e8895940b634505a8c22ac4
+      internalID: -1573853275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy1_Range_walk_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a9ec03ae99a53241b6ff0dc17e829ad
+      internalID: -446741161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy1_Range_walk_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e054e47c4675ba441b4168eb24343738
+      internalID: -785632099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy1_Range_walk_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47829f35ff830d246958ee95d4172811
+      internalID: -404442248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy1_Range_walk_5
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13ab14236bec7f443897d337519900f9
+      internalID: -1753555127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy1_Range_walk_6
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40ed2a708c696214ebcff384ee0631a4
+      internalID: 475046948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy1_Range_walk_7
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 0
+        width: 32
+        height: 32
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0f208559417e7849b14958bfd476702
+      internalID: -172395875
       vertices: []
       indices: 
       edges: []
@@ -162,8 +288,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Enemy1_Range_Idle_0: -1448410728
-      Enemy1_Range_Idle_1: 1388437236
+      Enemy1_Range_walk_0: 1080921819
+      Enemy1_Range_walk_1: -1573853275
+      Enemy1_Range_walk_2: -446741161
+      Enemy1_Range_walk_3: -785632099
+      Enemy1_Range_walk_4: -404442248
+      Enemy1_Range_walk_5: -1753555127
+      Enemy1_Range_walk_6: 475046948
+      Enemy1_Range_walk_7: -172395875
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
