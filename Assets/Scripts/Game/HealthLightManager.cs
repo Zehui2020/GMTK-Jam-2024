@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class HealthLightManager : MonoBehaviour
 {
-    [SerializeField] private List<HealthLight> healthLights;
+    [SerializeField] private List<HealthLight> _healthLights;
+    [SerializeField] private BaseEntity _base;
 
+    private void Update()
+    {
+    }
 }
