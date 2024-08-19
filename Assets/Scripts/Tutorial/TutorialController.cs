@@ -68,7 +68,6 @@ public class TutorialController : MonoBehaviour
 
     public void CheckEnemyPlaced(BaseEntity newEnemy)
     {
-        Debug.Log(newEnemy._inputStats.entityName);
         if (newEnemy._inputStats.entityName.Equals("TutorialEnemyTentCat"))
         {
             NextTutorial();
