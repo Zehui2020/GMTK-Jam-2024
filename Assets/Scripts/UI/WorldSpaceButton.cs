@@ -86,8 +86,15 @@ public class WorldSpaceButton : BaseEntity, IPointerEnterHandler, IPointerExitHa
             onDragEnd?.Invoke();
             onPointerUp?.Invoke();
 
-            if (_checkFallingRoutine == null && gameObject.activeInHierarchy)
+            if (_checkFallingRoutine != null)
+            {
+                StopCoroutine(_checkFallingRoutine);
+            }
+
+            if (gameObject.activeInHierarchy)
+            {
                 _checkFallingRoutine = StartCoroutine(CheckFallingRoutine());
+            }
         }
 
         if (!_isPointerDown || _isDragging)
@@ -110,16 +117,18 @@ public class WorldSpaceButton : BaseEntity, IPointerEnterHandler, IPointerExitHa
 
     public void OnDrag(PointerEventData eventData)
     {
-        if (Vector2.Distance(eventData.position, _pointerDownPosition) > _dragThreshold)
+        if (Vector2.Distance(eventData.position, _pointerDownPosition) < _dragThreshold)
         {
-            if (!_isDragging)
-            {
-                _isDragging = true;
-                onDrag?.Invoke();
-                _rb.velocity = Vector2.zero;
+            return;
+        }
 
-                onUngrounded?.Invoke();
-            }
+        if (!_isDragging)
+        {
+            _isDragging = true;
+            onDrag?.Invoke();
+            _rb.velocity = Vector2.zero;
+
+            onUngrounded?.Invoke();
         }
     }
 
@@ -139,7 +148,9 @@ public class WorldSpaceButton : BaseEntity, IPointerEnterHandler, IPointerExitHa
     private void OnCollisionEnter2D(Collision2D col)
     {
         if (!col.collider.CompareTag("Button") && !col.collider.CompareTag("Ground"))
+        {
             return;
+        }
 
         onGrounded?.Invoke();
     }
@@ -156,14 +167,24 @@ public class WorldSpaceButton : BaseEntity, IPointerEnterHandler, IPointerExitHa
     private void OnCollisionExit2D(Collision2D col)
     {
         if (!col.collider.CompareTag("Button") && !col.collider.CompareTag("Ground"))
+        {
             return;
+        }
 
-        if (_checkFallingRoutine == null &&
-            gameObject.activeInHierarchy)
+        if (_checkFallingRoutine != null)
+        {
+            StopCoroutine(_checkFallingRoutine);
+        }
+
+        if (gameObject.activeInHierarchy)
+        {
             _checkFallingRoutine = StartCoroutine(CheckFallingRoutine());
+        }
 
         if (_isDragging)
+        {
             onUngrounded?.Invoke();
+        }
     }
 
     private IEnumerator CheckFallingRoutine()
