@@ -27,6 +27,7 @@ public class TroopSelectionButton : MonoBehaviour
     private Coroutine _holdUpgradeRoutine;
 
     private bool canSelect = false;
+    private bool canUpgrade = false;
 
     private void Start()
     {
@@ -47,6 +48,8 @@ public class TroopSelectionButton : MonoBehaviour
 
     public void UpgradeSelection()
     {
+        MoneyController.Instance.SpendMoney(_entityList[currentEntityLevel]._stats.upgradeCost);
+
         currentEntityLevel++;
         if (currentEntityLevel >= _entityList.Count - 1)
             currentEntityLevel = _entityList.Count - 1;
@@ -58,7 +61,7 @@ public class TroopSelectionButton : MonoBehaviour
 
     public void StartUpgradeProcess()
     {
-        if (currentEntityLevel >= _entityList.Count - 1)
+        if (currentEntityLevel >= _entityList.Count - 1 || !canUpgrade)
             return;
 
         _checkUpgradeRoutine = StartCoroutine(CheckUpgradeRoutine());
@@ -112,6 +115,15 @@ public class TroopSelectionButton : MonoBehaviour
         {
             canSelect = true;
             _entityIcon.color = _availableColor;
+        }
+
+        if (MoneyController.Instance.money < _entityList[currentEntityLevel]._stats.upgradeCost)
+        {
+            canUpgrade = false;
+        }
+        else
+        {
+            canUpgrade = true;
         }
     }
 }
