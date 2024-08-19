@@ -22,7 +22,7 @@ MonoBehaviour:
   detectRange: 0.4
   minAttackRange: 0
   maxAttackRange: 0.6
-  weight: 20
+  weight: 10
   isAreaOfEffect: 1
   attackCooldown: 6
   attackTraitCooldown: 0
