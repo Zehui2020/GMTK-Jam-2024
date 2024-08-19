@@ -298,6 +298,8 @@ public class EntityController : MonoBehaviour
         DebugUtility.Assert(!enemyEntities.IsEmpty(), "There is no enemy base");
         baseEntity.Init(enemyEntities[0].transform);
 
+        MoneyController.Instance.SpendMoney(baseEntity.GetStats().cost);
+
         _entitiesDirty = true;
     }
 

@@ -238,7 +238,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 1
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!1 &106642903
 GameObject:
@@ -303,7 +303,7 @@ GameObject:
   - component: {fileID: 111600908}
   - component: {fileID: 111600909}
   - component: {fileID: 111600912}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CreditButton
   m_TagString: Button
   m_Icon: {fileID: 0}
@@ -319,7 +319,7 @@ Transform:
   m_GameObject: {fileID: 111600906}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -6.2, y: -1.7, z: 0}
   m_LocalScale: {x: -0.3, y: 0.3, z: 0.3}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -373,6 +373,7 @@ MonoBehaviour:
   _rb: {fileID: 111600908}
   _jointRB: {fileID: 720716095}
   _hingeJoint: {fileID: 720716094}
+  _scaleController: {fileID: 640758695}
   clickThreshold: 0.09
   onClick:
     m_PersistentCalls:
@@ -433,19 +434,7 @@ MonoBehaviour:
       m_Calls: []
   onGrounded:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 640758695}
-        m_TargetAssemblyTypeName: ScaleController, Assembly-CSharp
-        m_MethodName: AddEntity
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 111600909}
-          m_ObjectArgumentAssemblyTypeName: BaseEntity, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   onUngrounded:
     m_PersistentCalls:
       m_Calls:
@@ -470,7 +459,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 111600906}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 1a5a97346ecb6e04f909aeaf47b8965a, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -739,7 +728,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 1
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!1 &249650974
 GameObject:
@@ -1210,7 +1199,7 @@ GameObject:
   - component: {fileID: 533974621}
   - component: {fileID: 533974622}
   - component: {fileID: 533974623}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: StartButton
   m_TagString: Button
   m_Icon: {fileID: 0}
@@ -1278,7 +1267,7 @@ Transform:
   m_GameObject: {fileID: 533974618}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.2, z: 0}
+  m_LocalPosition: {x: -6.2, y: 0.5, z: 0}
   m_LocalScale: {x: -0.3, y: 0.3, z: 0.3}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1294,7 +1283,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 533974618}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 1a5a97346ecb6e04f909aeaf47b8965a, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -1377,6 +1366,7 @@ MonoBehaviour:
   _rb: {fileID: 533974622}
   _jointRB: {fileID: 40304240}
   _hingeJoint: {fileID: 40304239}
+  _scaleController: {fileID: 640758695}
   clickThreshold: 0.09
   onClick:
     m_PersistentCalls:
@@ -1437,34 +1427,10 @@ MonoBehaviour:
       m_Calls: []
   onGrounded:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 640758695}
-        m_TargetAssemblyTypeName: ScaleController, Assembly-CSharp
-        m_MethodName: AddEntity
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 533974623}
-          m_ObjectArgumentAssemblyTypeName: BaseEntity, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   onUngrounded:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 640758695}
-        m_TargetAssemblyTypeName: ScaleController, Assembly-CSharp
-        m_MethodName: RemoveEntity
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 533974623}
-          m_ObjectArgumentAssemblyTypeName: BaseEntity, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &573461096
 GameObject:
   m_ObjectHideFlags: 0
@@ -1548,7 +1514,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 1
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!1 &587662694
 GameObject:
@@ -1563,7 +1529,7 @@ GameObject:
   - component: {fileID: 587662698}
   - component: {fileID: 587662696}
   - component: {fileID: 587662697}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: QuitButton
   m_TagString: Button
   m_Icon: {fileID: 0}
@@ -1579,7 +1545,7 @@ Transform:
   m_GameObject: {fileID: 587662694}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.1, z: 0}
+  m_LocalPosition: {x: 6.2, y: -1.5, z: 0}
   m_LocalScale: {x: -0.3, y: 0.3, z: 0.3}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1633,13 +1599,14 @@ MonoBehaviour:
   _rb: {fileID: 587662696}
   _jointRB: {fileID: 196473648}
   _hingeJoint: {fileID: 196473647}
+  _scaleController: {fileID: 640758695}
   clickThreshold: 0.09
   onClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: LoadScene, Assembly-CSharp
-        m_MethodName: Load
+      - m_Target: {fileID: 1005913487}
+        m_TargetAssemblyTypeName: UIMenuPanel, Assembly-CSharp
+        m_MethodName: OnQuitButtonPress
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1693,19 +1660,7 @@ MonoBehaviour:
       m_Calls: []
   onGrounded:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 640758695}
-        m_TargetAssemblyTypeName: ScaleController, Assembly-CSharp
-        m_MethodName: AddEntity
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 587662697}
-          m_ObjectArgumentAssemblyTypeName: BaseEntity, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   onUngrounded:
     m_PersistentCalls:
       m_Calls:
@@ -1714,7 +1669,7 @@ MonoBehaviour:
         m_MethodName: RemoveEntity
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 587662697}
+          m_ObjectArgument: {fileID: 111600909}
           m_ObjectArgumentAssemblyTypeName: BaseEntity, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -1730,7 +1685,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 587662694}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 1a5a97346ecb6e04f909aeaf47b8965a, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -2072,7 +2027,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 1
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!1 &775213250
 GameObject:
@@ -2135,7 +2090,7 @@ GameObject:
   - component: {fileID: 966352770}
   - component: {fileID: 966352768}
   - component: {fileID: 966352769}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: OptionsButton
   m_TagString: Button
   m_Icon: {fileID: 0}
@@ -2151,7 +2106,7 @@ Transform:
   m_GameObject: {fileID: 966352766}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.1, z: 0}
+  m_LocalPosition: {x: -6.2, y: -0.6, z: 0}
   m_LocalScale: {x: -0.3, y: 0.3, z: 0.3}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2205,6 +2160,7 @@ MonoBehaviour:
   _rb: {fileID: 966352768}
   _jointRB: {fileID: 573461099}
   _hingeJoint: {fileID: 573461098}
+  _scaleController: {fileID: 640758695}
   clickThreshold: 0.09
   onClick:
     m_PersistentCalls:
@@ -2253,19 +2209,7 @@ MonoBehaviour:
       m_Calls: []
   onGrounded:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 640758695}
-        m_TargetAssemblyTypeName: ScaleController, Assembly-CSharp
-        m_MethodName: AddEntity
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 966352769}
-          m_ObjectArgumentAssemblyTypeName: BaseEntity, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   onUngrounded:
     m_PersistentCalls:
       m_Calls:
@@ -2274,7 +2218,7 @@ MonoBehaviour:
         m_MethodName: RemoveEntity
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 966352769}
+          m_ObjectArgument: {fileID: 111600909}
           m_ObjectArgumentAssemblyTypeName: BaseEntity, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -2290,7 +2234,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 966352766}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 1a5a97346ecb6e04f909aeaf47b8965a, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -2721,6 +2665,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1367915402
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1367915403}
+  m_Layer: 0
+  m_Name: Border
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1367915403
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1367915402}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1544500811
 GameObject:
   m_ObjectHideFlags: 0
@@ -3274,4 +3249,5 @@ SceneRoots:
   - {fileID: 519420032}
   - {fileID: 1005913486}
   - {fileID: 640758696}
+  - {fileID: 1367915403}
   - {fileID: 1758870570}

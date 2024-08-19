@@ -8,4 +8,5 @@ public class Entity : ScriptableObject
     public EntityStatsScriptableObject _stats;
     public GameObject _entityPrefab;
     public Sprite placeholderSprite;
+    public Sprite selectionIcon;
 }

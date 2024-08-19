@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class MoneyController : MonoBehaviour
 {
-    private float money;
+    public float money;
     private float increaseRate;
+
+    [SerializeField] private TextMeshProUGUI _costText;
 
     //Singleton
     private MoneyController instance;
@@ -34,7 +37,8 @@ public class MoneyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        HandleUpdate();   
+        HandleUpdate();
+        _costText.text = ((int)(money)).ToString();
     }
 
     public void Init()

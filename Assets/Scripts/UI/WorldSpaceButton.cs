@@ -17,6 +17,7 @@ public class WorldSpaceButton : BaseEntity, IPointerEnterHandler, IPointerExitHa
     [SerializeField] private Rigidbody2D _rb;
     [SerializeField] private Rigidbody2D _jointRB;
     [SerializeField] private HingeJoint2D _hingeJoint;
+    [SerializeField] private ScaleController _scaleController;
 
     public float clickThreshold = 0.3f;
     private float _pointerDownTime;
@@ -86,8 +87,15 @@ public class WorldSpaceButton : BaseEntity, IPointerEnterHandler, IPointerExitHa
             onDragEnd?.Invoke();
             onPointerUp?.Invoke();
 
-            if (_checkFallingRoutine == null && gameObject.activeInHierarchy)
+            if (_checkFallingRoutine != null)
+            {
+                StopCoroutine(_checkFallingRoutine);
+            }
+
+            if (gameObject.activeInHierarchy)
+            {
                 _checkFallingRoutine = StartCoroutine(CheckFallingRoutine());
+            }
         }
 
         if (!_isPointerDown || _isDragging)
@@ -110,16 +118,19 @@ public class WorldSpaceButton : BaseEntity, IPointerEnterHandler, IPointerExitHa
 
     public void OnDrag(PointerEventData eventData)
     {
-        if (Vector2.Distance(eventData.position, _pointerDownPosition) > _dragThreshold)
+        if (Vector2.Distance(eventData.position, _pointerDownPosition) < _dragThreshold)
         {
-            if (!_isDragging)
-            {
-                _isDragging = true;
-                onDrag?.Invoke();
-                _rb.velocity = Vector2.zero;
+            return;
+        }
 
-                onUngrounded?.Invoke();
-            }
+        if (!_isDragging)
+        {
+            _isDragging = true;
+            onDrag?.Invoke();
+            _rb.velocity = Vector2.zero;
+
+            onUngrounded?.Invoke();
+            _scaleController.RemoveEntity(this);
         }
     }
 
@@ -139,9 +150,12 @@ public class WorldSpaceButton : BaseEntity, IPointerEnterHandler, IPointerExitHa
     private void OnCollisionEnter2D(Collision2D col)
     {
         if (!col.collider.CompareTag("Button") && !col.collider.CompareTag("Ground"))
+        {
             return;
+        }
 
         onGrounded?.Invoke();
+        _scaleController.AddEntity(this);
     }
 
     private void OnCollisionStay2D(Collision2D collision)
@@ -156,14 +170,24 @@ public class WorldSpaceButton : BaseEntity, IPointerEnterHandler, IPointerExitHa
     private void OnCollisionExit2D(Collision2D col)
     {
         if (!col.collider.CompareTag("Button") && !col.collider.CompareTag("Ground"))
+        {
             return;
+        }
 
-        if (_checkFallingRoutine == null &&
-            gameObject.activeInHierarchy)
+        if (_checkFallingRoutine != null)
+        {
+            StopCoroutine(_checkFallingRoutine);
+        }
+
+        if (gameObject.activeInHierarchy)
+        {
             _checkFallingRoutine = StartCoroutine(CheckFallingRoutine());
+        }
 
         if (_isDragging)
-            onUngrounded?.Invoke();
+        {
+            _scaleController.RemoveEntity(this);
+        }
     }
 
     private IEnumerator CheckFallingRoutine()
