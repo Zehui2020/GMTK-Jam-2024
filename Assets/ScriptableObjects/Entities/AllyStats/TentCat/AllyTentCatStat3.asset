@@ -25,3 +25,8 @@ MonoBehaviour:
   weight: 3.5
   isAreaOfEffect: 1
   attackCooldown: 2.2
+  attackTraitCooldown: 0
+  passiveTraitTriggerDuration: 0
+  passiveTraitDuration: 0
+  attackTraitPercentage: 0
+  spawnCooldown: 3

@@ -28,3 +28,5 @@ MonoBehaviour:
   attackTraitCooldown: 0
   passiveTraitTriggerDuration: 10
   passiveTraitDuration: 10
+  attackTraitPercentage: 0
+  spawnCooldown: 16

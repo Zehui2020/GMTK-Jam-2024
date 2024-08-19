@@ -22,4 +22,5 @@ public class EntityStatsScriptableObject : ScriptableObject
     public float passiveTraitTriggerDuration;
     public float passiveTraitDuration;
     public float attackTraitPercentage;
+    public float spawnCooldown;
 }
