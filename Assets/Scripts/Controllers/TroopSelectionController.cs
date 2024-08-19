@@ -5,14 +5,24 @@ public class TroopSelectionController : MonoBehaviour
     [SerializeField] private SpriteRenderer placeholderSprite;
 
     [SerializeField] private Transform minSpawnPoint;
-
     [SerializeField] private Transform maxSpawnPoint;
 
     [Header("TroopSelectionController Events")]
-
     [SerializeField] private UnityEvent<Entity> _onTroopSpawned;
 
     private Entity _selectedEntity;
+
+    public bool canSpawn = true;
+
+    public void SetCanSpawn()
+    {
+        canSpawn = true;
+    }
+
+    public void SetCannotSpawn()
+    {
+        canSpawn = false;
+    }
 
     public void SelectTroop(Entity entityToSpawn)
     {
@@ -54,7 +64,7 @@ public class TroopSelectionController : MonoBehaviour
             placeholderSprite.transform.localPosition.y, 
             placeholderSprite.transform.localPosition.z);
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && canSpawn)
         {
             SpawnTroop(cursorWorldPosition);
             placeholderSprite.gameObject.SetActive(false);

@@ -17,6 +17,7 @@ public class WorldSpaceButton : BaseEntity, IPointerEnterHandler, IPointerExitHa
     [SerializeField] private Rigidbody2D _rb;
     [SerializeField] private Rigidbody2D _jointRB;
     [SerializeField] private HingeJoint2D _hingeJoint;
+    [SerializeField] private ScaleController _scaleController;
 
     public float clickThreshold = 0.3f;
     private float _pointerDownTime;
@@ -129,6 +130,7 @@ public class WorldSpaceButton : BaseEntity, IPointerEnterHandler, IPointerExitHa
             _rb.velocity = Vector2.zero;
 
             onUngrounded?.Invoke();
+            _scaleController.RemoveEntity(this);
         }
     }
 
@@ -153,6 +155,7 @@ public class WorldSpaceButton : BaseEntity, IPointerEnterHandler, IPointerExitHa
         }
 
         onGrounded?.Invoke();
+        _scaleController.AddEntity(this);
     }
 
     private void OnCollisionStay2D(Collision2D collision)
@@ -183,7 +186,7 @@ public class WorldSpaceButton : BaseEntity, IPointerEnterHandler, IPointerExitHa
 
         if (_isDragging)
         {
-            onUngrounded?.Invoke();
+            _scaleController.RemoveEntity(this);
         }
     }
 
