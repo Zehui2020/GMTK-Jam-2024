@@ -26,7 +26,10 @@ public class TentCat2Entity : BaseEntity
         else
             activeMovementValue = 1;
 
-
-        //If fear: activeMovementValue is negative
+        //Attributes
+        //increase defence if tilted to own base
+        activeDamageTakenMult = isEnemy ?
+            (_scaleAngle <= -3 ? 0.6f : 1.0f) : // check if tilted to enemy side if is enemy
+            (_scaleAngle >= 3 ? 0.6f : 1.0f); //check if tilted to ally side if is ally
     }
 }

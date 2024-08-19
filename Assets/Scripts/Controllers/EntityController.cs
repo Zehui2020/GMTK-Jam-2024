@@ -312,7 +312,7 @@ public class EntityController : MonoBehaviour
                 if (_entityStats.minAttackRange <= dist && dist <= _entityStats.maxAttackRange)
                 {
                     //apply
-                    e.Damage(_entityStats.attackDamage);
+                    e.Damage(_entity.GetAttackDamage());
                     totalEntitiesAffected--;
                     //check if not area of effect
                     if (totalEntitiesAffected == 0)
@@ -332,7 +332,7 @@ public class EntityController : MonoBehaviour
                 if (_entityStats.minAttackRange <= dist && dist <= _entityStats.maxAttackRange)
                 {
                     //apply
-                    e.Damage(_entityStats.attackDamage);
+                    e.Damage(_entity.GetAttackDamage());
                     totalEntitiesAffected--;
                     //check if not area of effect
                     if (totalEntitiesAffected == 0)

@@ -42,7 +42,10 @@ public class BaseEntity : MonoBehaviour
 
     private Transform _targetPoint;
 
+    //Active attributes/multiplier
     protected float activeMovementValue;
+    protected float activeAttackMult;
+    protected float activeDamageTakenMult;
 
     // Start is called before the first frame update
     public void Init(Transform targetPoint)
@@ -59,9 +62,14 @@ public class BaseEntity : MonoBehaviour
         attackCounter = 0;
         isDead = false;
         _targetPoint = targetPoint;
-        activeMovementValue = 1;
+
         entityStatusEffect = EntityStatusEffect.None;
         statusCounter = 0;
+
+        //active val
+        activeMovementValue = 1;
+        activeAttackMult = 1;
+        activeDamageTakenMult = 1;
 
         //Rotate Image
         spriteRenderer.flipX = !isEnemy;
@@ -169,7 +177,7 @@ public class BaseEntity : MonoBehaviour
         if (entityState == EntityState.Death)
             return;
 
-        entityStats.health -= _amt;
+        entityStats.health -= (int)(_amt * activeDamageTakenMult);
         if (entityStats.health < 0)
         {
             entityState = EntityState.Death;
@@ -274,5 +282,11 @@ public class BaseEntity : MonoBehaviour
     public void DeathAnimEnd()
     {
         isDead = true;
+    }
+
+    //Atributes
+    public int GetAttackDamage()
+    {
+        return (int)(entityStats.attackDamage * activeAttackMult);
     }
 }
