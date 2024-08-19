@@ -14,7 +14,6 @@ public class WorldSpaceButton : BaseEntity, IPointerEnterHandler, IPointerExitHa
     private Vector3 _clickOffset;
     private Coroutine _checkFallingRoutine;
 
-    [SerializeField] private float _groundCheckDist = 1.0f;
     [SerializeField] private Rigidbody2D _rb;
     [SerializeField] private Rigidbody2D _jointRB;
     [SerializeField] private HingeJoint2D _hingeJoint;

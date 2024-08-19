@@ -152,7 +152,7 @@ public class ScaleController : MonoBehaviour
     {
         _entityList.Remove(entityToAdd);
     }
-}
+
     public float GetAngle()
     {
         return angle;
