@@ -198,6 +198,14 @@ public class EntityController : MonoBehaviour
                 break;
             }
 
+            //check to get money from killing enemy
+            //check if enemy was killed
+            if (entityToDestroy.GetStats().health <= 0)
+            {
+                //get money
+                MoneyController.Instance.AddMoney(entityToDestroy.GetStats().moneyEarnedOnDeath);
+            }
+
             //remove from list
             enemyEntities.Remove(entityToDestroy);
 

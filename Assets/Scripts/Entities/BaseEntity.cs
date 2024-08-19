@@ -170,6 +170,7 @@ public class BaseEntity : MonoBehaviour
         entityStats.passiveTraitTriggerDuration = _newStats.passiveTraitTriggerDuration;
         entityStats.passiveTraitDuration = _newStats.passiveTraitDuration;
         entityStats.attackTraitPercentage = _newStats.attackTraitPercentage;
+        entityStats.moneyEarnedOnDeath = _newStats.moneyEarnedOnDeath;
 }
 
     public EntityStats GetStats()

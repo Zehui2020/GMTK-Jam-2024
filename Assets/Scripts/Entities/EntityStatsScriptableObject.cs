@@ -23,4 +23,5 @@ public class EntityStatsScriptableObject : ScriptableObject
     public float passiveTraitDuration;
     public float attackTraitPercentage;
     public float spawnCooldown;
+    public int moneyEarnedOnDeath;
 }
