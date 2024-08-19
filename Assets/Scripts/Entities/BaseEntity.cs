@@ -58,6 +58,8 @@ public class BaseEntity : MonoBehaviour
         //GetComponent
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+
+        spriteRenderer.sortingOrder = 100 + Random.Range(0, 6);
         
         //Stats Initialization
         hasInit = true;
@@ -170,6 +172,7 @@ public class BaseEntity : MonoBehaviour
         entityStats.passiveTraitTriggerDuration = _newStats.passiveTraitTriggerDuration;
         entityStats.passiveTraitDuration = _newStats.passiveTraitDuration;
         entityStats.attackTraitPercentage = _newStats.attackTraitPercentage;
+        entityStats.moneyEarnedOnDeath = _newStats.moneyEarnedOnDeath;
 }
 
     public EntityStats GetStats()

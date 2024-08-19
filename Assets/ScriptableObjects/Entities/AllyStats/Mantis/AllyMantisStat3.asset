@@ -26,3 +26,7 @@ MonoBehaviour:
   isAreaOfEffect: 0
   attackCooldown: 2.5
   attackTraitCooldown: 15
+  passiveTraitTriggerDuration: 0
+  passiveTraitDuration: 0
+  attackTraitPercentage: 0
+  spawnCooldown: 7

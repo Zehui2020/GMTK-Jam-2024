@@ -22,4 +22,5 @@ public class EntityStats
     public float passiveTraitTriggerDuration;
     public float passiveTraitDuration;
     public float attackTraitPercentage;
+    public int moneyEarnedOnDeath;
 }
