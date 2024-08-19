@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3238665a2b064104f86e291be46c69b0, type: 3}
+  m_Name: AllyCrowStat3
+  m_EditorClassIdentifier: 
+  entityName: AllyCrow3
+  level: 3
+  cost: 700
+  upgradeCost: 0
+  attackDamage: 14
+  health: 20
+  movementSpeed: 1.8
+  detectRange: 3
+  minAttackRange: 2.2
+  maxAttackRange: 4
+  weight: 1.6
+  isAreaOfEffect: 1
+  attackCooldown: 3.2
+  attackTraitCooldown: 0
+  passiveTraitTriggerDuration: 0
+  passiveTraitDuration: 0
+  attackTraitPercentage: 0.1

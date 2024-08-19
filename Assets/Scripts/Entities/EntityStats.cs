@@ -20,4 +20,5 @@ public class EntityStats
     public float attackTraitCooldown;
     public float passiveTraitTriggerDuration;
     public float passiveTraitDuration;
+    public float attackTraitPercentage;
 }

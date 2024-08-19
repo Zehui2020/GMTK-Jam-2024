@@ -165,6 +165,7 @@ public class BaseEntity : MonoBehaviour
         entityStats.attackTraitCooldown = _newStats.attackTraitCooldown;
         entityStats.passiveTraitTriggerDuration = _newStats.passiveTraitTriggerDuration;
         entityStats.passiveTraitDuration = _newStats.passiveTraitDuration;
+        entityStats.attackTraitPercentage = _newStats.attackTraitPercentage;
 }
 
     public EntityStats GetStats()

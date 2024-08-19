@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3238665a2b064104f86e291be46c69b0, type: 3}
+  m_Name: EnemyCrowStat1
+  m_EditorClassIdentifier: 
+  entityName: EnemyCrow1
+  level: 1
+  cost: 0
+  upgradeCost: 0
+  attackDamage: 4
+  health: 8
+  movementSpeed: 1.6
+  detectRange: 2.3
+  minAttackRange: 1.8
+  maxAttackRange: 3.2
+  weight: 0.8
+  isAreaOfEffect: 1
+  attackCooldown: 3.8
+  attackTraitCooldown: 0
+  passiveTraitTriggerDuration: 0
+  passiveTraitDuration: 0
+  attackTraitPercentage: 0.1
