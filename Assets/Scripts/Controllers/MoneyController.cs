@@ -46,7 +46,7 @@ public class MoneyController : MonoBehaviour
     public void HandleUpdate()
     {
         money += increaseRate * Time.deltaTime;
-        Debug.Log((int)money);
+        //Debug.Log((int)money);
     }
 
     public bool SpendMoney(int _amt)

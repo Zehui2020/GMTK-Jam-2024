@@ -34,6 +34,6 @@ public class GameController : MonoBehaviour
 
     private void Update()
     {
-        _entityController.HandleUpdate();
+        _entityController.HandleUpdate(_scaleController.GetAngle());
     }
 }

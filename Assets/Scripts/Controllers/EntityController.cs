@@ -2,6 +2,7 @@ using System.Linq;
 using System.Collections.Generic;
 
 using UnityEngine;
+using static BaseEntity;
 
 public class EntityController : MonoBehaviour
 {
@@ -45,7 +46,7 @@ public class EntityController : MonoBehaviour
         allyEntities[0].Init(enemyEntities[0].transform);
     }
 
-    public void HandleUpdate()
+    public void HandleUpdate(float _scaleAngle)
     {
         //DEBUGGING ONLY
         //spawn ally
@@ -79,10 +80,20 @@ public class EntityController : MonoBehaviour
                 deadAllyEntity.Add(entity);
                 continue;
             }
+            //check to init
+            if (!entity.hasInit)
+                entity.Init(enemyEntities[0].transform);
+
+            //handle active traits
+            entity.HandleActiveTrait(_scaleAngle);
 
             //Range check for ally entities to attack
             foreach (var entity2 in enemyEntities)
             {
+                //check if entity is dead
+                if (entity2.GetState() == BaseEntity.EntityState.Death)
+                    continue;
+
                 if (entity.DetectedEnemy(Vector3.Distance(entity.transform.position, entity2.transform.position) <= entity.GetStats().detectRange))
                 {
                     break;
@@ -126,10 +137,21 @@ public class EntityController : MonoBehaviour
                 deadEnemyEntity.Add(entity);
                 continue;
             }
+            //check to init
+            if (!entity.hasInit)
+                entity.Init(allyEntities[0].transform);
+
+            //handle active traits
+            entity.HandleActiveTrait(_scaleAngle);
 
             //Range check for ally entities to attack
             foreach (var entity2 in allyEntities)
             {
+                //check if entity is dead
+                if (entity2.GetState() == BaseEntity.EntityState.Death)
+                    continue;
+
+
                 if (entity.DetectedEnemy(Vector3.Distance(entity.transform.position, entity2.transform.position) <= entity.GetStats().detectRange))
                 {
                     break;
@@ -274,5 +296,51 @@ public class EntityController : MonoBehaviour
         }
 
         return _allEntities;
+    }
+
+    public void ApplyStatusEffect(BaseEntity _entity, EntityStatusEffect _effect, int totalEntitiesAffected)
+    {
+        Vector3 _entityPos = _entity.transform.position;
+        EntityStats _entityStats = _entity.GetStats();
+        //check attack dist between troops
+        if (_entity.isEnemy)
+        {
+            foreach (BaseEntity e in allyEntities)
+            {
+                //distance check
+                float dist = Vector3.Distance(_entityPos, e.transform.position);
+                if (_entityStats.minAttackRange <= dist && dist <= _entityStats.maxAttackRange)
+                {
+                    //apply
+                    e.Damage(_entityStats.attackDamage);
+                    totalEntitiesAffected--;
+                    //check if not area of effect
+                    if (totalEntitiesAffected == 0)
+                    {
+                        break; //only hit one enemy
+                    }
+                }
+            }
+        }
+        //check attack dist between enemy
+        else
+        {
+            foreach (BaseEntity e in enemyEntities)
+            {
+                //distance check
+                float dist = Vector3.Distance(_entityPos, e.transform.position);
+                if (_entityStats.minAttackRange <= dist && dist <= _entityStats.maxAttackRange)
+                {
+                    //apply
+                    e.Damage(_entityStats.attackDamage);
+                    totalEntitiesAffected--;
+                    //check if not area of effect
+                    if (totalEntitiesAffected == 0)
+                    {
+                        break; //only hit one enemy
+                    }
+                }
+            }
+        }
     }
 }
