@@ -368,6 +368,7 @@ MonoBehaviour:
   _inputStats: {fileID: 11400000, guid: de37b749d5d21ad45b1e3d34b1894f8f, type: 2}
   isEnemy: 0
   isDead: 0
+  isTargetable: 0
   hasInit: 0
   _isDragging: 0
   _rb: {fileID: 111600908}
@@ -859,10 +860,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Tip The Scales
+  m_text: TIP THE SCALES
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 546c597e81e647141bda94c5a88bacac, type: 2}
+  m_sharedMaterial: {fileID: -6256155570785008344, guid: 546c597e81e647141bda94c5a88bacac, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1349,6 +1350,7 @@ MonoBehaviour:
   _inputStats: {fileID: 11400000, guid: de37b749d5d21ad45b1e3d34b1894f8f, type: 2}
   isEnemy: 0
   isDead: 0
+  isTargetable: 0
   hasInit: 0
   _isDragging: 0
   _rb: {fileID: 533974622}
@@ -1582,6 +1584,7 @@ MonoBehaviour:
   _inputStats: {fileID: 11400000, guid: de37b749d5d21ad45b1e3d34b1894f8f, type: 2}
   isEnemy: 0
   isDead: 0
+  isTargetable: 0
   hasInit: 0
   _isDragging: 0
   _rb: {fileID: 587662696}
@@ -2310,6 +2313,7 @@ MonoBehaviour:
   _inputStats: {fileID: 11400000, guid: de37b749d5d21ad45b1e3d34b1894f8f, type: 2}
   isEnemy: 0
   isDead: 0
+  isTargetable: 0
   hasInit: 0
   _isDragging: 0
   _rb: {fileID: 966352768}
