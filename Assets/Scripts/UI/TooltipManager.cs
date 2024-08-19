@@ -58,7 +58,7 @@ public class TooltipManager : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    private string SetupStatString(EntityStats currentStats, EntityStats upgradedStats)
+    private string SetupStatString(EntityStatsScriptableObject currentStats, EntityStatsScriptableObject upgradedStats)
     {
         string finalString = string.Empty;
 

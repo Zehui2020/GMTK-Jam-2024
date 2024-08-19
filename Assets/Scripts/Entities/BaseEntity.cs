@@ -139,7 +139,9 @@ public class BaseEntity : MonoBehaviour
             case EntityState.Death:
                 //DEBUGGING ONLY
                 if (!animator)
+                {
                     isDead = true;
+                }
                 break;
             default:
                 break;
