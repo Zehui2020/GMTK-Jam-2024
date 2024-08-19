@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EntityStats : MonoBehaviour 
+public class EntityStats
 {
     public string entityName;
     public int level;

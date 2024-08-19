@@ -41,9 +41,11 @@ public class Octopus3Entity : BaseEntity
             ((_scaleAngle >= 4 && !isEnemy) ||
             (_scaleAngle <= -4 && isEnemy)))
         {
+
             passiveTriggerCounter += Time.deltaTime;
+
             //if hit limit
-            if (passiveTriggerCounter >= entityStats.passiveTraitTriggerDuration)
+            if (passiveTriggerCounter >= GetStats().passiveTraitTriggerDuration)
             {
                 //activate trigger
                 ApplyStatusEffect(EntityStatusEffect.Sleep, entityStats.passiveTraitDuration);
@@ -73,6 +75,10 @@ public class Octopus3Entity : BaseEntity
         if (GetStatusEffect() != EntityStatusEffect.Sleep)
         {
             currWeight = entityStats.weight;
+        }
+        else
+        {
+            Debug.Log("Octo Sleeping");
         }
     }
 }
