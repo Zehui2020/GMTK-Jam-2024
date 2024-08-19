@@ -204,7 +204,7 @@ HingeJoint2D:
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0, y: 0}
+  m_ConnectedAnchor: {x: -0, y: 0}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 1000
@@ -302,6 +302,7 @@ GameObject:
   - component: {fileID: 111600910}
   - component: {fileID: 111600908}
   - component: {fileID: 111600909}
+  - component: {fileID: 111600912}
   m_Layer: 0
   m_Name: CreditButton
   m_TagString: Button
@@ -319,7 +320,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
+  m_LocalScale: {x: -0.3, y: 0.3, z: 0.3}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 720716093}
@@ -369,14 +370,25 @@ MonoBehaviour:
   isDead: 0
   hasInit: 0
   _isDragging: 0
-  _groundCheckDist: 0.6
   _rb: {fileID: 111600908}
   _jointRB: {fileID: 720716095}
   _hingeJoint: {fileID: 720716094}
   clickThreshold: 0.09
   onClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 111600912}
+        m_TargetAssemblyTypeName: LoadScene, Assembly-CSharp
+        m_MethodName: Load
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onPointerDown:
     m_PersistentCalls:
       m_Calls:
@@ -546,6 +558,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &111600912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 111600906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28f7ca6d63f89be44b25b4ace73dc1a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sceneName: CreditsScene
+  _blackScreen: {fileID: 1240810728}
 --- !u!1 &128785643
 GameObject:
   m_ObjectHideFlags: 0
@@ -679,7 +705,7 @@ HingeJoint2D:
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0, y: 0}
+  m_ConnectedAnchor: {x: -0, y: 0}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 1000
@@ -1253,7 +1279,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 2.2, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
+  m_LocalScale: {x: -0.3, y: 0.3, z: 0.3}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 40304238}
@@ -1348,7 +1374,6 @@ MonoBehaviour:
   isDead: 0
   hasInit: 0
   _isDragging: 0
-  _groundCheckDist: 0.6
   _rb: {fileID: 533974622}
   _jointRB: {fileID: 40304240}
   _hingeJoint: {fileID: 40304239}
@@ -1489,7 +1514,7 @@ HingeJoint2D:
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0, y: 0}
+  m_ConnectedAnchor: {x: -0, y: 0}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 1000
@@ -1555,7 +1580,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -1.1, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
+  m_LocalScale: {x: -0.3, y: 0.3, z: 0.3}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 196473646}
@@ -1605,7 +1630,6 @@ MonoBehaviour:
   isDead: 0
   hasInit: 0
   _isDragging: 0
-  _groundCheckDist: 0.6
   _rb: {fileID: 587662696}
   _jointRB: {fileID: 196473648}
   _hingeJoint: {fileID: 196473647}
@@ -1613,9 +1637,9 @@ MonoBehaviour:
   onClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1005913487}
-        m_TargetAssemblyTypeName: UIMenuPanel, Assembly-CSharp
-        m_MethodName: OnQuitButtonPress
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: LoadScene, Assembly-CSharp
+        m_MethodName: Load
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2014,7 +2038,7 @@ HingeJoint2D:
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0, y: 0}
+  m_ConnectedAnchor: {x: -0, y: 0}
   m_UseMotor: 0
   m_Motor:
     m_MotorSpeed: 1000
@@ -2128,7 +2152,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 1.1, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
+  m_LocalScale: {x: -0.3, y: 0.3, z: 0.3}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 573461097}
@@ -2178,7 +2202,6 @@ MonoBehaviour:
   isDead: 0
   hasInit: 0
   _isDragging: 0
-  _groundCheckDist: 0.6
   _rb: {fileID: 966352768}
   _jointRB: {fileID: 573461099}
   _hingeJoint: {fileID: 573461098}

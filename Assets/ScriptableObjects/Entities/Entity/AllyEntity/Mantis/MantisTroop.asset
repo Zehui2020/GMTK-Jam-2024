@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f118cd2f3ba170348813f506bb5426b9, type: 3}
+  m_Name: MantisTroop
+  m_EditorClassIdentifier: 
+  _stats: {fileID: 11400000, guid: ebf1164ea6a656348bb40b5e306d5e51, type: 2}
+  _entityPrefab: {fileID: 4617329641929948581, guid: 9fe2d861587da614dbde1a8619caf539, type: 3}
+  placeholderSprite: {fileID: -1714299249, guid: 59cfd46ebd307e843a4d57d5202cb56f, type: 3}
