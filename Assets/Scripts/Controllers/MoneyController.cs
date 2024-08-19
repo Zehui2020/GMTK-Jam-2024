@@ -6,7 +6,7 @@ using TMPro;
 public class MoneyController : MonoBehaviour
 {
     public float money;
-    private float increaseRate;
+    [SerializeField] private float increaseRate;
 
     [SerializeField] private TextMeshProUGUI _costText;
 
@@ -44,7 +44,6 @@ public class MoneyController : MonoBehaviour
     public void Init()
     {
         money = 0;
-        increaseRate = 10;
     }
 
     public void HandleUpdate()

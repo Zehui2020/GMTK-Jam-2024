@@ -2,8 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Scriptable Object/EntityStatsScriptableObject")]
-public class EntityStats : ScriptableObject
+public class EntityStats : MonoBehaviour 
 {
     public string entityName;
     public int level;
@@ -19,4 +18,6 @@ public class EntityStats : ScriptableObject
     public bool isAreaOfEffect;
     public float attackCooldown;
     public float attackTraitCooldown;
+    public float passiveTraitTriggerDuration;
+    public float passiveTraitDuration;
 }

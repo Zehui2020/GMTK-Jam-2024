@@ -17,7 +17,7 @@ public class LoadScene : MonoBehaviour
 
     public void Load()
     {
-        if (!_isLoading)
+        if (!_isLoading && _currTime >= 1.25)
         {
             _isLoading = true;
             _currTime = 0;

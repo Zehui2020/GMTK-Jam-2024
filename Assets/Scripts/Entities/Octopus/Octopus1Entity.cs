@@ -4,6 +4,15 @@ using UnityEngine;
 
 public class Octopus1Entity : BaseEntity
 {
+    private float passiveTriggerCounter;
+    [SerializeField] private GameObject _clonePrefab;
+
+    /*public override void Init(Transform targetPoint)
+    {
+        base.Init(targetPoint);
+        SetStats(_inputStats);
+        passiveTriggerCounter = 0;
+    }*/
     public override void HandlePassiveTrait()
     {
 
@@ -26,7 +35,49 @@ public class Octopus1Entity : BaseEntity
         else
             activeMovementValue = 1;
 
+        //Ability: spawn clone on the opposite side if scale lean on ally side for too long
+        if (GetStatusEffect() != EntityStatusEffect.Sleep &&
+            ((_scaleAngle >= 4 && !isEnemy) ||
+            (_scaleAngle <= -4 && isEnemy)))
+        {
+            
+            passiveTriggerCounter += Time.deltaTime;
 
-        //If fear: activeMovementValue is negative
+            //if hit limit
+            if (passiveTriggerCounter >= GetStats().passiveTraitTriggerDuration)
+            {
+                //activate trigger
+                ApplyStatusEffect(EntityStatusEffect.Sleep, entityStats.passiveTraitDuration);
+
+                //summon clone
+                GameObject newEntity = Instantiate(_clonePrefab);
+                //set position
+                newEntity.transform.position = _targetPoint.position;
+                //Init
+                newEntity.GetComponent<BaseEntity>().Init(_targetPoint);
+                //Add Weight
+                newEntity.GetComponent<BaseEntity>().SetWeight(entityStats.weight);
+                newEntity.GetComponent<OctopusCloneEntity>().counter = entityStats.passiveTraitDuration;
+                //add to entitycontroller
+                EntityController.Instance.AddEntity(newEntity, isEnemy);
+
+                currWeight = 0;
+            }
+        }
+        else
+        {
+            //reset
+            passiveTriggerCounter = 0;
+            
+        }
+
+        if (GetStatusEffect() != EntityStatusEffect.Sleep)
+        {
+            currWeight = entityStats.weight;
+        }
+        else
+        {
+            Debug.Log("Octo Sleeping");
+        }
     }
 }

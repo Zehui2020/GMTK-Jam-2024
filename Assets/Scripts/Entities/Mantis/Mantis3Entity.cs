@@ -31,7 +31,10 @@ public class Mantis3Entity : BaseEntity
         else
             activeMovementValue = 1;
 
-        //If fear: activeMovementValue is negative
+        //increase attack damage if tilted to oppotsite base
+        activeDamageTakenMult = isEnemy ?
+            (_scaleAngle >= 4 ? 1.4f : 1.0f) : // check if tilted to ally side if is enemy
+            (_scaleAngle <= -4 ? 1.4f : 1.0f); //check if tilted to enemy side if is ally
     }
 
     protected override void HandleAttackTrait()

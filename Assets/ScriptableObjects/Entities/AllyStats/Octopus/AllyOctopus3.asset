@@ -16,7 +16,7 @@ MonoBehaviour:
   level: 3
   cost: 850
   upgradeCost: 0
-  attackDamage: 15
+  attackDamage: 12
   health: 200
   movementSpeed: 0.7
   detectRange: 0.4
@@ -25,3 +25,6 @@ MonoBehaviour:
   weight: 20
   isAreaOfEffect: 1
   attackCooldown: 6
+  attackTraitCooldown: 0
+  passiveTraitTriggerDuration: 10
+  passiveTraitDuration: 10

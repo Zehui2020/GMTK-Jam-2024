@@ -25,3 +25,4 @@ MonoBehaviour:
   weight: 1.5
   isAreaOfEffect: 0
   attackCooldown: 2
+  attackTraitCooldown: 0

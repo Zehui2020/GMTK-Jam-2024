@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class Mantis2Entity : BaseEntity
 {
+    private float attackAbilityTraitCounter = 0;
 
     public override void HandlePassiveTrait()
     {
+        if (attackAbilityTraitCounter > 0)
+        {
+            attackAbilityTraitCounter -= Time.deltaTime;
+        }
     }
 
     public override void HandleActiveTrait(float _scaleAngle)
@@ -26,6 +31,20 @@ public class Mantis2Entity : BaseEntity
         else
             activeMovementValue = 1;
 
-        //If fear: activeMovementValue is negative
+        //increase attack damage if tilted to oppotsite base
+        activeDamageTakenMult = isEnemy ?
+            (_scaleAngle >= 4 ? 1.4f : 1.0f) : // check if tilted to ally side if is enemy
+            (_scaleAngle <= -4 ? 1.4f : 1.0f); //check if tilted to enemy side if is ally
+    }
+
+    protected override void HandleAttackTrait()
+    {
+        if (attackAbilityTraitCounter <= 0)
+        {
+            //Apply fear
+            attackAbilityTraitCounter = entityStats.attackTraitCooldown;//20 sec
+            DealStatusEffect(EntityStatusEffect.Fear, 3);
+        }
     }
 }
+
