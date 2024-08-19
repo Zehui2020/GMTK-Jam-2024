@@ -42,7 +42,7 @@ public class Mantis2Entity : BaseEntity
         if (attackAbilityTraitCounter <= 0)
         {
             //Apply fear
-            attackAbilityTraitCounter = entityStats.attackTraitCooldown;//15 sec
+            attackAbilityTraitCounter = entityStats.attackTraitCooldown;//20 sec
             DealStatusEffect(EntityStatusEffect.Fear, 3);
         }
     }
