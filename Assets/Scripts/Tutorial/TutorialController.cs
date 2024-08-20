@@ -153,7 +153,7 @@ public class TutorialController : MonoBehaviour
         switch (_currentTutorialSet) {
             case -1:
                 _currentTime += Time.deltaTime;
-                if (_currentTime >= 0)
+                if (_currentTime >= 1.5)
                 {
                     NextTutorial();    
                 }
