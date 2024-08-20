@@ -13,10 +13,23 @@ public class LevelSelector : MonoBehaviour
     [SerializeField]
     private Level _levelToSelect;
 
+    private Animator _animator;
+
     public void Select() 
     {
         AssertNotNull(_levelToSelect, "No level to select");
         _sharedData.Level = _levelToSelect;
+        _animator.SetTrigger("select");
+    }
+
+    public void OnHover()
+    {
+        _animator.SetBool("hovering", true);
+    }
+
+    public void OnHoverExit()
+    {
+        _animator.SetBool("hovering", false);
     }
 
     private void Awake()
@@ -27,5 +40,6 @@ public class LevelSelector : MonoBehaviour
                 "There is no level inside the `levelToSelect` field");
         }
         _sharedData.Level = null; 
+        _animator = GetComponent<Animator>();
     }
 }
