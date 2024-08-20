@@ -11319,8 +11319,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 77.755005, y: -125}
-  m_SizeDelta: {x: 115.51, y: 0}
+  m_AnchoredPosition: {x: 109.57325, y: -125}
+  m_SizeDelta: {x: 179.1465, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &128480000
 MonoBehaviour:
@@ -66893,8 +66893,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 76.505005, y: -25}
-  m_SizeDelta: {x: 81.01, y: 50}
+  m_AnchoredPosition: {x: 111, y: -25}
+  m_SizeDelta: {x: 150, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &996860475
 MonoBehaviour:
@@ -66908,8 +66908,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_HorizontalFit: 2
-  m_VerticalFit: 0
+  m_HorizontalFit: 0
+  m_VerticalFit: 2
 --- !u!114 &996860476
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66930,7 +66930,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Fear Effect
+  m_text: 'Fear Effect: Run Away From Threat'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 77e83a5f5314e72479827cf0561028a0, type: 2}
   m_sharedMaterial: {fileID: -7654662865303220287, guid: 77e83a5f5314e72479827cf0561028a0, type: 2}
@@ -73769,7 +73769,6 @@ GameObject:
   - component: {fileID: 1234267692}
   - component: {fileID: 1234267695}
   - component: {fileID: 1234267694}
-  - component: {fileID: 1234267693}
   m_Layer: 5
   m_Name: EffectDetail
   m_TagString: Untagged
@@ -73791,25 +73790,11 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 128479999}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 75.755005, y: -25}
-  m_SizeDelta: {x: 79.51, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 143.1465, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1234267693
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1234267691}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_HorizontalFit: 2
-  m_VerticalFit: 0
 --- !u!114 &1234267694
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -73830,7 +73815,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Stun Effect
+  m_text: 'Stun Effect: Unable To Move & Attack'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 77e83a5f5314e72479827cf0561028a0, type: 2}
   m_sharedMaterial: {fileID: -7654662865303220287, guid: 77e83a5f5314e72479827cf0561028a0, type: 2}
@@ -85826,7 +85811,6 @@ GameObject:
   - component: {fileID: 1474791657}
   - component: {fileID: 1474791660}
   - component: {fileID: 1474791659}
-  - component: {fileID: 1474791658}
   m_Layer: 5
   m_Name: EffectDetail
   m_TagString: Untagged
@@ -85848,25 +85832,11 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2131841192}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 78.005005, y: -25}
-  m_SizeDelta: {x: 84.01, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 150.8396, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1474791658
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1474791656}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_HorizontalFit: 2
-  m_VerticalFit: 0
 --- !u!114 &1474791659
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -85887,7 +85857,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Sleep Effect
+  m_text: 'Sleep Effect: Self Inflicted Stun'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 77e83a5f5314e72479827cf0561028a0, type: 2}
   m_sharedMaterial: {fileID: -7654662865303220287, guid: 77e83a5f5314e72479827cf0561028a0, type: 2}
@@ -131168,8 +131138,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 80.005005, y: -75}
-  m_SizeDelta: {x: 120.01, y: 0}
+  m_AnchoredPosition: {x: 113.4198, y: -75}
+  m_SizeDelta: {x: 186.8396, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2131841193
 MonoBehaviour:

@@ -754,7 +754,7 @@ MonoBehaviour:
   _jointRB: {fileID: 720716095}
   _hingeJoint: {fileID: 720716094}
   _scaleController: {fileID: 220052613}
-  clickThreshold: 0.09
+  clickThreshold: 0.1
   onClick:
     m_PersistentCalls:
       m_Calls:
@@ -22280,7 +22280,7 @@ MonoBehaviour:
   _jointRB: {fileID: 40304240}
   _hingeJoint: {fileID: 40304239}
   _scaleController: {fileID: 220052613}
-  clickThreshold: 0.09
+  clickThreshold: 0.1
   onClick:
     m_PersistentCalls:
       m_Calls:
@@ -22830,7 +22830,7 @@ MonoBehaviour:
   _jointRB: {fileID: 196473648}
   _hingeJoint: {fileID: 196473647}
   _scaleController: {fileID: 220052613}
-  clickThreshold: 0.09
+  clickThreshold: 0.1
   onClick:
     m_PersistentCalls:
       m_Calls:
@@ -58614,7 +58614,7 @@ MonoBehaviour:
   _jointRB: {fileID: 573461099}
   _hingeJoint: {fileID: 573461098}
   _scaleController: {fileID: 220052613}
-  clickThreshold: 0.09
+  clickThreshold: 0.1
   onClick:
     m_PersistentCalls:
       m_Calls:
