@@ -16,25 +16,14 @@ public class OctopusCloneEntity : BaseEntity
 
     public override void HandleUpdate()
     {
-        switch (entityState)
+        if (counter > 0)
         {
-            case EntityState.Death:
-                if (!animator)
-                    isDead = true;
-                break;
-            default:
-                if (counter > 0)
-                {
-                    counter -= Time.deltaTime;
-                    if (counter <= 0)
-                    {
-                        entityState = EntityState.Death;
-                        if (animator)
-                            animator.SetBool("isDead", true);
-                    }
-                }
-                
-                break;
+            counter -= Time.deltaTime;
+            if (counter <= 0)
+            {
+                entityState = EntityState.Death;
+                animator.SetBool("IsDead", true);
+            }
         }
     }
 }
