@@ -42,6 +42,7 @@ public class Crow1Entity : BaseEntity
 
         HandleStatusEffect();
         HandlePassiveTrait();
+        UpdateEffectIcon();
 
         //attack counter countdown
         if (attackCounter > 0)
