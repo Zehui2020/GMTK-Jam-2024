@@ -71,6 +71,11 @@ public class EntityController : MonoBehaviour
         entitiesToAdd = new List<BaseEntity>();
         SetLevel(_levelController.GetLevel().levelID);
         _nextLevelUnlock = _levelController.GetLevel().nextLevelID;
+
+        if (_levelController.GetLevel().levelID >= 4)
+            AudioManager.Instance.PlayBossBGM();
+        else
+            AudioManager.Instance.PlayNormalBGM();
     }
 
     public void HandleUpdate(float _scaleAngle)

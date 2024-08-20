@@ -15,6 +15,18 @@ public class AudioManager : MonoBehaviour
         InitSoundList(sounds);
     }
 
+    public void PlayNormalBGM()
+    {
+        Play("NormalBGM");
+        PlayAfterDelay(FindSound("NormalBGM").clip.length, "NormalBGM1");
+    }
+
+    public void PlayBossBGM()
+    {
+        Play("BossBGM");
+        PlayAfterDelay(FindSound("BossBGM").clip.length, "BossBGM1");
+    }
+
     private void InitSoundList(Sound[] sounds)
     {
         foreach (Sound s in sounds)

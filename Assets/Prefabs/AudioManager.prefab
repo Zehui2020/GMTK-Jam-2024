@@ -90,9 +90,161 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 6a7e3b51d977bec4caceb1ceb8e709e8, type: 3}
     mixerGroup: {fileID: 7868881172993788651, guid: c8a8989eea4eaef408b0a0bbe33942d5, type: 2}
     pitch: 1
+    volume: 0.3
+    source: {fileID: 0}
+    loop: 0
+    createSource: 1
+    playOnAwake: 0
+    doNotFade: 0
+  - name: MantisAttack
+    clip: {fileID: 8300000, guid: 1936eac12673ebc4cb3ffdaea691f0b0, type: 3}
+    mixerGroup: {fileID: 7868881172993788651, guid: c8a8989eea4eaef408b0a0bbe33942d5, type: 2}
+    pitch: 1
     volume: 1
     source: {fileID: 0}
     loop: 0
     createSource: 1
     playOnAwake: 0
     doNotFade: 0
+  - name: TentCatAttack
+    clip: {fileID: 8300000, guid: ccb03ea7fc517c54ab27498a755c2ba1, type: 3}
+    mixerGroup: {fileID: 7868881172993788651, guid: c8a8989eea4eaef408b0a0bbe33942d5, type: 2}
+    pitch: 1
+    volume: 1
+    source: {fileID: 0}
+    loop: 0
+    createSource: 1
+    playOnAwake: 0
+    doNotFade: 0
+  - name: TentCatDie
+    clip: {fileID: 8300000, guid: 117d0f032d7d9d3448c4a31561a00b5d, type: 3}
+    mixerGroup: {fileID: 7868881172993788651, guid: c8a8989eea4eaef408b0a0bbe33942d5, type: 2}
+    pitch: 1
+    volume: 0.1
+    source: {fileID: 0}
+    loop: 0
+    createSource: 1
+    playOnAwake: 0
+    doNotFade: 0
+  - name: OctopusAttack
+    clip: {fileID: 8300000, guid: 9b9af4af198404c4b85f7dd2cd03709f, type: 3}
+    mixerGroup: {fileID: 7868881172993788651, guid: c8a8989eea4eaef408b0a0bbe33942d5, type: 2}
+    pitch: 1
+    volume: 1
+    source: {fileID: 0}
+    loop: 0
+    createSource: 1
+    playOnAwake: 0
+    doNotFade: 0
+  - name: OctopusDie
+    clip: {fileID: 8300000, guid: c6c2e1fcb11661d4abb475f98a918d3e, type: 3}
+    mixerGroup: {fileID: 7868881172993788651, guid: c8a8989eea4eaef408b0a0bbe33942d5, type: 2}
+    pitch: 1
+    volume: 1
+    source: {fileID: 0}
+    loop: 0
+    createSource: 1
+    playOnAwake: 0
+    doNotFade: 0
+  - name: CrowAttack
+    clip: {fileID: 8300000, guid: e126b4184315bf74b8cf1d8ed6117790, type: 3}
+    mixerGroup: {fileID: 7868881172993788651, guid: c8a8989eea4eaef408b0a0bbe33942d5, type: 2}
+    pitch: 1
+    volume: 0.6
+    source: {fileID: 0}
+    loop: 0
+    createSource: 1
+    playOnAwake: 0
+    doNotFade: 0
+  - name: CrowDie
+    clip: {fileID: 8300000, guid: 52e44ea75d873e94591cac28798743b5, type: 3}
+    mixerGroup: {fileID: 7868881172993788651, guid: c8a8989eea4eaef408b0a0bbe33942d5, type: 2}
+    pitch: 1
+    volume: 1
+    source: {fileID: 0}
+    loop: 0
+    createSource: 1
+    playOnAwake: 0
+    doNotFade: 0
+  - name: ElephantAttack
+    clip: {fileID: 8300000, guid: 0a728c04144f8324583189d06826817e, type: 3}
+    mixerGroup: {fileID: 7868881172993788651, guid: c8a8989eea4eaef408b0a0bbe33942d5, type: 2}
+    pitch: 1
+    volume: 0.7
+    source: {fileID: 0}
+    loop: 0
+    createSource: 1
+    playOnAwake: 0
+    doNotFade: 0
+  - name: ElephantDie
+    clip: {fileID: 8300000, guid: 59beaa40909d5de4fa0175b2356e0a47, type: 3}
+    mixerGroup: {fileID: 7868881172993788651, guid: c8a8989eea4eaef408b0a0bbe33942d5, type: 2}
+    pitch: 1
+    volume: 0.1
+    source: {fileID: 0}
+    loop: 0
+    createSource: 1
+    playOnAwake: 0
+    doNotFade: 0
+  - name: LightFlicker
+    clip: {fileID: 8300000, guid: 4f6eeee56ca6ff5498091a3893cf1264, type: 3}
+    mixerGroup: {fileID: 7868881172993788651, guid: c8a8989eea4eaef408b0a0bbe33942d5, type: 2}
+    pitch: 1
+    volume: 0.05
+    source: {fileID: 0}
+    loop: 1
+    createSource: 1
+    playOnAwake: 0
+    doNotFade: 0
+  - name: DeployTroop
+    clip: {fileID: 8300000, guid: 7993e4fff2d7f1843bdd9d70618ca2ed, type: 3}
+    mixerGroup: {fileID: 7868881172993788651, guid: c8a8989eea4eaef408b0a0bbe33942d5, type: 2}
+    pitch: 1
+    volume: 1
+    source: {fileID: 0}
+    loop: 0
+    createSource: 1
+    playOnAwake: 0
+    doNotFade: 0
+  - name: NormalBGM
+    clip: {fileID: 8300000, guid: d397898e39c18cb4a9ba5287f0189c77, type: 3}
+    mixerGroup: {fileID: -4921478165539472393, guid: c8a8989eea4eaef408b0a0bbe33942d5, type: 2}
+    pitch: 1
+    volume: 1
+    source: {fileID: 0}
+    loop: 0
+    createSource: 1
+    playOnAwake: 0
+    doNotFade: 0
+  - name: NormalBGM1
+    clip: {fileID: 8300000, guid: 7530c300f90aefc4ab4a2105beda823d, type: 3}
+    mixerGroup: {fileID: -4921478165539472393, guid: c8a8989eea4eaef408b0a0bbe33942d5, type: 2}
+    pitch: 1
+    volume: 1
+    source: {fileID: 0}
+    loop: 1
+    createSource: 1
+    playOnAwake: 0
+    doNotFade: 0
+  - name: BossBGM
+    clip: {fileID: 8300000, guid: d276a8278e5667a40963d37eee2970ef, type: 3}
+    mixerGroup: {fileID: -4921478165539472393, guid: c8a8989eea4eaef408b0a0bbe33942d5, type: 2}
+    pitch: 1
+    volume: 1
+    source: {fileID: 0}
+    loop: 0
+    createSource: 1
+    playOnAwake: 0
+    doNotFade: 0
+  - name: BossBGM1
+    clip: {fileID: 8300000, guid: 7c982b7d395444f4babbd454947b9a48, type: 3}
+    mixerGroup: {fileID: -4921478165539472393, guid: c8a8989eea4eaef408b0a0bbe33942d5, type: 2}
+    pitch: 1
+    volume: 1
+    source: {fileID: 0}
+    loop: 1
+    createSource: 1
+    playOnAwake: 0
+    doNotFade: 0
+  normalBattleBGM: []
+  bossBattleBGM: []

@@ -31,3 +31,5 @@ MonoBehaviour:
   attackTraitPercentage: 0
   spawnCooldown: 7
   moneyEarnedOnDeath: 0
+  attackSFX: MantisAttack
+  dieSFX: 

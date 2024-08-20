@@ -43,6 +43,7 @@ public class TroopSelectionController : MonoBehaviour
             return;
         }
 
+        AudioManager.Instance.PlayOneShot("DeployTroop");
         EntityController.Instance.SpawnPlayerEntity(_selectedEntity._entityPrefab, position);
         _onTroopSpawned.Invoke(_selectedEntity);
         _selectedEntity = null;
