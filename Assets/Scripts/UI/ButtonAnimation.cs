@@ -64,7 +64,7 @@ public class ButtonAnimation : MonoBehaviour,IPointerEnterHandler, IPointerExitH
 
         if (_isHover)
         {
-            _hoverGO.transform.localScale = Vector3.Lerp(_hoverGO.transform.localScale, new(-1.7f, 0.55f, 1), Time.deltaTime * _hoverSpeed);
+            _hoverGO.transform.localScale = Vector3.Lerp(_hoverGO.transform.localScale, new(1.7f, 0.55f, 1), Time.deltaTime * _hoverSpeed);
         }
         else
         {
