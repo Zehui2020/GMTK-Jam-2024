@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   entityName: AllyOctopus2
   level: 2
-  cost: 700
-  upgradeCost: 1200
+  cost: 250
+  upgradeCost: 600
   attackDamage: 8
-  health: 80
+  health: 100
   movementSpeed: 0.6
   detectRange: 1.2
   minAttackRange: -0.6
