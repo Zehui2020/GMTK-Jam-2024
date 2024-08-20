@@ -60620,7 +60620,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   allyPrefab1: {fileID: 4617329641929948581, guid: 81e2c6313bff57e44a7553b7cad96bd4, type: 3}
   allyPrefab2: {fileID: 4617329641929948581, guid: 9fe2d861587da614dbde1a8619caf539, type: 3}
-  enemyPrefab1: {fileID: 4617329641929948581, guid: 14d0de20f8ac5d34f911d7a981d1f7c1, type: 3}
+  enemyPrefab1: {fileID: 4617329641929948581, guid: 416399ba002d6694ba6f4ee6bc71da19, type: 3}
   allyEntities:
   - {fileID: 866944103}
   enemyEntities:
