@@ -15,7 +15,6 @@ public class TroopSelectionButton : MonoBehaviour
     [SerializeField] private Color _unavailableColor;
 
     [SerializeField] private TextMeshProUGUI _entityCost;
-    [SerializeField] private TextMeshProUGUI _entityLevel;
     [SerializeField] private RectTransform _tooltipPosition;
     [SerializeField] private Animator _animator;
 
@@ -36,7 +35,6 @@ public class TroopSelectionButton : MonoBehaviour
     {
         _entityIcon.sprite = _entityList[currentEntityLevel].selectionIcon;
         _entityCost.text = "" + _entityList[currentEntityLevel]._stats.cost;
-        _entityLevel.text = "Lvl " + (currentEntityLevel + 1);
     }
 
     public void OnSelectTroop()
@@ -59,7 +57,6 @@ public class TroopSelectionButton : MonoBehaviour
 
         _entityIcon.sprite = _entityList[currentEntityLevel].selectionIcon;
         _entityCost.text = "" + _entityList[currentEntityLevel]._stats.cost;
-        _entityLevel.text = "Lvl " + (currentEntityLevel + 1);
 
         if (currentEntityLevel < _entityList.Count - 1)
             TooltipManager.Instance.SetupToolip(_entityList[currentEntityLevel], _entityList[currentEntityLevel + 1], _tooltipPosition);

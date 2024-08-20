@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _stats: {fileID: 11400000, guid: ce34da1bb4f6aaa4c84629d48220d871, type: 2}
   _entityPrefab: {fileID: 4617329641929948581, guid: 81e2c6313bff57e44a7553b7cad96bd4, type: 3}
-  placeholderSprite: {fileID: 21300000, guid: 5b253109ef4f7b34ba6df9e19b8c430d, type: 3}
-  selectionIcon: {fileID: 21300000, guid: 5b253109ef4f7b34ba6df9e19b8c430d, type: 3}
+  placeholderSprite: {fileID: -243161445, guid: fb55f7f1274943d4fa0722802d2ec5b3, type: 3}
+  selectionIcon: {fileID: -243161445, guid: fb55f7f1274943d4fa0722802d2ec5b3, type: 3}
   entityName: Octopus Lvl 1
   abilities: 'Create an Ink Clone on the opponent''s side, transferring all its weight
     to the clone.
