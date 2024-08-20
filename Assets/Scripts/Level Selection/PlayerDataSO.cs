@@ -7,7 +7,7 @@ public class PlayerDataSO : ScriptableObject
 {
     public int MaxUnlockedLevel;
 
-    private void OnEnable()
+    private void Reset()
     {
         MaxUnlockedLevel = 0;
     }
