@@ -5,6 +5,10 @@ using UnityEngine;
 public class Crow2Entity : BaseEntity
 {
     private bool hasAbilityActivated;
+
+    [SerializeField] private GameObject _posPrefab;
+    private GameObject ogPosObj, targetPosObj;
+
     private enum CrowAttackStates
     {
         Rise,
@@ -14,8 +18,8 @@ public class Crow2Entity : BaseEntity
     private CrowAttackStates attackState;
 
     //No Special Attributes
-    Vector3 originalPos;
-    Vector3 targetPos;
+    //Vector3 originalPos;
+    //Vector3 targetPos;
     Vector3 startPos;
     private float lerpCounter;
 
@@ -23,13 +27,21 @@ public class Crow2Entity : BaseEntity
     {
         base.Init(targetPoint);
         lerpCounter = 0;
-        attackState = CrowAttackStates.Rise;
         hasAbilityActivated = false;
+
+        attackState = CrowAttackStates.Rise;
+
+        ogPosObj = Instantiate(_posPrefab);
+        ogPosObj.transform.parent = transform.parent;
+        ogPosObj.GetComponent<PositionEntity>().creater = gameObject;
+        targetPosObj = Instantiate(_posPrefab);
+        targetPosObj.transform.parent = transform.parent;
+        targetPosObj.GetComponent<PositionEntity>().creater = gameObject;
     }
 
-    void SetVector3Pos(out Vector3 posToAlt, Vector3 _pos)
+    Vector3 SetVector3Pos(Vector3 _pos)
     {
-        posToAlt = new Vector3(_pos.x, _pos.y, _pos.z);
+        return new Vector3(_pos.x, _pos.y, _pos.z);
     }
 
     //Rework Update for diving
@@ -62,9 +74,9 @@ public class Crow2Entity : BaseEntity
         {
             //change to attack
             entityState = EntityState.Attack;
-            SetVector3Pos(out originalPos, gameObject.transform.position);
-            SetVector3Pos(out startPos, originalPos);
-            SetVector3Pos(out targetPos, startPos + new Vector3(0, 2, 0));
+            ogPosObj.transform.position = SetVector3Pos(gameObject.transform.position);
+            startPos = SetVector3Pos(gameObject.transform.position);
+            targetPosObj.transform.position = SetVector3Pos(startPos + new Vector3(0, 2, 0));
 
             lerpCounter = 0;
             /*            attackCounter = entityStats.attackCooldown;
@@ -89,7 +101,7 @@ public class Crow2Entity : BaseEntity
                         case CrowAttackStates.Rise:
                             lerpCounter += Time.deltaTime / 3;
                             //move up
-                            transform.position = Vector3.Lerp(startPos, targetPos, lerpCounter);
+                            transform.position = Vector3.Lerp(startPos, targetPosObj.transform.position, lerpCounter);
                             //reach end of lerp
                             if (lerpCounter >= 1)
                             {
@@ -105,7 +117,7 @@ public class Crow2Entity : BaseEntity
                         case CrowAttackStates.Dive:
                             lerpCounter += Time.deltaTime;
                             //dive
-                            transform.position = Vector3.Lerp(startPos, targetPos, lerpCounter);
+                            transform.position = Vector3.Lerp(startPos, targetPosObj.transform.position, lerpCounter);
                             //reach end of lerp
                             if (lerpCounter >= 1)
                             {
@@ -116,9 +128,7 @@ public class Crow2Entity : BaseEntity
 
                                 //Set Positions
                                 //new Start
-                                SetVector3Pos(out startPos, transform.position);
-                                //new target
-                                targetPos = originalPos;
+                                startPos = SetVector3Pos(transform.position);
 
                                 //Attack
                                 Attack();
@@ -130,7 +140,7 @@ public class Crow2Entity : BaseEntity
                             lerpCounter += Time.deltaTime / 4;
                             animator.SetBool("IsWalking", true);
                             //dive
-                            transform.position = Vector3.Lerp(startPos, targetPos, lerpCounter);
+                            transform.position = Vector3.Lerp(startPos, ogPosObj.transform.position, lerpCounter);
                             //reach end of lerp
                             if (lerpCounter >= 1)
                             {
@@ -168,9 +178,9 @@ public class Crow2Entity : BaseEntity
 
         //Set Positions
         //new Start
-        SetVector3Pos(out startPos, transform.position);
+        startPos = SetVector3Pos(transform.position);
         //new target
-        targetPos = originalPos + (_targetPoint.position - originalPos).normalized * entityStats.detectRange;
+        targetPosObj.transform.position = ogPosObj.transform.position + (_targetPoint.position - ogPosObj.transform.position).normalized * entityStats.detectRange;
     }
 
     public override void HandlePassiveTrait()
@@ -215,7 +225,7 @@ public class Crow2Entity : BaseEntity
     public override Vector3 GetPos()
     {
         if (entityState == EntityState.Attack)
-            return originalPos;
+            return ogPosObj.transform.position;
         return transform.position;
     }
 }
