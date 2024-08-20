@@ -19,3 +19,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 86fc276c847044142a6a70336d63dc65, type: 2}
   - {fileID: 11400000, guid: 34599adfe7500bd47b4e46f598460675, type: 2}
   levelID: 1
+  buttonUses: 010100

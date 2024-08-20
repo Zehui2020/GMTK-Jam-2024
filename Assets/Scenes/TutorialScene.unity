@@ -993,7 +993,6 @@ MonoBehaviour:
   blowIntensity: 8
   flickerSparkPS: {fileID: 2145562613}
   blowSparkPS: {fileID: 366412423}
-  flickerThreshold: 0
   blowThreshold: 0
 --- !u!114 &102904798
 MonoBehaviour:
@@ -1316,7 +1315,6 @@ MonoBehaviour:
   blowIntensity: 8
   flickerSparkPS: {fileID: 1585250179}
   blowSparkPS: {fileID: 754016476}
-  flickerThreshold: 0
   blowThreshold: 0
 --- !u!114 &155240866
 MonoBehaviour:
@@ -6785,7 +6783,6 @@ MonoBehaviour:
   blowIntensity: 8
   flickerSparkPS: {fileID: 1713815397}
   blowSparkPS: {fileID: 1271420864}
-  flickerThreshold: 0
   blowThreshold: 0
 --- !u!114 &215028078
 MonoBehaviour:
@@ -29353,7 +29350,6 @@ MonoBehaviour:
   blowIntensity: 8
   flickerSparkPS: {fileID: 207320601}
   blowSparkPS: {fileID: 1171715365}
-  flickerThreshold: 0
   blowThreshold: 0
 --- !u!114 &713980514
 MonoBehaviour:
@@ -35111,7 +35107,6 @@ MonoBehaviour:
   blowIntensity: 8
   flickerSparkPS: {fileID: 1117855890}
   blowSparkPS: {fileID: 1925691000}
-  flickerThreshold: 0
   blowThreshold: 0
 --- !u!114 &767773367
 MonoBehaviour:
@@ -47010,7 +47005,6 @@ MonoBehaviour:
   blowIntensity: 8
   flickerSparkPS: {fileID: 310812351}
   blowSparkPS: {fileID: 469387204}
-  flickerThreshold: 0
   blowThreshold: 0
 --- !u!114 &1091108388
 MonoBehaviour:
@@ -47116,7 +47110,6 @@ MonoBehaviour:
   blowIntensity: 8
   flickerSparkPS: {fileID: 1311515281}
   blowSparkPS: {fileID: 2006274822}
-  flickerThreshold: 0
   blowThreshold: 0
 --- !u!114 &1093605096
 MonoBehaviour:
@@ -57790,7 +57783,6 @@ MonoBehaviour:
   blowIntensity: 8
   flickerSparkPS: {fileID: 1685159827}
   blowSparkPS: {fileID: 966864623}
-  flickerThreshold: 0
   blowThreshold: 0
 --- !u!114 &1264982469
 MonoBehaviour:
@@ -68606,7 +68598,6 @@ MonoBehaviour:
   blowIntensity: 8
   flickerSparkPS: {fileID: 422284913}
   blowSparkPS: {fileID: 1443950282}
-  flickerThreshold: 0
   blowThreshold: 0
 --- !u!114 &1380282527
 MonoBehaviour:
@@ -80199,6 +80190,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  _troopButtons:
+  - {fileID: 741298729}
+  - {fileID: 1796544803}
+  - {fileID: 1607146774}
 --- !u!4 &1652309396
 Transform:
   m_ObjectHideFlags: 0
@@ -96303,6 +96298,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _scaleController: {fileID: 235701402}
   _pauseMenu: {fileID: 1531450303}
+  _allyHealthLights: {fileID: 141968666}
+  _enemyHealthLights: {fileID: 1355093612}
 --- !u!114 &1725609255
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97544,7 +97541,6 @@ MonoBehaviour:
   blowIntensity: 8
   flickerSparkPS: {fileID: 877902378}
   blowSparkPS: {fileID: 1709446797}
-  flickerThreshold: 0
   blowThreshold: 0
 --- !u!114 &1900943936
 MonoBehaviour:
