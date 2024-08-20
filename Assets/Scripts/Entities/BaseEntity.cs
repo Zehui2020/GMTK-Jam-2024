@@ -183,7 +183,7 @@ public class BaseEntity : MonoBehaviour
         entityStats.passiveTraitDuration = _newStats.passiveTraitDuration;
         entityStats.attackTraitPercentage = _newStats.attackTraitPercentage;
         entityStats.moneyEarnedOnDeath = _newStats.moneyEarnedOnDeath;
-}
+    }
 
     public EntityStats GetStats()
     { 
@@ -434,5 +434,10 @@ public class BaseEntity : MonoBehaviour
     public int GetSumDamage()
     {
         return (int)(entityStats.attackDamage * activeAttackMult);
+    }
+
+    public void PlayAudio(string SFX)
+    {
+        AudioManager.Instance.PlayOneShot(SFX);
     }
 }

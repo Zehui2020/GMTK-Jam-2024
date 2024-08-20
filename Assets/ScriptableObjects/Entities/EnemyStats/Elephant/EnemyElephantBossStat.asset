@@ -19,9 +19,9 @@ MonoBehaviour:
   attackDamage: 40
   health: 300
   movementSpeed: 0.6
-  detectRange: 1
-  minAttackRange: -1
-  maxAttackRange: 2
+  detectRange: 2
+  minAttackRange: -0.5
+  maxAttackRange: 2.5
   weight: 35
   isAreaOfEffect: 1
   attackCooldown: 9.5

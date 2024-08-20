@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1710bf68c3f0f647b312ee85a228d30, type: 3}
   m_Name: PlayerData
   m_EditorClassIdentifier: 
-  MaxUnlockedLevel: 3
+  MaxUnlockedLevel: 0

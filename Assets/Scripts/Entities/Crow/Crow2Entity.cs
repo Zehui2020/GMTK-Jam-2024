@@ -212,6 +212,9 @@ public class Crow2Entity : BaseEntity
 
             //weight increase
             currWeight = entityStats.weight * 2;
+
+            spriteRenderer.color = Color.green;
+            hurtFlashLerpCounter = 0;
         }
     }
 

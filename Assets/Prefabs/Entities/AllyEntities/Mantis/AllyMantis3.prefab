@@ -125,6 +125,8 @@ MonoBehaviour:
   isDead: 0
   isTargetable: 0
   hasInit: 0
+  _attackSound: MantisAttack
+  _dieSound: 
   _projectileEffectPrefab: {fileID: 6982372621650227239, guid: b33ce92f03a1303498c049a72837065a, type: 3}
 --- !u!1001 &4258237600538921163
 PrefabInstance:

@@ -48,6 +48,7 @@ public class HealthLight : MonoBehaviour
         if (sparksRoutine != null)
             return;
 
+        AudioManager.Instance.Play("LightFlicker");
         StartCoroutine(Flicker());
         sparksRoutine = StartCoroutine(SparksRoutine());
     }
