@@ -21,7 +21,9 @@ MonoBehaviour:
 
     Chance increases when weight increase
 
+    Can
+    only attack at a fixed angle
 
-    Roost:
-    Heal 50%, Apply its full weight x <color=#00FF00>2</color> on the scale, then
-    increases damage'
+
+    Roost: Heal 50%, Apply its full weight x <color=#00FF00>2</color>
+    on the scale, then increases damage'

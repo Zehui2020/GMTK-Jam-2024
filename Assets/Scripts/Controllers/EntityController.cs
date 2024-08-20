@@ -316,8 +316,8 @@ public class EntityController : MonoBehaviour
         //instantiate new player entity
         GameObject newEntity = Instantiate(_entityToSpawnPrefab);
         //spawn at set position
-        newEntity.transform.position = new Vector3(position.x, 0, 0);
         newEntity.transform.parent = allyEntities[0].transform.parent;
+        newEntity.transform.position = new Vector3(position.x, 0, 0);
         newEntity.transform.localPosition = new Vector3(newEntity.transform.localPosition.x, 0, 0);
         newEntity.transform.rotation = newEntity.transform.parent.rotation;
 
