@@ -290,9 +290,9 @@ public class BaseEntity : MonoBehaviour
         }
     }
 
-    protected void DealStatusEffect(EntityStatusEffect _effect, int totalEntitiesAffected)
+    protected void DealStatusEffect(EntityStatusEffect _effect, int totalEntitiesAffected, bool applyWithoutDist = false)
     {
-        EntityController.Instance.ApplyStatusEffect(this, _effect, totalEntitiesAffected);
+        EntityController.Instance.ApplyStatusEffect(this, _effect, totalEntitiesAffected, applyWithoutDist);
     }
 
     protected virtual void HandleAttackTrait()
