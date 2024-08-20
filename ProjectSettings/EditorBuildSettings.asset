@@ -19,11 +19,14 @@ EditorBuildSettings:
     guid: f2a85979362b2ec48a1bca9de79fcbc0
   - enabled: 1
     path: Assets/Scenes/TutorialScene.unity
-    guid: 0860c71a4b00b0646bd0d2bc4b3a76f6
+    guid: ff2b38300f5c5ce4c8086beac6337b6a
   - enabled: 1
     path: Assets/Scenes/WinScene.unity
     guid: 4e92b5b4d07120f49a83bceb756b246e
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/GameSceneTest.unity
     guid: 798b8dc118bf94e4dafc24f4541ec6e4
+  - enabled: 1
+    path: Assets/Scenes/LoseScene.unity
+    guid: ebcd511fed042884d849cfa11bf1c047
   m_configObjects: {}

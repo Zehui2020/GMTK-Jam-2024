@@ -16,6 +16,13 @@ public class EntityController : MonoBehaviour
     public List<BaseEntity> enemyEntities;
     public List<BaseEntity> entitiesToAdd;
 
+    //Win lose loadscenes
+    [SerializeField]
+    private LoadScene _loadWinScene;
+
+    [SerializeField]
+    private LoadScene _loadLoseScene;
+
     // Cached list of all entities
     private List<BaseEntity> _allEntities = new();
     private bool _entitiesDirty = true;
@@ -335,7 +342,16 @@ public class EntityController : MonoBehaviour
 
         _entitiesDirty = true;
 
-        Debug.Log(enemyWin ? "Enemy wins" : "Player wins");
+        //Debug.Log(enemyWin ? "Enemy wins" : "Player wins");
+
+        if (enemyWin)
+        {
+            _loadLoseScene.Load();
+        }
+        else
+        {
+            _loadWinScene.Load();
+        }
     }
 
     public List<BaseEntity> GetAllEntities()
