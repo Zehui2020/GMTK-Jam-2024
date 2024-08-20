@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f118cd2f3ba170348813f506bb5426b9, type: 3}
   m_Name: CrowTroop 3
   m_EditorClassIdentifier: 
-  _stats: {fileID: 11400000, guid: 16a487d5d7dc05c4192fb7e95b2488f4, type: 2}
-  _entityPrefab: {fileID: 4617329641929948581, guid: 39602cef718017d45967ed0a01684ab9, type: 3}
+  _stats: {fileID: 11400000, guid: 2e99c3029f73823428d11a34e1c77966, type: 2}
+  _entityPrefab: {fileID: 4617329641929948581, guid: 64b3b565887ce484bb1a9b73efe4bfd8, type: 3}
   placeholderSprite: {fileID: 1136845915, guid: 11f41fc8b89e8b24984897d5c33703a0, type: 3}
   selectionIcon: {fileID: 1136845915, guid: 11f41fc8b89e8b24984897d5c33703a0, type: 3}
-  entityName: Crow Lvl 1
+  entityName: Crow Lvl 3
   abilities: 'Chance to stun enemies per hit
 
     Chance increases when weight increase
@@ -25,5 +25,5 @@ MonoBehaviour:
     only attack at a fixed angle
 
 
-    Roost: Heal 50%, Apply its full weight x <color=#00FF00>2</color>
+    Roost: Heal 50%, Apply its full weight x <color=#00FF00>3</color>
     on the scale, then increases damage'

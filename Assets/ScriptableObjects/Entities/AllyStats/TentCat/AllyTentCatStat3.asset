@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   entityName: AllyMeleeEntity3
   level: 3
-  cost: 75
+  cost: 150
   upgradeCost: 800
-  attackDamage: 8
+  attackDamage: 6
   health: 100
   movementSpeed: 1.3
   detectRange: 0.84

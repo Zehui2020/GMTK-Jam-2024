@@ -30,6 +30,9 @@ public class TutorialController : MonoBehaviour
     [SerializeField]
     private Level _endlessLevelSwap;
 
+    [SerializeField]
+    private TMP_Text _controls;
+
     private int _currentTutorialNumber;
     private int _currentTutorialSet;
     private TutorialData _currentTutorialData;
@@ -38,6 +41,7 @@ public class TutorialController : MonoBehaviour
     private int _currentWave;
     private int _mantisPlaced;
     private List<BaseEntity> _enemyEntities;
+    private float _showCooldown;
     public void CheckNewWave(int newWave)
     {
         _currentWave = newWave;
@@ -91,6 +95,7 @@ public class TutorialController : MonoBehaviour
             _troopButtonGO[buttonno].SetActive(false);
         }
         _enemyEntities = new();
+        _showCooldown = 0;
     }
     private void Update()
     {
@@ -102,7 +107,7 @@ public class TutorialController : MonoBehaviour
         {
             if (Input.GetAxisRaw("Fire1") != 0)
             {
-                if (!_hasClicked)
+                if (!_hasClicked && _showCooldown < 0)
                 {
                     _currentTutorialNumber++;
                     if (_currentTutorialNumber >=
