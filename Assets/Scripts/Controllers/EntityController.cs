@@ -42,6 +42,8 @@ public class EntityController : MonoBehaviour
     private EntityController instance;
     public static EntityController Instance { get; private set; }
 
+    private int _nextLevelUnlock;
+
     private void Awake()
     {
         // If there is an instance, and it's not me, delete myself.
@@ -68,6 +70,7 @@ public class EntityController : MonoBehaviour
 
         entitiesToAdd = new List<BaseEntity>();
         SetLevel(_levelController.GetLevel().levelID);
+        _nextLevelUnlock = _levelController.GetLevel().nextLevelID;
     }
 
     public void HandleUpdate(float _scaleAngle)
@@ -366,9 +369,9 @@ public class EntityController : MonoBehaviour
         {
             if (_playerDataSO)
             {
-                if (_playerDataSO.MaxUnlockedLevel < 4)
+                if (_playerDataSO.MaxUnlockedLevel < _nextLevelUnlock)
                 {
-                    _playerDataSO.MaxUnlockedLevel++;
+                    _playerDataSO.MaxUnlockedLevel = _nextLevelUnlock;
                 }
             }
             _loadWinScene.Load();
