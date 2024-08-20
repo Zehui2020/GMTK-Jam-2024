@@ -122,4 +122,6 @@ MonoBehaviour:
   _inputStats: {fileID: 11400000, guid: 6570d4806922f5944944b47018e4226e, type: 2}
   isEnemy: 0
   isDead: 0
+  isTargetable: 0
   hasInit: 0
+  _projectileEffectPrefab: {fileID: 6982372621650227239, guid: b33ce92f03a1303498c049a72837065a, type: 3}
