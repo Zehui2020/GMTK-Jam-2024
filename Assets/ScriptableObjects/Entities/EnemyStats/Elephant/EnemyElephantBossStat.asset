@@ -16,7 +16,7 @@ MonoBehaviour:
   level: 1
   cost: 0
   upgradeCost: 0
-  attackDamage: 40
+  attackDamage: 25
   health: 300
   movementSpeed: 0.6
   detectRange: 2
@@ -24,7 +24,7 @@ MonoBehaviour:
   maxAttackRange: 2.5
   weight: 35
   isAreaOfEffect: 1
-  attackCooldown: 9.5
+  attackCooldown: 12
   attackTraitCooldown: 0
   passiveTraitTriggerDuration: 25
   passiveTraitDuration: 5
