@@ -5,6 +5,7 @@ using UnityEngine;
 public class Mantis2Entity : BaseEntity
 {
     private float attackAbilityTraitCounter = 0;
+    [SerializeField] private GameObject _projectileEffectPrefab;
 
     public override void HandlePassiveTrait()
     {
@@ -45,6 +46,11 @@ public class Mantis2Entity : BaseEntity
             attackAbilityTraitCounter = entityStats.attackTraitCooldown;//20 sec
             DealStatusEffect(EntityStatusEffect.Fear, 3);
         }
+
+        //projectile
+        GameObject newObj = Instantiate(_projectileEffectPrefab);
+        newObj.transform.rotation = transform.rotation;
+        newObj.transform.position = transform.position + (_targetPoint.position - transform.position).normalized * entityStats.detectRange;
     }
 }
 

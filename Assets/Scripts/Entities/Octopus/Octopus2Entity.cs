@@ -54,6 +54,8 @@ public class Octopus2Entity : BaseEntity
                 GameObject newEntity = Instantiate(_clonePrefab);
                 //set position
                 newEntity.transform.position = _targetPoint.position;
+                //set Scale
+                newEntity.transform.localScale = transform.localScale;
                 //Init
                 newEntity.GetComponent<BaseEntity>().Init(_targetPoint);
                 //Add Weight

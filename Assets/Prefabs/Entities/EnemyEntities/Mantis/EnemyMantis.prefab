@@ -103,6 +103,7 @@ MonoBehaviour:
   isDead: 0
   isTargetable: 0
   hasInit: 0
+  _projectileEffectPrefab: {fileID: 1207442931168329210, guid: f409d3009f5b621468871fda44a6d1e4, type: 3}
 --- !u!95 &7513993425396406691
 Animator:
   serializedVersion: 5

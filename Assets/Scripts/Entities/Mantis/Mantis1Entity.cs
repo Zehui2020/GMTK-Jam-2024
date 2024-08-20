@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Mantis1Entity : BaseEntity
 {
+    [SerializeField] private GameObject _projectileEffectPrefab;
+
     public override void HandlePassiveTrait()
     {
 
@@ -30,5 +32,13 @@ public class Mantis1Entity : BaseEntity
         activeDamageTakenMult = isEnemy ?
             (_scaleAngle >= 4 ? 1.4f : 1.0f) : // check if tilted to ally side if is enemy
             (_scaleAngle <= -4 ? 1.4f : 1.0f); //check if tilted to enemy side if is ally
+    }
+
+    protected override void HandleAttackTrait()
+    {
+        //projectile
+        GameObject newObj = Instantiate(_projectileEffectPrefab);
+        newObj.transform.rotation = transform.rotation;
+        newObj.transform.position = transform.position + (_targetPoint.position - transform.position).normalized * entityStats.detectRange;
     }
 }
