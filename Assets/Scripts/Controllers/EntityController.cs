@@ -28,7 +28,11 @@ public class EntityController : MonoBehaviour
     private List<int> _enemyBaseHealth;
 
     //level controller
-    [SerializeField] LevelController _levelController;
+    [SerializeField] 
+    LevelController _levelController;
+
+    [SerializeField]
+    PlayerDataSO _playerDataSO;
 
     // Cached list of all entities
     private List<BaseEntity> _allEntities = new();
@@ -360,6 +364,13 @@ public class EntityController : MonoBehaviour
         }
         else
         {
+            if (_playerDataSO)
+            {
+                if (_playerDataSO.MaxUnlockedLevel < 4)
+                {
+                    _playerDataSO.MaxUnlockedLevel++;
+                }
+            }
             _loadWinScene.Load();
         }
     }
