@@ -853,8 +853,9 @@ MonoBehaviour:
   entitiesToAdd: []
   _loadWinScene: {fileID: 1886358944}
   _loadLoseScene: {fileID: 1078671994}
-  _enemyBaseHealth: 96000000fa000000f4010000
+  _enemyBaseHealth: 3200000096000000fa000000f4010000e8030000
   _levelController: {fileID: 173289247}
+  _playerDataSO: {fileID: 0}
 --- !u!4 &94375602
 Transform:
   m_ObjectHideFlags: 0

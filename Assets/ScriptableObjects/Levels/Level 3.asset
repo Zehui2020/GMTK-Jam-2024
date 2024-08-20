@@ -20,5 +20,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 86fc276c847044142a6a70336d63dc65, type: 2}
   - {fileID: 11400000, guid: 34599adfe7500bd47b4e46f598460675, type: 2}
   - {fileID: 11400000, guid: c025ea090fc0c7c4183e9b5e91e84497, type: 2}
-  levelID: 2
+  levelID: 3
+  nextLevelID: 4
   buttonUses: 01010101

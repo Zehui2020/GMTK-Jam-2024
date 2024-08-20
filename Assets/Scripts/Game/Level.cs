@@ -12,6 +12,8 @@ public class Level : ScriptableObject
 
     public int levelID;
 
+    public int nextLevelID;
+
     public List<bool> buttonUses;
     private void OnEnable()
     {
