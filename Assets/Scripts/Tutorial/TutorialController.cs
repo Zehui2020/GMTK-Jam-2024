@@ -41,7 +41,6 @@ public class TutorialController : MonoBehaviour
     private int _currentWave;
     private int _mantisPlaced;
     private List<BaseEntity> _enemyEntities;
-    private float _showCooldown;
     public void CheckNewWave(int newWave)
     {
         _currentWave = newWave;
@@ -95,7 +94,6 @@ public class TutorialController : MonoBehaviour
             _troopButtonGO[buttonno].SetActive(false);
         }
         _enemyEntities = new();
-        _showCooldown = 0;
     }
     private void Update()
     {
