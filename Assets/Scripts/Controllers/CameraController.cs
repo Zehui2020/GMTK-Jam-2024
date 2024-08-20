@@ -35,7 +35,7 @@ public class CameraController : MonoBehaviour
             _yBounds.x, _yBounds.y), transform.position.z);
 
         _virtualCamera.m_Lens.OrthographicSize =
-            Mathf.Clamp(_virtualCamera.m_Lens.OrthographicSize +
+            Mathf.Clamp(_virtualCamera.m_Lens.OrthographicSize -
             (Input.mouseScrollDelta.y * _zoomSpeed * 0.1f), _minZoom,
             _maxZoom);
     }
