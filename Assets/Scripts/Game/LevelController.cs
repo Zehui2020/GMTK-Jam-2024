@@ -79,6 +79,10 @@ public class LevelController : MonoBehaviour
         _isRunning = false;
     }
 
+    public Level GetLevel()
+    {
+        return _currentLevel;
+    }
     private void InitValues()
     {
         // Init gameplay variables

@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3238665a2b064104f86e291be46c69b0, type: 3}
-  m_Name: BaseEntitiy
+  m_Name: AllyBaseEntity
   m_EditorClassIdentifier: 
   entityName: Base
   level: 0
   cost: 0
   upgradeCost: 0
   attackDamage: 0
-  health: 25
+  health: 50
   movementSpeed: 0
   detectRange: 0
   minAttackRange: 0
@@ -25,3 +25,9 @@ MonoBehaviour:
   weight: 0
   isAreaOfEffect: 0
   attackCooldown: 0
+  attackTraitCooldown: 0
+  passiveTraitTriggerDuration: 0
+  passiveTraitDuration: 0
+  attackTraitPercentage: 0
+  spawnCooldown: 0
+  moneyEarnedOnDeath: 0

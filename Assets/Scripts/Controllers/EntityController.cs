@@ -23,6 +23,13 @@ public class EntityController : MonoBehaviour
     [SerializeField]
     private LoadScene _loadLoseScene;
 
+    //List of enemy base stats
+    [SerializeField]
+    private List<int> _enemyBaseHealth;
+
+    //level controller
+    [SerializeField] LevelController _levelController;
+
     // Cached list of all entities
     private List<BaseEntity> _allEntities = new();
     private bool _entitiesDirty = true;
@@ -56,6 +63,7 @@ public class EntityController : MonoBehaviour
         allyEntities[0].GetComponent<SpriteRenderer>().sortingOrder = 12;
 
         entitiesToAdd = new List<BaseEntity>();
+        SetLevel(_levelController.GetLevel().levelID);
     }
 
     public void HandleUpdate(float _scaleAngle)
@@ -438,4 +446,18 @@ public class EntityController : MonoBehaviour
             }
         }
     }
+    public void SetLevel(int levelID)
+    {
+        if (levelID == -1)
+        {
+            //endless
+            enemyEntities[0].Damage(-99999999);
+        }
+        else
+        {
+            enemyEntities[0].Damage(_enemyBaseHealth[0]
+                - _enemyBaseHealth[levelID]);
+        }
+    }
+
 }
