@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Attack
+  m_Name: Death
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,19 +21,17 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: 760469498, guid: 15759b8e7c531fc45b3c0b0e3cdc1483, type: 3}
+      value: {fileID: 835937348, guid: e1d5a6edbae0035449304c64fbd04966, type: 3}
     - time: 0.083333336
-      value: {fileID: 112323196, guid: 15759b8e7c531fc45b3c0b0e3cdc1483, type: 3}
+      value: {fileID: -1036182935, guid: e1d5a6edbae0035449304c64fbd04966, type: 3}
     - time: 0.16666667
-      value: {fileID: -784155462, guid: 15759b8e7c531fc45b3c0b0e3cdc1483, type: 3}
+      value: {fileID: -940204405, guid: e1d5a6edbae0035449304c64fbd04966, type: 3}
     - time: 0.25
-      value: {fileID: 1745639498, guid: 15759b8e7c531fc45b3c0b0e3cdc1483, type: 3}
+      value: {fileID: 1209365847, guid: e1d5a6edbae0035449304c64fbd04966, type: 3}
     - time: 0.33333334
-      value: {fileID: -732432634, guid: 15759b8e7c531fc45b3c0b0e3cdc1483, type: 3}
+      value: {fileID: -1576074489, guid: e1d5a6edbae0035449304c64fbd04966, type: 3}
     - time: 0.41666666
-      value: {fileID: 1063992679, guid: 15759b8e7c531fc45b3c0b0e3cdc1483, type: 3}
-    - time: 0.5
-      value: {fileID: 1552198865, guid: 15759b8e7c531fc45b3c0b0e3cdc1483, type: 3}
+      value: {fileID: 2079773314, guid: e1d5a6edbae0035449304c64fbd04966, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -56,19 +54,18 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: 760469498, guid: 15759b8e7c531fc45b3c0b0e3cdc1483, type: 3}
-    - {fileID: 112323196, guid: 15759b8e7c531fc45b3c0b0e3cdc1483, type: 3}
-    - {fileID: -784155462, guid: 15759b8e7c531fc45b3c0b0e3cdc1483, type: 3}
-    - {fileID: 1745639498, guid: 15759b8e7c531fc45b3c0b0e3cdc1483, type: 3}
-    - {fileID: -732432634, guid: 15759b8e7c531fc45b3c0b0e3cdc1483, type: 3}
-    - {fileID: 1063992679, guid: 15759b8e7c531fc45b3c0b0e3cdc1483, type: 3}
-    - {fileID: 1552198865, guid: 15759b8e7c531fc45b3c0b0e3cdc1483, type: 3}
+    - {fileID: 835937348, guid: e1d5a6edbae0035449304c64fbd04966, type: 3}
+    - {fileID: -1036182935, guid: e1d5a6edbae0035449304c64fbd04966, type: 3}
+    - {fileID: -940204405, guid: e1d5a6edbae0035449304c64fbd04966, type: 3}
+    - {fileID: 1209365847, guid: e1d5a6edbae0035449304c64fbd04966, type: 3}
+    - {fileID: -1576074489, guid: e1d5a6edbae0035449304c64fbd04966, type: 3}
+    - {fileID: 2079773314, guid: e1d5a6edbae0035449304c64fbd04966, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.5833333
+    m_StopTime: 0.5
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -89,14 +86,7 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0.41666666
-    functionName: Attack
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
-  - time: 0.5
-    functionName: AttackAnimEnd
+    functionName: DeathAnimEnd
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
