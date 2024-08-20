@@ -56,6 +56,8 @@ public class Octopus3Entity : BaseEntity
                 newEntity.transform.position = _targetPoint.position;
                 //Init
                 newEntity.GetComponent<BaseEntity>().Init(_targetPoint);
+                //set Scale
+                newEntity.transform.localScale = transform.localScale;
                 //Add Weight
                 newEntity.GetComponent<BaseEntity>().SetWeight(entityStats.weight);
                 newEntity.GetComponent<OctopusCloneEntity>().counter = entityStats.passiveTraitDuration;
