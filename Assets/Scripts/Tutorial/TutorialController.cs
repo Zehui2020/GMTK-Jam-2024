@@ -107,7 +107,7 @@ public class TutorialController : MonoBehaviour
         {
             if (Input.GetAxisRaw("Fire1") != 0)
             {
-                if (!_hasClicked && _showCooldown < 0)
+                if (!_hasClicked)
                 {
                     _currentTutorialNumber++;
                     if (_currentTutorialNumber >=

@@ -1083,7 +1083,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   money: 0
-  increaseRate: 11
+  increaseRate: 13
   _costText: {fileID: 544697870}
   _moneyAnimation: {fileID: 6483838986166786020, guid: cb1d1fbcacc28a849bb6712aa98c25ad, type: 3}
   _moneyAnimationParent: {fileID: 544697867}
@@ -68241,12 +68241,17 @@ MonoBehaviour:
     - {x: 240, y: 0, z: 0}
     - {x: 0, y: 0, z: 0}
     - {x: 0, y: -55, z: 0}
+    - {x: 0, y: -55, z: 0}
+    - {x: 0, y: -55, z: 0}
     InstructionsText:
     - Oh no! An enemy<color=#FF0000> Tent Cat </color>has appeared!
     - As troops begin to enter the field,<br>The scale will tilt towards the heavier
       side.
     - Lets try deploying a <color=#00FFFF>troop</color>!<br>Press on troop button
-      below to spawn a troop!
+      below to spawn a troop!<br>
+    - Troops also cost money, be wary of your spending!
+    - You can aslo upgrade troops by pressing and holding on the icon. <br>The arrow
+      in between both upgrades will show how much you need to upgrade the troop!
   - ContainerPosition:
     - {x: 0, y: 0, z: 0}
     - {x: 0, y: 0, z: 0}
@@ -68266,7 +68271,9 @@ MonoBehaviour:
     - Try placing some <color=#00FFFF>Mantises</color> to counter them!
   - ContainerPosition:
     - {x: 0, y: 0, z: 0}
+    - {x: 0, y: 0, z: 0}
     InstructionsText:
+    - Use W,A,S,D and the mouse scroll to control the camera.
     - That's all for the tutorial!<br>Now, go on to defeat the enemy's base!<br>Have
       fun!
   _textboxContainer: {fileID: 2037449459}
@@ -68284,6 +68291,7 @@ MonoBehaviour:
   - {fileID: 1521360108}
   - {fileID: 1983754654}
   _endlessLevelSwap: {fileID: 11400000, guid: a9265c9a81067b9479ca3aa251627dda, type: 2}
+  _controls: {fileID: 0}
 --- !u!4 &1466548604
 Transform:
   m_ObjectHideFlags: 0
