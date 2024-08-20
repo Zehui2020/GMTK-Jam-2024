@@ -17,5 +17,5 @@ MonoBehaviour:
     <SpawnAfterStartSeconds>k__BackingField: 3
     <PositionSpawn>k__BackingField: 0
     <SequenceAmount>k__BackingField: 0
-    <SequenceTimeGap>k__BackingField: 0
-  <LastNodeBuffer>k__BackingField: 1
+    <SequenceTimeGap>k__BackingField: 0.1
+  <LastNodeBuffer>k__BackingField: 2

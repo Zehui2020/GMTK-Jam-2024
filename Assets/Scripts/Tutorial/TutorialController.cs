@@ -71,7 +71,7 @@ public class TutorialController : MonoBehaviour
 
     public void CheckEnemyPlaced(BaseEntity newEnemy)
     {
-        if (newEnemy._inputStats.entityName.Equals("TutorialEnemyTentCat"))
+        if (_currentTutorialSet == 0)
         {
             NextTutorial();
         }
@@ -162,7 +162,7 @@ public class TutorialController : MonoBehaviour
                 if (_currentWave == 1)
                 {
                     _currentTime += Time.deltaTime;
-                    if (_currentTime >= 4f)
+                    if (_currentTime >= 1f)
                     {
                         NextTutorial();
                     }
