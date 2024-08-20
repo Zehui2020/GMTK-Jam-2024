@@ -59166,6 +59166,7 @@ MonoBehaviour:
   _loadLoseScene: {fileID: 42401363}
   _enemyBaseHealth: 96000000fa000000f4010000
   _levelController: {fileID: 1956069994}
+  _playerDataSO: {fileID: 0}
 --- !u!114 &1090087210
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -93094,7 +93095,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 97.5, y: -50.777298}
-  m_SizeDelta: {x: 96.03, y: 21.5546}
+  m_SizeDelta: {x: 0, y: 21.5546}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1796533188
 MonoBehaviour:
@@ -103413,7 +103414,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 97.5, y: -50.777298}
-  m_SizeDelta: {x: 96.03, y: 21.5546}
+  m_SizeDelta: {x: 0, y: 21.5546}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1828374677
 MonoBehaviour:
