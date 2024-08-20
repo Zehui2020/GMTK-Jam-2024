@@ -25,6 +25,9 @@ public class TutorialController : MonoBehaviour
     private List<Button> _troopsButtons;
 
     [SerializeField]
+    private List<GameObject> _troopButtonGO;
+
+    [SerializeField]
     private Level _endlessLevelSwap;
 
     private int _currentTutorialNumber;
@@ -61,7 +64,7 @@ public class TutorialController : MonoBehaviour
             if (_mantisPlaced >= 2)
             {
                 _troopsButtons[1].enabled = false;
-                _troopsButtons[1].gameObject.SetActive(false);
+                _troopButtonGO[1].gameObject.SetActive(false);
             }
         }
     }
@@ -82,10 +85,10 @@ public class TutorialController : MonoBehaviour
         _textboxContainer.gameObject.SetActive(false);
         _hasClicked = false;
         _mantisPlaced = 0;
-        foreach(Button button in _troopsButtons)
+        for (int buttonno = 0; buttonno < _troopsButtons.Count; buttonno++)
         {
-            button.enabled = false;
-            button.gameObject.SetActive(false);
+            _troopsButtons[buttonno].enabled = false;
+            _troopButtonGO[buttonno].SetActive(false);
         }
         _enemyEntities = new();
     }
@@ -188,14 +191,14 @@ public class TutorialController : MonoBehaviour
         {
             case 1:
                 _levelController.Stop();
-                _troopsButtons[0].gameObject.SetActive(true);
+                _troopButtonGO[0].gameObject.SetActive(true);
                 break;
             case 2:
                 _troopSelectionController.enabled = false;
                 break;
             case 3:
                 _levelController.Stop();
-                _troopsButtons[1].gameObject.SetActive(true);
+                _troopButtonGO[1].gameObject.SetActive(true);
                 _mantisPlaced = 0;
                 break;
         }
@@ -210,16 +213,16 @@ public class TutorialController : MonoBehaviour
             case 2:
                 _troopSelectionController.enabled = true;
                 _troopsButtons[0].enabled = false;
-                _troopsButtons[0].gameObject.SetActive(false);
+                _troopButtonGO[0].gameObject.SetActive(false);
                 break;
             case 3:
                 _troopsButtons[1].enabled = true;
                 break;
             case 4:
-                foreach(Button button in _troopsButtons)
+                for (int buttonno = 0; buttonno < _troopsButtons.Count; buttonno++)
                 {
-                    button.enabled = true;
-                    button.gameObject.SetActive(true);
+                    _troopsButtons[buttonno].enabled = true;
+                    _troopButtonGO[buttonno].SetActive(true);
                 }
                 _levelController.SetLevel(_endlessLevelSwap);
                 break;
