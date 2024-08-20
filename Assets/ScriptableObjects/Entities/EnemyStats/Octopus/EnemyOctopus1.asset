@@ -30,4 +30,4 @@ MonoBehaviour:
   passiveTraitDuration: 3
   attackTraitPercentage: 0
   spawnCooldown: 0
-  moneyEarnedOnDeath: 800
+  moneyEarnedOnDeath: 50

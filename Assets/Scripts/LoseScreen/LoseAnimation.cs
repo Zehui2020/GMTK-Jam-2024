@@ -11,21 +11,15 @@ public class LoseAnimation : MonoBehaviour
     private Light2D _light;
 
     [SerializeField]
-    private GameObject _tumbleweed;
-
-    [SerializeField]
     private LoadScene _loadScene;
 
     private float _currTime;
-    private Vector3 _tumbleweedDir;
-    private bool _isTumbleweedRolling;
+
 
     // Start is called before the first frame update
     private void Start()
     {
         _currTime = 0;
-        _tumbleweedDir = new Vector3(3, 0, 0);
-        _isTumbleweedRolling = false;
     }
 
     // Update is called once per frame
@@ -59,37 +53,6 @@ public class LoseAnimation : MonoBehaviour
             {
                 anim.Play("Death");
                 
-            }
-        }
-        else if (_currTime >= 3)
-        {
-            if (!_isTumbleweedRolling)
-            {
-                _isTumbleweedRolling = true;
-                if (Random.Range(0, 2) == 0) {
-                    _tumbleweed.transform.localPosition = new Vector3(
-                    -10.25f,
-                    _tumbleweed.transform.localPosition.y,
-                    _tumbleweed.transform.localPosition.z);
-                    _tumbleweedDir = new(Random.Range(1, 3), 0, 0);
-                }
-                else
-                {
-                    _tumbleweed.transform.localPosition = new Vector3(
-                    10.25f,
-                    _tumbleweed.transform.localPosition.y,
-                    _tumbleweed.transform.localPosition.z);
-                    _tumbleweedDir = new(Random.Range(-1, -3), 0, 0);
-                }
-                _isTumbleweedRolling = true;
-            }
-            else
-            {
-                _tumbleweed.transform.localPosition += _tumbleweedDir * Time.deltaTime;
-                if (_tumbleweed.transform.localPosition.x > 14f || _tumbleweed.transform.localPosition.x < -14f)
-                {
-                    _isTumbleweedRolling = false;
-                }
             }
         }
         for (int animno = 0; animno < _m_AnimatorList.Count; animno++)
