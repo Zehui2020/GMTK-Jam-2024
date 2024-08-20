@@ -78707,10 +78707,13 @@ MonoBehaviour:
   - ContainerPosition:
     - {x: 0, y: 0, z: 0}
     - {x: 0, y: 0, z: 0}
+    - {x: 0, y: 0, z: 0}
     InstructionsText:
     - You can only place your troops<br>on your side of the field.
     - There will be an indication on where<br>you can place the troop down.<br>Try
       clicking again to deploy the troop!
+    - When either bases get damaged, the damage will be reflected via the light bulbs
+      shown above!
   - ContainerPosition:
     - {x: 0, y: 0, z: 0}
     - {x: 0, y: 0, z: 0}
