@@ -64,9 +64,9 @@ public class EntityController : MonoBehaviour
         DebugUtility.Assert(!allyEntities.IsEmpty(), "There is no ally base");
 
         enemyEntities[0].Init(allyEntities[0].transform);
-        enemyEntities[0].GetComponent<SpriteRenderer>().sortingOrder = 12;
+        enemyEntities[0].GetComponent<SpriteRenderer>().sortingOrder = 15;
         allyEntities[0].Init(enemyEntities[0].transform);
-        allyEntities[0].GetComponent<SpriteRenderer>().sortingOrder = 12;
+        allyEntities[0].GetComponent<SpriteRenderer>().sortingOrder = 15;
 
         entitiesToAdd = new List<BaseEntity>();
         SetLevel(_levelController.GetLevel().levelID);

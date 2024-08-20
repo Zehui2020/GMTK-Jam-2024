@@ -29,7 +29,7 @@ public class BaseEntity : MonoBehaviour
     //Animation controller
     protected Animator animator;
     //sprite renderer
-    private SpriteRenderer spriteRenderer;
+    protected SpriteRenderer spriteRenderer;
     //effect icons
     private EffectIconController _effectIconController;
 
@@ -54,6 +54,9 @@ public class BaseEntity : MonoBehaviour
     protected float activeDamageTakenMult;
 
     protected float currWeight;
+
+    //hurt flash
+    protected float hurtFlashLerpCounter;
 
     // Start is called before the first frame update
     public virtual void Init(Transform targetPoint)
@@ -97,6 +100,8 @@ public class BaseEntity : MonoBehaviour
         //Vector3 dir = _targetPoint.position - transform.position;
         //dir.Normalize();
         //Debug.DrawRay(transform.position + dir * entityStats.minAttackRange, dir * entityStats.maxAttackRange, Color.green, 0.01f);
+        hurtFlashLerpCounter += Time.deltaTime;
+        spriteRenderer.color = Color.Lerp(spriteRenderer.color, Color.white, hurtFlashLerpCounter);
 
         HandleStatusEffect();
         HandlePassiveTrait();
@@ -225,6 +230,12 @@ public class BaseEntity : MonoBehaviour
             {
                 animator.SetBool("IsDead", true);
             }
+        }
+        else
+        {
+            //flash
+            spriteRenderer.color = Color.black;
+            hurtFlashLerpCounter = 0;
         }
     }
 

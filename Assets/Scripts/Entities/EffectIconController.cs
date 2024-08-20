@@ -32,7 +32,7 @@ public class EffectIconController : MonoBehaviour
                 effectIcons[i].SetActive(true);
 
                 //placement
-                effectIcons[i].transform.position = transform.position + new Vector3(x * 0.125f, -y * 0.125f, 0);
+                effectIcons[i].transform.position = transform.position + new Vector3(x * 0.25f, -y * 0.25f, 0);
                 x++;
                 y += (x == 4 ? 1 : 0);
                 x = x % 4;
