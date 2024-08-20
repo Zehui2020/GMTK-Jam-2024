@@ -134,6 +134,10 @@ PrefabInstance:
       propertyPath: hasInit
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1551906799901664555, guid: 25468d1934b6aae418b328c5d3e4b572, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4617329641929948581, guid: 25468d1934b6aae418b328c5d3e4b572, type: 3}
       propertyPath: m_Name
       value: AllyTentCat1
@@ -609,6 +613,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4908172224569523342, guid: 9fe2d861587da614dbde1a8619caf539, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5143695929012946374, guid: 9fe2d861587da614dbde1a8619caf539, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1581,6 +1589,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 372809740}
     m_Modifications:
+    - target: {fileID: 598376861100720386, guid: 81e2c6313bff57e44a7553b7cad96bd4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4617329641929948581, guid: 81e2c6313bff57e44a7553b7cad96bd4, type: 3}
       propertyPath: m_Name
       value: AllyOctopus1
