@@ -162,6 +162,19 @@ public class Crow3Entity : BaseEntity
                 }
                 break;
             case EntityState.Death:
+
+                if (ogPosObj != null)
+                {
+                    Destroy(ogPosObj);
+                    ogPosObj = null;
+                }
+
+                if (targetPosObj != null)
+                {
+                    Destroy(targetPosObj);
+                    targetPosObj = null;
+                }
+
                 //DEBUGGING ONLY
                 if (!animator)
                 {
