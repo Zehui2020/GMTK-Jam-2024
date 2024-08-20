@@ -11524,7 +11524,6 @@ MonoBehaviour:
   _availableColor: {r: 1, g: 1, b: 1, a: 1}
   _unavailableColor: {r: 0.5176471, g: 0.5176471, b: 0.5176471, a: 1}
   _entityCost: {fileID: 837128071}
-  _entityLevel: {fileID: 1479198650}
   _tooltipPosition: {fileID: 451190566}
   _animator: {fileID: 295678434}
   _upgradeHoldDelay: 0.3
@@ -38502,6 +38501,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _detailTooltip: {fileID: 1380729590}
   _upgradeTooltip: {fileID: 1195845716}
+  _upgradeCost: {fileID: 0}
   _arrow: {fileID: 1952279094}
   _rectTransform: {fileID: 867084791}
   _animator: {fileID: 867084793}
@@ -59154,7 +59154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c713aff8c63fe542beac397f320c56f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  allyPrefab1: {fileID: 4617329641929948581, guid: 39602cef718017d45967ed0a01684ab9, type: 3}
+  allyPrefab1: {fileID: 4617329641929948581, guid: 9fe2d861587da614dbde1a8619caf539, type: 3}
   allyPrefab2: {fileID: 4617329641929948581, guid: 25468d1934b6aae418b328c5d3e4b572, type: 3}
   enemyPrefab1: {fileID: 4617329641929948581, guid: 14d0de20f8ac5d34f911d7a981d1f7c1, type: 3}
   allyEntities:
@@ -103303,7 +103303,6 @@ MonoBehaviour:
   _availableColor: {r: 1, g: 1, b: 1, a: 1}
   _unavailableColor: {r: 0.5176471, g: 0.5176471, b: 0.5176471, a: 1}
   _entityCost: {fileID: 7798164}
-  _entityLevel: {fileID: 1881589599}
   _tooltipPosition: {fileID: 1737394621}
   _animator: {fileID: 1817173745}
   _upgradeHoldDelay: 0.3
@@ -103863,7 +103862,6 @@ MonoBehaviour:
   _availableColor: {r: 1, g: 1, b: 1, a: 1}
   _unavailableColor: {r: 0.5176471, g: 0.5176471, b: 0.5176471, a: 1}
   _entityCost: {fileID: 1266383668}
-  _entityLevel: {fileID: 123969209}
   _tooltipPosition: {fileID: 588979649}
   _animator: {fileID: 1910814387}
   _upgradeHoldDelay: 0.3

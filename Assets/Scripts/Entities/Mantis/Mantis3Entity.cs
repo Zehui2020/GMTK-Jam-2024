@@ -50,6 +50,6 @@ public class Mantis3Entity : BaseEntity
         //projectile
         GameObject newObj = Instantiate(_projectileEffectPrefab);
         newObj.transform.rotation = transform.rotation;
-        newObj.transform.position = transform.position + (_targetPoint.position - transform.position).normalized * entityStats.detectRange;
+        newObj.GetComponent<AnimProjectileController>().Init(transform.position + (_targetPoint.position - transform.position).normalized * 0.5f, transform.position + (_targetPoint.position - transform.position).normalized * entityStats.detectRange);
     }
 }
