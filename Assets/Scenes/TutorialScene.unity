@@ -855,7 +855,7 @@ MonoBehaviour:
   _loadLoseScene: {fileID: 1078671994}
   _enemyBaseHealth: 3200000096000000fa000000f4010000e8030000
   _levelController: {fileID: 173289247}
-  _playerDataSO: {fileID: 0}
+  _playerDataSO: {fileID: 11400000, guid: 04dc0b81d1f96244dab994aaf63c4738, type: 2}
 --- !u!4 &94375602
 Transform:
   m_ObjectHideFlags: 0
