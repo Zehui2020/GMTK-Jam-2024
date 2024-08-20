@@ -20,7 +20,7 @@ public class BaseEntity : MonoBehaviour
         Stun,
         TotalStatus
     }
-    private EntityStatusEffect entityStatusEffect;
+    protected EntityStatusEffect entityStatusEffect;
     private float statusCounter;
 
     public EntityStatsScriptableObject _inputStats;
@@ -40,7 +40,7 @@ public class BaseEntity : MonoBehaviour
     public bool hasInit = false;
 
     //attack counter
-    private float attackCounter;
+    protected float attackCounter;
     //private float attackAnimCounter;
 
     protected Transform _targetPoint;
@@ -90,9 +90,9 @@ public class BaseEntity : MonoBehaviour
     {
         //DEBUGGING ONLY
         //Draw Attack Range
-        Vector3 dir = _targetPoint.position - transform.position;
-        dir.Normalize();
-        Debug.DrawRay(transform.position + dir * entityStats.minAttackRange, dir * entityStats.maxAttackRange, Color.green, 0.01f);
+        //Vector3 dir = _targetPoint.position - transform.position;
+        //dir.Normalize();
+        //Debug.DrawRay(transform.position + dir * entityStats.minAttackRange, dir * entityStats.maxAttackRange, Color.green, 0.01f);
 
         HandleStatusEffect();
         HandlePassiveTrait();
@@ -300,7 +300,7 @@ public class BaseEntity : MonoBehaviour
 
     }
 
-    private void HandleStatusEffect()
+    protected void HandleStatusEffect()
     {
         //if no status, then don't enter
         if (entityStatusEffect == EntityStatusEffect.None)
@@ -359,5 +359,16 @@ public class BaseEntity : MonoBehaviour
     public int GetAttackDamage()
     {
         return (int)(entityStats.attackDamage * activeAttackMult);
+    }
+
+    public void SetHealth(int _health)
+    {
+        entityStats.health = _health;
+        entityStats.maxHealth = _health;
+    }
+
+    public virtual Vector3 GetPos()
+    {
+        return transform.position;
     }
 }
