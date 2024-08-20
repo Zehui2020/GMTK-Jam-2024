@@ -2140,6 +2140,8 @@ MonoBehaviour:
   money: 0
   increaseRate: 0
   _costText: {fileID: 171394381}
+  _moneyAnimation: {fileID: 0}
+  _moneyAnimationParent: {fileID: 0}
 --- !u!1 &1103289378
 GameObject:
   m_ObjectHideFlags: 0
