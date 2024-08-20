@@ -31,6 +31,11 @@ public class TroopSelectionController : MonoBehaviour
         placeholderSprite.gameObject.SetActive(true);
     }
 
+    public Entity GetSelectedEntity()
+    {
+        return _selectedEntity;
+    }
+
     public void SpawnTroop(Vector3 position)
     {
         if (_selectedEntity == null)

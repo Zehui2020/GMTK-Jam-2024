@@ -48,7 +48,7 @@ public class TutorialController : MonoBehaviour
         switch (troop)
         {
             case 0:
-                if (_currentTutorialSet == 1)
+                if (_currentTutorialSet == 1 && _troopSelectionController.GetSelectedEntity() != null)
                 {
                     NextTutorial();
                 }
