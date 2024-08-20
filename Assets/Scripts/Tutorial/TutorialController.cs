@@ -219,7 +219,7 @@ public class TutorialController : MonoBehaviour
                 _troopsButtons[1].enabled = true;
                 break;
             case 4:
-                for (int buttonno = 0; buttonno < _troopsButtons.Count; buttonno++)
+                for (int buttonno = 0; buttonno < 2; buttonno++)
                 {
                     _troopsButtons[buttonno].enabled = true;
                     _troopButtonGO[buttonno].SetActive(true);

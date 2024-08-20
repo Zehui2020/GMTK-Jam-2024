@@ -12,6 +12,7 @@ public class Level : ScriptableObject
 
     public int levelID;
 
+    public List<bool> buttonUses;
     private void OnEnable()
     {
         hideFlags = HideFlags.DontUnloadUnusedAsset;

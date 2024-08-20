@@ -38,6 +38,11 @@ public class LevelController : MonoBehaviour
     [SerializeField]
     private UnityEvent<BaseEntity> _onEntitySpawn;
 
+    [Header("LevelController Affect")]
+
+    [SerializeField]
+    List<GameObject> _troopButtons;
+
     private bool _isRunning = false;
     private int _waveIndex; 
     private float _timer;
@@ -67,6 +72,14 @@ public class LevelController : MonoBehaviour
         Assert(!_currentLevel.Waves.IsEmpty(), "Current level waves are empty");
 
         InitValues();
+
+        for (int buttonno = 0; buttonno < _troopButtons.Count; buttonno++)
+        {
+            if (!level.buttonUses[buttonno])
+            {
+                _troopButtons[buttonno].SetActive(false);
+            }
+        }
     }
     
     public void Play()

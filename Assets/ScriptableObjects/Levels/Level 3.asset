@@ -22,3 +22,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4daaecaf8fcebb949a5a6fcc192d4865, type: 2}
   - {fileID: 11400000, guid: ddaafd95854b8894fb5b02f1a553dd56, type: 2}
   levelID: 2
+  buttonUses: 010101

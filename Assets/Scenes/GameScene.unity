@@ -104651,7 +104651,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _selectionSharedData: {fileID: 11400000, guid: 5b7f22cb3a9882b4a876de8eabda565a, type: 2}
-  _debugLevel: {fileID: 11400000, guid: 0b5e46452048fe247af34ba14bc96eaa, type: 2}
+  _debugLevel: {fileID: 0}
   _loop: 1
   _onNextWave:
     m_PersistentCalls:
@@ -104659,6 +104659,10 @@ MonoBehaviour:
   _onEntitySpawn:
     m_PersistentCalls:
       m_Calls: []
+  _troopButtons:
+  - {fileID: 1910814383}
+  - {fileID: 1817173741}
+  - {fileID: 295678430}
 --- !u!4 &1956069995
 Transform:
   m_ObjectHideFlags: 0
