@@ -18,6 +18,8 @@ public class HealthLightManager : MonoBehaviour
             _healthLights[i].OnBlowEvent += OnLightBlow;
             health -= intervals;
         }
+
+        _healthLights[_healthLights.Count - 1].SetThreshold(0);
     }
 
     private void Update()

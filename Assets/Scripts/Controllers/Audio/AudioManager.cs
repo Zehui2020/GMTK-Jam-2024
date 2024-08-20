@@ -1,11 +1,14 @@
 using UnityEngine.Audio;
 using UnityEngine;
+using UnityEditor;
 
 public class AudioManager : MonoBehaviour
 {
     public AudioMixer audioMixer;
 
     public Sound[] sounds;
+
+    [SerializeField] private PlayerSettings playerSettings;
 
     public static AudioManager Instance;
 
@@ -185,6 +188,6 @@ public class AudioManager : MonoBehaviour
 
     private void OnApplicationQuit()
     {
-        MixerManager.Instance.ResetVolume();
+        playerSettings.ResetVolume();
     }
 }

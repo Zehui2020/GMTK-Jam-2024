@@ -80,7 +80,7 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 76eb80637312b6d4abd38c229f1476eb, type: 3}
     mixerGroup: {fileID: 7868881172993788651, guid: c8a8989eea4eaef408b0a0bbe33942d5, type: 2}
     pitch: 1
-    volume: 0.2
+    volume: 0.4
     source: {fileID: 0}
     loop: 0
     createSource: 1
@@ -120,7 +120,7 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 117d0f032d7d9d3448c4a31561a00b5d, type: 3}
     mixerGroup: {fileID: 7868881172993788651, guid: c8a8989eea4eaef408b0a0bbe33942d5, type: 2}
     pitch: 1
-    volume: 0.1
+    volume: 0.3
     source: {fileID: 0}
     loop: 0
     createSource: 1
@@ -190,7 +190,7 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 4f6eeee56ca6ff5498091a3893cf1264, type: 3}
     mixerGroup: {fileID: 7868881172993788651, guid: c8a8989eea4eaef408b0a0bbe33942d5, type: 2}
     pitch: 1
-    volume: 0.05
+    volume: 0.2
     source: {fileID: 0}
     loop: 1
     createSource: 1
@@ -246,3 +246,4 @@ MonoBehaviour:
     createSource: 1
     playOnAwake: 0
     doNotFade: 0
+  playerSettings: {fileID: 11400000, guid: 2cb182e91383dd9419a7d3f4f17be8b8, type: 2}
