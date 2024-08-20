@@ -1321,7 +1321,7 @@ MonoBehaviour:
   enemyEntities:
   - {fileID: 1029616209}
   entitiesToAdd: []
-  _endAnimation: {fileID: 0}
+  _endAnimation: {fileID: 1137867904}
   _enemyBaseHealth: 3200000096000000fa000000f4010000e8030000
   _levelController: {fileID: 173289247}
   _playerDataSO: {fileID: 11400000, guid: 04dc0b81d1f96244dab994aaf63c4738, type: 2}
