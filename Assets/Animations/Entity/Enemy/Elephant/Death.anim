@@ -109,6 +109,9 @@ AnimationClip:
   - time: 0
     functionName: PlayAudio
     data: ElephantDie
+  - time: 1
+    functionName: DeathAnimEnd
+    data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0

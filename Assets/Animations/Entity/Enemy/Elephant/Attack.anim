@@ -109,6 +109,16 @@ AnimationClip:
   - time: 0
     functionName: PlayAudio
     data: ElephantAttack
+  - time: 0.5833333
+    functionName: Attack
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 1
+    functionName: ElephantAttackEnd
+    data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
