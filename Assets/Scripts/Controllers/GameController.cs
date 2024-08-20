@@ -12,6 +12,8 @@ public class GameController : MonoBehaviour
     [SerializeField] private HealthLightManager _allyHealthLights;
     [SerializeField] private HealthLightManager _enemyHealthLights;
 
+    [SerializeField] private Animator _effectsList;
+
     private void Awake()
     {
         // If there is an instance, and it's not me, delete myself.
@@ -47,6 +49,11 @@ public class GameController : MonoBehaviour
             _pauseMenu.SetActive(true);
             Time.timeScale = 0;
         }
+
+        if (Input.GetKey(KeyCode.Tab))
+            _effectsList.SetBool("show", true);
+        else
+            _effectsList.SetBool("show", false);
     }
 
     public void ResumeGame()
