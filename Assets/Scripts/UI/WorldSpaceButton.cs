@@ -42,6 +42,19 @@ public class WorldSpaceButton : BaseEntity, IPointerEnterHandler, IPointerExitHa
         _hingeJoint.enabled = false;
     }
 
+    private void Update()
+    {
+        if (Mathf.Abs(transform.position.x) > 10 || Mathf.Abs(transform.position.y) > 10)
+        {
+            if (_checkFallingRoutine == null && !_isDragging)
+            {
+                transform.position = Vector3.zero;
+                transform.rotation = Quaternion.identity;
+                _rb.velocity = Vector3.zero;
+                _rb.angularVelocity = 0;
+            }
+        }
+    }
     public void OnPointerEnter(PointerEventData eventData)
     {
         if (!_isHovering)
@@ -177,6 +190,7 @@ public class WorldSpaceButton : BaseEntity, IPointerEnterHandler, IPointerExitHa
         if (_checkFallingRoutine != null)
         {
             StopCoroutine(_checkFallingRoutine);
+            _checkFallingRoutine = null;
         }
 
         if (gameObject.activeInHierarchy)
