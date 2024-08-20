@@ -127,7 +127,7 @@ public class EntityController : MonoBehaviour
                     if (entity2.GetState() == BaseEntity.EntityState.Death || !entity2.isTargetable)
                         continue;
 
-                    if (entity.DetectedEnemy(Vector3.Distance(entity.transform.position, entity2.transform.position) <= entity.GetStats().detectRange))
+                    if (entity.DetectedEnemy(Vector3.Distance(entity.GetPos(), entity2.GetPos()) <= entity.GetStats().detectRange))
                     {
                         break;
                     }
@@ -191,7 +191,7 @@ public class EntityController : MonoBehaviour
                     continue;
 
 
-                if (entity.DetectedEnemy(Vector3.Distance(entity.transform.position, entity2.transform.position) <= entity.GetStats().detectRange))
+                if (entity.DetectedEnemy(Vector3.Distance(entity.GetPos(), entity2.GetPos()) <= entity.GetStats().detectRange))
                 {
                     break;
                 }
@@ -233,7 +233,7 @@ public class EntityController : MonoBehaviour
 
     public void HandleEntityAttack(BaseEntity _attackingEntity)
     {
-        Vector3 _entityPos = _attackingEntity.transform.position;
+        Vector3 _entityPos = _attackingEntity.GetPos();
         EntityStats _entityStats = _attackingEntity.GetStats();
         //check attack dist between troops
         if (_attackingEntity.isEnemy)
@@ -245,7 +245,7 @@ public class EntityController : MonoBehaviour
                     continue;
 
                 //distance check
-                float dist = Vector3.Distance(_entityPos, e.transform.position);
+                float dist = Vector3.Distance(_entityPos, e.GetPos());
                 if (_entityStats.minAttackRange <= dist && dist <= _entityStats.maxAttackRange)
                 {
                     //attack
@@ -268,7 +268,7 @@ public class EntityController : MonoBehaviour
                     continue;
 
                 //distance check
-                float dist = Vector3.Distance(_entityPos, e.transform.position);
+                float dist = Vector3.Distance(_entityPos, e.GetPos());
                 if (_entityStats.minAttackRange <= dist && dist <= _entityStats.maxAttackRange)
                 {
                     //attack
@@ -379,7 +379,7 @@ public class EntityController : MonoBehaviour
 
     public void ApplyStatusEffect(BaseEntity _entity, EntityStatusEffect _effect, int totalEntitiesAffected)
     {
-        Vector3 _entityPos = _entity.transform.position;
+        Vector3 _entityPos = _entity.GetPos();
         EntityStats _entityStats = _entity.GetStats();
         //check attack dist between troops
         if (_entity.isEnemy)
@@ -399,7 +399,7 @@ public class EntityController : MonoBehaviour
                 }
 
                 //distance check
-                float dist = Vector3.Distance(_entityPos, e.transform.position);
+                float dist = Vector3.Distance(_entityPos, e.GetPos());
                 if (_entityStats.minAttackRange <= dist && dist <= _entityStats.maxAttackRange && pass)
                 {
                     //apply
@@ -431,7 +431,7 @@ public class EntityController : MonoBehaviour
                 }
 
                 //distance check
-                float dist = Vector3.Distance(_entityPos, e.transform.position);
+                float dist = Vector3.Distance(_entityPos, e.GetPos());
                 if (_entityStats.minAttackRange <= dist && dist <= _entityStats.maxAttackRange && pass)
                 {
                     //apply

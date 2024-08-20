@@ -226,7 +226,7 @@ public class BaseEntity : MonoBehaviour
     public bool DetectedEnemy(bool hasDetectedEnemy)
     {
 
-        if (entityStatusEffect != EntityStatusEffect.None)
+        if (entityStatusEffect != EntityStatusEffect.None && entityState != EntityState.Attack)
         {
             return true;
         }
