@@ -2,7 +2,7 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!114 &11400000
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 32
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -15,3 +15,4 @@ MonoBehaviour:
   <Waves>k__BackingField:
   - {fileID: 11400000, guid: 7e1f38439f00a454c8894722d77e414d, type: 2}
   - {fileID: 11400000, guid: a1cb600022085054b9c0ea10f0f24715, type: 2}
+  levelID: -1

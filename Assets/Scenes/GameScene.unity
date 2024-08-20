@@ -59167,6 +59167,8 @@ MonoBehaviour:
   entitiesToAdd: []
   _loadWinScene: {fileID: 1712156209}
   _loadLoseScene: {fileID: 42401363}
+  _enemyBaseHealth: 96000000fa000000f4010000
+  _levelController: {fileID: 1956069994}
 --- !u!114 &1090087210
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -71410,7 +71412,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8649d535578a86943a41e0bfcf04f487, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _inputStats: {fileID: 11400000, guid: 19c8e6628706b874384a1c4adb652595, type: 2}
+  _inputStats: {fileID: 11400000, guid: e60c39f9a14020c4795b2163294043a1, type: 2}
   isEnemy: 1
   isDead: 0
   isTargetable: 0
