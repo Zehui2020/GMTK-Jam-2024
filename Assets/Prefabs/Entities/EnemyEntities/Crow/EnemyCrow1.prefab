@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4908172224569523342}
   - component: {fileID: 6193861427105000360}
-  - component: {fileID: -1069374489317283290}
   - component: {fileID: 5487116346669465030}
+  - component: {fileID: 1083865099760627142}
   m_Layer: 0
   m_Name: EnemyCrow1
   m_TagString: Untagged
@@ -87,24 +87,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-1069374489317283290
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4617329641929948581}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0e7345419fecb048973dfa57ac563fd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _inputStats: {fileID: 11400000, guid: 938a4c0cd688daf409826feb9b92378c, type: 2}
-  isEnemy: 0
-  isDead: 0
-  isTargetable: 0
-  hasInit: 0
-  _posPrefab: {fileID: 0}
 --- !u!95 &5487116346669465030
 Animator:
   serializedVersion: 5
@@ -126,6 +108,24 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1083865099760627142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4617329641929948581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23c85deef45b2af4dab5b92590f985e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _inputStats: {fileID: 11400000, guid: 938a4c0cd688daf409826feb9b92378c, type: 2}
+  isEnemy: 0
+  isDead: 0
+  isTargetable: 0
+  hasInit: 0
+  _posPrefab: {fileID: 4980151081350017344, guid: e1c933e8c1b6b9748a439fe9201c4028, type: 3}
 --- !u!1001 &309395458930659792
 PrefabInstance:
   m_ObjectHideFlags: 0
