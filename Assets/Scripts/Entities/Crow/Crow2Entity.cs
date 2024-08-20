@@ -33,10 +33,10 @@ public class Crow2Entity : BaseEntity
 
         ogPosObj = Instantiate(_posPrefab);
         ogPosObj.transform.parent = transform.parent;
-        ogPosObj.GetComponent<PositionEntity>().creater = gameObject;
+        //ogPosObj.GetComponent<PositionEntity>().creater = gameObject;
         targetPosObj = Instantiate(_posPrefab);
         targetPosObj.transform.parent = transform.parent;
-        targetPosObj.GetComponent<PositionEntity>().creater = gameObject;
+        //targetPosObj.GetComponent<PositionEntity>().creater = gameObject;
     }
 
     Vector3 SetVector3Pos(Vector3 _pos)
@@ -52,6 +52,9 @@ public class Crow2Entity : BaseEntity
         //Vector3 dir = _targetPoint.position - transform.position;
         //dir.Normalize();
         //Debug.DrawRay(transform.position + dir * entityStats.minAttackRange, dir * entityStats.maxAttackRange, Color.green, 0.01f);
+
+        hurtFlashLerpCounter += Time.deltaTime;
+        spriteRenderer.color = Color.Lerp(spriteRenderer.color, Color.white, hurtFlashLerpCounter);
 
         HandleStatusEffect();
         HandlePassiveTrait();
