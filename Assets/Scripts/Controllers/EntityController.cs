@@ -16,9 +16,12 @@ public class EntityController : MonoBehaviour
     public List<BaseEntity> enemyEntities;
     public List<BaseEntity> entitiesToAdd;
 
-    //endanimation
+    //Win lose loadscenes
     [SerializeField]
-    private EndAnimation endAnimation;
+    private LoadScene _loadWinScene;
+
+    [SerializeField]
+    private LoadScene _loadLoseScene;
 
     //List of enemy base stats
     [SerializeField]
@@ -365,7 +368,7 @@ public class EntityController : MonoBehaviour
 
         if (enemyWin)
         {
-            endAnimation.EndGame(false);
+            _loadLoseScene.Load();
         }
         else
         {
@@ -376,8 +379,7 @@ public class EntityController : MonoBehaviour
                     _playerDataSO.MaxUnlockedLevel = _nextLevelUnlock;
                 }
             }
-            endAnimation.EndGame(true);
-            
+            _loadWinScene.Load();
         }
     }
 
