@@ -8,12 +8,12 @@ public class EffectIconController : MonoBehaviour
     //effect gameobject icons
     //1. attack down
     //2. attack up
-    //3. Defense Up
-    //4. Defense Down
+    //3. Defense Down
+    //4. Defense Up
     //5. movement down
     //6. movement up
-    //7. Weight Up
-    //8. Weight Down
+    //7. Weight Down
+    //8. Weight up
     //9. fear
     //10. sleep
     //11. stun
