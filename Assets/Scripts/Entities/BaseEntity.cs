@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class BaseEntity : MonoBehaviour
@@ -29,6 +30,8 @@ public class BaseEntity : MonoBehaviour
     protected Animator animator;
     //sprite renderer
     private SpriteRenderer spriteRenderer;
+    //effect icons
+    private EffectIconController _effectIconController;
 
     protected EntityStats entityStats;
 
@@ -58,6 +61,7 @@ public class BaseEntity : MonoBehaviour
         //GetComponent
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        _effectIconController = GetComponentInChildren<EffectIconController>();
 
         spriteRenderer.sortingOrder = 100 + Random.Range(0, 6);
         
@@ -96,6 +100,7 @@ public class BaseEntity : MonoBehaviour
 
         HandleStatusEffect();
         HandlePassiveTrait();
+        UpdateEffectIcon();
 
         //attack counter countdown
         if (attackCounter > 0)
@@ -370,5 +375,44 @@ public class BaseEntity : MonoBehaviour
     public virtual Vector3 GetPos()
     {
         return transform.position;
+    }
+
+    private void UpdateEffectIcon()
+    {
+        /*List<bool> showICons = new List<bool>();
+
+        if (entityState == EntityState.Death)
+        {
+            showICons.Add(false);//1. attack down
+            showICons.Add(false);//2. attack up
+            showICons.Add(false);//3. Defense Up
+            showICons.Add(false);//4. Defense Down
+            showICons.Add(false);//5. movement down
+            showICons.Add(false);//6. movement up
+            showICons.Add(false);//7. Weight Up
+            showICons.Add(false);//8. Weight Down
+            showICons.Add(false);//9. fear
+            showICons.Add(false);//10. sleep
+            showICons.Add(false);//11. stun
+
+        }
+
+        else
+        {
+            showICons.Add(true);//1. attack down
+            showICons.Add(true);//2. attack up
+            showICons.Add(true);//3. Defense Up
+            showICons.Add(true);//4. Defense Down
+            showICons.Add(true);//5. movement down
+            showICons.Add(true);//6. movement up
+            showICons.Add(true);//7. Weight Up
+            showICons.Add(true);//8. Weight Down
+            showICons.Add(true);//9. fear
+            showICons.Add(true);//10. sleep
+            showICons.Add(true);//11. stun
+
+        }
+
+        _effectIconController.UpdateEffectIcons(showICons);*/
     }
 }
