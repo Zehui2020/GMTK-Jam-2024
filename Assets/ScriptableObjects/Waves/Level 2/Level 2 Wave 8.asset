@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 69d74b8ec7b81174a84b50d97933d353, type: 3}
-  m_Name: Level 3 Wave 8
+  m_Name: Level 2 Wave 8
   m_EditorClassIdentifier: 
   <Nodes>k__BackingField:
   - <EntityPrefab>k__BackingField: {fileID: 4617329641929948581, guid: 14d0de20f8ac5d34f911d7a981d1f7c1, type: 3}

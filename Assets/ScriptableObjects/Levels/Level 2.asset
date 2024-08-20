@@ -13,10 +13,13 @@ MonoBehaviour:
   m_Name: Level 2
   m_EditorClassIdentifier: 
   <Waves>k__BackingField:
-  - {fileID: 11400000, guid: 3a8c6023e46381e42b5373f01ad61a8e, type: 2}
-  - {fileID: 11400000, guid: 6a6a52027cb7fbc46846b84dd982026b, type: 2}
-  - {fileID: 11400000, guid: 27c9be380be8cf341b489a67cac80347, type: 2}
-  - {fileID: 11400000, guid: 86fc276c847044142a6a70336d63dc65, type: 2}
-  - {fileID: 11400000, guid: 34599adfe7500bd47b4e46f598460675, type: 2}
+  - {fileID: 11400000, guid: 49100d9fa1677b346b2dec45d4bc7626, type: 2}
+  - {fileID: 11400000, guid: 18fdc17f430769d43b9d1cec83dfc06d, type: 2}
+  - {fileID: 11400000, guid: 82f8f4bfdc2ac21498a982daf5062adf, type: 2}
+  - {fileID: 11400000, guid: 683d743496ae95846bf9031a879beb05, type: 2}
+  - {fileID: 11400000, guid: 696d52e75a632ee469e6d6aef9326ada, type: 2}
+  - {fileID: 11400000, guid: 87b5b1efa56a2c54eb451d91f1688e63, type: 2}
+  - {fileID: 11400000, guid: 4daaecaf8fcebb949a5a6fcc192d4865, type: 2}
+  - {fileID: 11400000, guid: ddaafd95854b8894fb5b02f1a553dd56, type: 2}
   levelID: 1
   buttonUses: 01010100

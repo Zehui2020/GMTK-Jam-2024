@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Level 3 Wave 7
   m_EditorClassIdentifier: 
   <Nodes>k__BackingField:
-  - <EntityPrefab>k__BackingField: {fileID: 4617329641929948581, guid: 0f7fc83e4d6841145ba0298eaee96572, type: 3}
-    <SpawnAfterStartSeconds>k__BackingField: 2
+  - <EntityPrefab>k__BackingField: {fileID: 4617329641929948581, guid: d11f6c36873a2364fa0d7caf3cd348db, type: 3}
+    <SpawnAfterStartSeconds>k__BackingField: 3
     <PositionSpawn>k__BackingField: 0
-    <SequenceAmount>k__BackingField: 1
-    <SequenceTimeGap>k__BackingField: 0.1
-  <LastNodeBuffer>k__BackingField: 4
+    <SequenceAmount>k__BackingField: 2
+    <SequenceTimeGap>k__BackingField: 0.5
+  <LastNodeBuffer>k__BackingField: 1
