@@ -80,7 +80,7 @@ public class EntityController : MonoBehaviour
 
     public void HandleUpdate(float _scaleAngle)
     {
-        //DEBUGGING ONLY
+        /*//DEBUGGING ONLY
         //spawn ally
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
@@ -97,7 +97,7 @@ public class EntityController : MonoBehaviour
         {
             //spawn ally
             SpawnEntity(enemyPrefab1, true);
-        }
+        }*/
 
         //add entities
         foreach (BaseEntity e in  entitiesToAdd)

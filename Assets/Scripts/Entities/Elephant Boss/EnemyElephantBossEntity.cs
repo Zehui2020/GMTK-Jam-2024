@@ -81,6 +81,10 @@ public class EnemyElephantBossEntity : BaseEntity
         {
             case EntityState.Walk:
                 transform.position = Vector2.MoveTowards(transform.position, _targetPoint.position, entityStats.movementSpeed * activeMovementValue * 1 * Time.deltaTime);
+                if (entityStatusEffect != EntityStatusEffect.Fear)
+                {
+                    spriteRenderer.flipX = true;
+                }
                 break;
             case EntityState.Idle:
                 break;

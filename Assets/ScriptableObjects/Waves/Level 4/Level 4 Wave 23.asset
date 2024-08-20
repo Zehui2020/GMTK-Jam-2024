@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69d74b8ec7b81174a84b50d97933d353, type: 3}
+  m_Name: Level 4 Wave 23
+  m_EditorClassIdentifier: 
+  <Nodes>k__BackingField:
+  - <EntityPrefab>k__BackingField: {fileID: 4617329641929948581, guid: 0f7fc83e4d6841145ba0298eaee96572, type: 3}
+    <SpawnAfterStartSeconds>k__BackingField: 0
+    <PositionSpawn>k__BackingField: 0
+    <SequenceAmount>k__BackingField: 1
+    <SequenceTimeGap>k__BackingField: 0.2
+  <LastNodeBuffer>k__BackingField: 8
