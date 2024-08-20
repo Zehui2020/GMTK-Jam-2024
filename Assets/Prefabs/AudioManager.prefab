@@ -50,7 +50,7 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 43a4dc1f67b67fd4484873d287cc154f, type: 3}
     mixerGroup: {fileID: 7868881172993788651, guid: c8a8989eea4eaef408b0a0bbe33942d5, type: 2}
     pitch: 1
-    volume: 0.05
+    volume: 0.3
     source: {fileID: 0}
     loop: 0
     createSource: 1
@@ -60,7 +60,7 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: c89055dec3e229749b5edd6d56e5a9e2, type: 3}
     mixerGroup: {fileID: 7868881172993788651, guid: c8a8989eea4eaef408b0a0bbe33942d5, type: 2}
     pitch: 1
-    volume: 0.2
+    volume: 0.3
     source: {fileID: 0}
     loop: 0
     createSource: 1
@@ -210,7 +210,7 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: d397898e39c18cb4a9ba5287f0189c77, type: 3}
     mixerGroup: {fileID: -4921478165539472393, guid: c8a8989eea4eaef408b0a0bbe33942d5, type: 2}
     pitch: 1
-    volume: 1
+    volume: 0.7
     source: {fileID: 0}
     loop: 0
     createSource: 1
@@ -220,7 +220,7 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 7530c300f90aefc4ab4a2105beda823d, type: 3}
     mixerGroup: {fileID: -4921478165539472393, guid: c8a8989eea4eaef408b0a0bbe33942d5, type: 2}
     pitch: 1
-    volume: 1
+    volume: 0.7
     source: {fileID: 0}
     loop: 1
     createSource: 1
@@ -230,7 +230,7 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: d276a8278e5667a40963d37eee2970ef, type: 3}
     mixerGroup: {fileID: -4921478165539472393, guid: c8a8989eea4eaef408b0a0bbe33942d5, type: 2}
     pitch: 1
-    volume: 1
+    volume: 0.7
     source: {fileID: 0}
     loop: 0
     createSource: 1
@@ -240,11 +240,9 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 7c982b7d395444f4babbd454947b9a48, type: 3}
     mixerGroup: {fileID: -4921478165539472393, guid: c8a8989eea4eaef408b0a0bbe33942d5, type: 2}
     pitch: 1
-    volume: 1
+    volume: 0.7
     source: {fileID: 0}
     loop: 1
     createSource: 1
     playOnAwake: 0
     doNotFade: 0
-  normalBattleBGM: []
-  bossBattleBGM: []

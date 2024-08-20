@@ -13,7 +13,22 @@ public class MixerManager : MonoBehaviour
     // Player prefs
     [SerializeField] private PlayerSettings playerSettings;
 
+    public static MixerManager Instance;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
+
     private void Start()
+    {
+        SetSliders();
+        SetMasterVolume();
+        SetBGMVolume();
+        SetSFXVolume();
+    }
+
+    private void OnEnable()
     {
         SetSliders();
         SetMasterVolume();
@@ -46,9 +61,9 @@ public class MixerManager : MonoBehaviour
     {
         playerSettings.ResetVolume();
 
-        masterSlider.value = playerSettings.masterVolume;
-        bgmSlider.value = playerSettings.bgmVolume;
-        sfxSlider.value = playerSettings.sfxVolume;
+        masterSlider.value = 1;
+        bgmSlider.value = 1;
+        sfxSlider.value = 1;
 
         SetMasterVolume();
         SetBGMVolume();
@@ -65,10 +80,5 @@ public class MixerManager : MonoBehaviour
     private void SetVolume(string name, float volume)
     {
         audioMixer.SetFloat(name, volume);
-    }
-
-    private void OnApplicationQuit()
-    {
-        ResetVolume();
     }
 }

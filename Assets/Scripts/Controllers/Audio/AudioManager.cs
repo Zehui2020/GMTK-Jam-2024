@@ -182,4 +182,9 @@ public class AudioManager : MonoBehaviour
         Sound s = FindSound(sound);
         s.source.pitch = newPitch;
     }
+
+    private void OnApplicationQuit()
+    {
+        MixerManager.Instance.ResetVolume();
+    }
 }
