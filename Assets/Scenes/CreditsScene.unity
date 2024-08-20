@@ -3631,7 +3631,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Tan Ji Jie
+  m_text: Tan Yi Jie
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 77e83a5f5314e72479827cf0561028a0, type: 2}
   m_sharedMaterial: {fileID: -7654662865303220287, guid: 77e83a5f5314e72479827cf0561028a0, type: 2}
