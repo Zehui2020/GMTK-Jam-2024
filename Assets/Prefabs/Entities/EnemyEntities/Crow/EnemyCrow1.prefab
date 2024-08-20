@@ -104,6 +104,7 @@ MonoBehaviour:
   isDead: 0
   isTargetable: 0
   hasInit: 0
+  _posPrefab: {fileID: 4980151081350017344, guid: e1c933e8c1b6b9748a439fe9201c4028, type: 3}
 --- !u!95 &5487116346669465030
 Animator:
   serializedVersion: 5
