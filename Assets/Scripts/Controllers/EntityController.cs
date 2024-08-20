@@ -377,7 +377,7 @@ public class EntityController : MonoBehaviour
         return _allEntities;
     }
 
-    public void ApplyStatusEffect(BaseEntity _entity, EntityStatusEffect _effect, int totalEntitiesAffected)
+    public void ApplyStatusEffect(BaseEntity _entity, EntityStatusEffect _effect, int totalEntitiesAffected, bool applyWithoutDist = false)
     {
         Vector3 _entityPos = _entity.GetPos();
         EntityStats _entityStats = _entity.GetStats();
@@ -400,10 +400,10 @@ public class EntityController : MonoBehaviour
 
                 //distance check
                 float dist = Vector3.Distance(_entityPos, e.GetPos());
-                if (_entityStats.minAttackRange <= dist && dist <= _entityStats.maxAttackRange && pass)
+                if ((_entityStats.minAttackRange <= dist && dist <= _entityStats.maxAttackRange && pass) || applyWithoutDist)
                 {
                     //apply
-                    e.Damage(_entity.GetAttackDamage());
+                    e.ApplyStatusEffect(_effect);
                     totalEntitiesAffected--;
                     //check if not area of effect
                     if (totalEntitiesAffected == 0)
@@ -432,10 +432,10 @@ public class EntityController : MonoBehaviour
 
                 //distance check
                 float dist = Vector3.Distance(_entityPos, e.GetPos());
-                if (_entityStats.minAttackRange <= dist && dist <= _entityStats.maxAttackRange && pass)
+                if ((_entityStats.minAttackRange <= dist && dist <= _entityStats.maxAttackRange && pass) || applyWithoutDist)
                 {
                     //apply
-                    e.Damage(_entity.GetAttackDamage());
+                    e.ApplyStatusEffect(_effect);
                     totalEntitiesAffected--;
                     //check if not area of effect
                     if (totalEntitiesAffected == 0)

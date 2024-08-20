@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,6 +11,7 @@ public class TooltipManager : MonoBehaviour
 
     [SerializeField] private Tooltip _detailTooltip;
     [SerializeField] private Tooltip _upgradeTooltip;
+    [SerializeField] private TextMeshProUGUI _upgradeCost;
     [SerializeField] private GameObject _arrow;
     [SerializeField] private RectTransform _rectTransform;
 
@@ -44,6 +46,7 @@ public class TooltipManager : MonoBehaviour
             _detailTooltip.GetComponent<RectTransform>().anchoredPosition = new Vector3(-260, 0, 0);
 
             _upgradeTooltip.SetTooltip(upgradedEntity.entityName, SetupStatString(currentEntity._stats, upgradedEntity._stats), upgradedEntity.abilities);
+            _upgradeCost.text = "" + currentEntity._stats.upgradeCost;
         }
 
         _rectTransform.SetParent(tooltipPosition);

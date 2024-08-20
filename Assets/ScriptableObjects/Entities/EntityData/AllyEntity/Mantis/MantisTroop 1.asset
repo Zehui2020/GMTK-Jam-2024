@@ -15,7 +15,7 @@ MonoBehaviour:
   _stats: {fileID: 11400000, guid: 6570d4806922f5944944b47018e4226e, type: 2}
   _entityPrefab: {fileID: 4617329641929948581, guid: a8e257d55905afb44b756357b387cdca, type: 3}
   placeholderSprite: {fileID: -1714299249, guid: 59cfd46ebd307e843a4d57d5202cb56f, type: 3}
-  selectionIcon: {fileID: 21300000, guid: 86b341f0ddc2c8d428cabde4020940f3, type: 3}
+  selectionIcon: {fileID: -1714299249, guid: 59cfd46ebd307e843a4d57d5202cb56f, type: 3}
   entityName: Mantis Lvl 2
   abilities: '<color=green>Walking upwards doesn''t affect movement speed</color>
 
