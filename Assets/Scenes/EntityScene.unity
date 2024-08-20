@@ -104323,6 +104323,7 @@ MonoBehaviour:
   _onEntitySpawn:
     m_PersistentCalls:
       m_Calls: []
+  _troopButtons: []
 --- !u!4 &1956069995
 Transform:
   m_ObjectHideFlags: 0
