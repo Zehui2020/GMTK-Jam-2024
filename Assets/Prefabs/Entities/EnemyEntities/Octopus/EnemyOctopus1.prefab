@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4908172224569523342}
   - component: {fileID: 6193861427105000360}
   - component: {fileID: 5943738197343423560}
+  - component: {fileID: -2747850326516023663}
   m_Layer: 0
   m_Name: EnemyOctopus1
   m_TagString: Untagged
@@ -74,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 100
-  m_Sprite: {fileID: 21300000, guid: 5b253109ef4f7b34ba6df9e19b8c430d, type: 3}
+  m_Sprite: {fileID: 1880934076, guid: e4630aa37453e3042978f03fae8e4239, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -103,3 +104,24 @@ MonoBehaviour:
   isTargetable: 0
   hasInit: 0
   _clonePrefab: {fileID: 4617329641929948581, guid: 1882cd7529801194b8e99dbd201ffcce, type: 3}
+--- !u!95 &-2747850326516023663
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4617329641929948581}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4686a01c5777b8b41871690179131ae0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
