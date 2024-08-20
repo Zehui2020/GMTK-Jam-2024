@@ -19,4 +19,7 @@ MonoBehaviour:
   entityName: Crow Lvl 1
   abilities: 'Chance to stun enemies per hit
 
-    Chance increases when weight increase'
+    Chance increases when weight increase
+
+    Can
+    only attack at a fixed angle'
