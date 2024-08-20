@@ -72,6 +72,7 @@ public class HealthLight : MonoBehaviour
         if (sparksRoutine != null)
             StopCoroutine(sparksRoutine);
 
+        AudioManager.Instance.PlayOneShot("LightExplode");
         OnBlowEvent?.Invoke(this);
         StartCoroutine(BlowRoutine());
     }

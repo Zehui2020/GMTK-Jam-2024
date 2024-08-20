@@ -1,0 +1,98 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5392316979769155508
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6324285064030958161}
+  - component: {fileID: 8914640170121401853}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6324285064030958161
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5392316979769155508}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8914640170121401853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5392316979769155508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5c553b4ab1216a4e940aa22ebc122af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioMixer: {fileID: 24100000, guid: c8a8989eea4eaef408b0a0bbe33942d5, type: 2}
+  sounds:
+  - name: ButtonClick
+    clip: {fileID: 8300000, guid: 43a4dc1f67b67fd4484873d287cc154f, type: 3}
+    mixerGroup: {fileID: 7868881172993788651, guid: c8a8989eea4eaef408b0a0bbe33942d5, type: 2}
+    pitch: 1
+    volume: 0.05
+    source: {fileID: 0}
+    loop: 0
+    createSource: 1
+    playOnAwake: 0
+    doNotFade: 0
+  - name: ButtonHover
+    clip: {fileID: 8300000, guid: c89055dec3e229749b5edd6d56e5a9e2, type: 3}
+    mixerGroup: {fileID: 7868881172993788651, guid: c8a8989eea4eaef408b0a0bbe33942d5, type: 2}
+    pitch: 1
+    volume: 0.2
+    source: {fileID: 0}
+    loop: 0
+    createSource: 1
+    playOnAwake: 0
+    doNotFade: 0
+  - name: Upgrading
+    clip: {fileID: 8300000, guid: 94c52b5620e201e44b9760603f1a528c, type: 3}
+    mixerGroup: {fileID: 7868881172993788651, guid: c8a8989eea4eaef408b0a0bbe33942d5, type: 2}
+    pitch: 1
+    volume: 0.2
+    source: {fileID: 0}
+    loop: 1
+    createSource: 1
+    playOnAwake: 0
+    doNotFade: 0
+  - name: UpgradeDone
+    clip: {fileID: 8300000, guid: 76eb80637312b6d4abd38c229f1476eb, type: 3}
+    mixerGroup: {fileID: 7868881172993788651, guid: c8a8989eea4eaef408b0a0bbe33942d5, type: 2}
+    pitch: 1
+    volume: 0.2
+    source: {fileID: 0}
+    loop: 0
+    createSource: 1
+    playOnAwake: 0
+    doNotFade: 0
+  - name: LightExplode
+    clip: {fileID: 8300000, guid: 6a7e3b51d977bec4caceb1ceb8e709e8, type: 3}
+    mixerGroup: {fileID: 7868881172993788651, guid: c8a8989eea4eaef408b0a0bbe33942d5, type: 2}
+    pitch: 1
+    volume: 1
+    source: {fileID: 0}
+    loop: 0
+    createSource: 1
+    playOnAwake: 0
+    doNotFade: 0

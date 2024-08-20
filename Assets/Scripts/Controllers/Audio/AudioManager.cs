@@ -39,7 +39,7 @@ public class AudioManager : MonoBehaviour
         source.loop = sound.loop;
     }
 
-    public Sound FindSound(Sound.SoundName name)
+    public Sound FindSound(string name)
     {
         foreach (Sound s in sounds)
         {
@@ -49,35 +49,35 @@ public class AudioManager : MonoBehaviour
         return null;
     }
 
-    public void Play(Sound.SoundName sound)
+    public void Play(string sound)
     {
         Sound s = FindSound(sound);
         ResetVolumeOfSound(s);
         s.source.Play();
     }
 
-    public void PlayOneShot(Sound.SoundName sound)
+    public void PlayOneShot(string sound)
     {
         Sound s = FindSound(sound);
         ResetVolumeOfSound(s);
         s.source.PlayOneShot(s.clip);
     }
 
-    public void PlayOneShot(AudioSource source, Sound.SoundName sound)
+    public void PlayOneShot(AudioSource source, string sound)
     {
         Sound s = FindSound(sound);
         InitAudioSource(source, s);
         source.PlayOneShot(s.clip);
     }
 
-    public void OnlyPlayAfterSoundEnds(Sound.SoundName sound)
+    public void OnlyPlayAfterSoundEnds(string sound)
     {
         Sound s = FindSound(sound);
         if (s.name.Equals(sound) && !s.source.isPlaying)
             s.source.Play();
     }
 
-    public void Stop(Sound.SoundName sound)
+    public void Stop(string sound)
     {
         FindSound(sound).source.Stop();
     }
@@ -88,12 +88,12 @@ public class AudioManager : MonoBehaviour
             s.source.Stop();
     }
 
-    public void Pause(Sound.SoundName sound)
+    public void Pause(string sound)
     {
         FindSound(sound).source.Pause();
     }
 
-    public void Unpause(Sound.SoundName sound)
+    public void Unpause(string sound)
     {
         FindSound(sound).source.UnPause();
     }
@@ -116,7 +116,7 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    public bool CheckIfSoundPlaying(Sound.SoundName sound)
+    public bool CheckIfSoundPlaying(string sound)
     {
         return FindSound(sound).source.isPlaying;
     }
@@ -133,14 +133,14 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    public void FadeSound(bool fadeIn, Sound.SoundName sound, float duration, float targetVolume)
+    public void FadeSound(bool fadeIn, string sound, float duration, float targetVolume)
     {
         Sound s = FindSound(sound);
         StopFadeRoutine(sound);
         s.fadeRoutine = StartCoroutine(s.FadeSoundRoutine(fadeIn, duration, targetVolume));
     }
 
-    public void StopFadeRoutine(Sound.SoundName sound)
+    public void StopFadeRoutine(string sound)
     {
         Sound s = FindSound(sound);
 
@@ -160,12 +160,12 @@ public class AudioManager : MonoBehaviour
         FindSound(sound.name).source.volume = sound.volume;
     }
 
-    public void PlayAfterDelay(float delay, Sound.SoundName sound)
+    public void PlayAfterDelay(float delay, string sound)
     {
         FindSound(sound).source.PlayDelayed(delay);
     }
 
-    public void SetPitch(Sound.SoundName sound, float newPitch)
+    public void SetPitch(string sound, float newPitch)
     {
         Sound s = FindSound(sound);
         s.source.pitch = newPitch;

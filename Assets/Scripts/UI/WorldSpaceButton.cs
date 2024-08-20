@@ -62,6 +62,8 @@ public class WorldSpaceButton : BaseEntity, IPointerEnterHandler, IPointerExitHa
             _isHovering = true;
             onHoverEnter?.Invoke();
         }
+
+        AudioManager.Instance.PlayOneShot("ButtonHover");
     }
 
     public void OnPointerExit(PointerEventData eventData)
@@ -119,6 +121,7 @@ public class WorldSpaceButton : BaseEntity, IPointerEnterHandler, IPointerExitHa
         float duration = Time.time - _pointerDownTime;
         if (duration <= clickThreshold)
         {
+            AudioManager.Instance.PlayOneShot("ButtonClick");
             onClick?.Invoke();
         }
         _isPointerDown = false;

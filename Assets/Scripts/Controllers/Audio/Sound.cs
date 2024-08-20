@@ -5,10 +5,7 @@ using System.Collections;
 [System.Serializable]
 public class Sound
 {
-    public enum SoundName
-    {
-    }
-    public SoundName name;
+    public string name;
 
     public AudioClip clip;
 

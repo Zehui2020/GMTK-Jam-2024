@@ -20,11 +20,13 @@ public class LevelSelector : MonoBehaviour
         AssertNotNull(_levelToSelect, "No level to select");
         _sharedData.Level = _levelToSelect;
         _animator.SetTrigger("select");
+        AudioManager.Instance.PlayOneShot("ButtonClick");
     }
 
     public void OnHover()
     {
         _animator.SetBool("hovering", true);
+        AudioManager.Instance.PlayOneShot("ButtonHover");
     }
 
     public void OnHoverExit()

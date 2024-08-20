@@ -82,6 +82,7 @@ public class TroopSelectionButton : MonoBehaviour
             StopCoroutine(_holdUpgradeRoutine);
         }
 
+        AudioManager.Instance.Stop("Upgrading");
         _animator.SetBool("upgrading", false);
         TooltipManager.Instance.SetUpgradeAnimation(false);
 
@@ -110,6 +111,7 @@ public class TroopSelectionButton : MonoBehaviour
         _upgradeSlider.value = 0;
         _upgradeSlider.maxValue = _upgradeHoldDuration;
         _animator.SetBool("upgrading", true);
+        AudioManager.Instance.Play("Upgrading");
         TooltipManager.Instance.SetUpgradeAnimation(true);
 
         float timer = 0;
@@ -122,6 +124,8 @@ public class TroopSelectionButton : MonoBehaviour
 
         _animator.SetBool("upgrading", false);
         TooltipManager.Instance.FinishUpgrading();
+        AudioManager.Instance.Play("UpgradeDone");
+        AudioManager.Instance.Stop("Upgrading");
         TooltipManager.Instance.SetUpgradeAnimation(false);
         _upgradeSlider.value = 0;
 
