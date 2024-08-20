@@ -112,7 +112,7 @@ public class Crow1Entity : BaseEntity
                             break;
 
                         case CrowAttackStates.Dive:
-                            lerpCounter += Time.deltaTime;
+                            lerpCounter += Time.deltaTime * 1.5f;
                             //dive
                             transform.position = Vector3.Lerp(startPos, targetPosObj.transform.position, lerpCounter);
                             //reach end of lerp

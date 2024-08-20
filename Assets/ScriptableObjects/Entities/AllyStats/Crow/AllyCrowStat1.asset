@@ -16,7 +16,7 @@ MonoBehaviour:
   level: 1
   cost: 300
   upgradeCost: 600
-  attackDamage: 6
+  attackDamage: 10
   health: 10
   movementSpeed: 1.6
   detectRange: 3

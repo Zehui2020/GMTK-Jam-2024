@@ -17,7 +17,7 @@ MonoBehaviour:
   cost: 0
   upgradeCost: 0
   attackDamage: 4
-  health: 8
+  health: 10
   movementSpeed: 1.6
   detectRange: 2.5
   minAttackRange: 1.8
