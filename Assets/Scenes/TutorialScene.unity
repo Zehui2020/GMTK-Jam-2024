@@ -1134,6 +1134,7 @@ MonoBehaviour:
   _inputStats: {fileID: 11400000, guid: 19c8e6628706b874384a1c4adb652595, type: 2}
   isEnemy: 0
   isDead: 0
+  isTargetable: 0
   hasInit: 0
 --- !u!1 &883525200
 GameObject:
@@ -1557,6 +1558,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scaleController: {fileID: 1418952084}
+  _pauseMenu: {fileID: 0}
 --- !u!114 &1090087209
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1576,6 +1578,7 @@ MonoBehaviour:
   - {fileID: 866944103}
   enemyEntities:
   - {fileID: 1434466983}
+  entitiesToAdd: []
 --- !u!114 &1090087210
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1620,6 +1623,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   money: 0
+  increaseRate: 0
   _costText: {fileID: 0}
 --- !u!1 &1103289378
 GameObject:
@@ -2436,6 +2440,7 @@ MonoBehaviour:
   _inputStats: {fileID: 11400000, guid: 19c8e6628706b874384a1c4adb652595, type: 2}
   isEnemy: 1
   isDead: 0
+  isTargetable: 0
   hasInit: 0
 --- !u!1 &1436867933
 GameObject:

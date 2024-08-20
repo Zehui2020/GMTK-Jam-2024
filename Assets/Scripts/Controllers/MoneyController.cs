@@ -10,6 +10,12 @@ public class MoneyController : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI _costText;
 
+    [SerializeField]
+    private MoneyAnimation _moneyAnimation;
+
+    [SerializeField]
+    private GameObject _moneyAnimationParent;
+
     //Singleton
     private MoneyController instance;
     public static MoneyController Instance { get; private set; }
@@ -58,6 +64,9 @@ public class MoneyController : MonoBehaviour
         if (canSpend)
         {
             money -= _amt;
+            MoneyAnimation anim = Instantiate(_moneyAnimation, _moneyAnimationParent.transform).GetComponent<MoneyAnimation>();
+            anim.SetText("- " + _amt);
+
         }
         return canSpend;
     }

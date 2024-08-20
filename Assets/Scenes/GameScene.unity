@@ -59120,6 +59120,8 @@ MonoBehaviour:
   money: 0
   increaseRate: 12
   _costText: {fileID: 171394381}
+  _moneyAnimation: {fileID: 6483838986166786020, guid: cb1d1fbcacc28a849bb6712aa98c25ad, type: 3}
+  _moneyAnimationParent: {fileID: 171394379}
 --- !u!114 &1090087212
 MonoBehaviour:
   m_ObjectHideFlags: 0
