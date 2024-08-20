@@ -17,4 +17,9 @@ MonoBehaviour:
   placeholderSprite: {fileID: 21300000, guid: 5b253109ef4f7b34ba6df9e19b8c430d, type: 3}
   selectionIcon: {fileID: 21300000, guid: 5b253109ef4f7b34ba6df9e19b8c430d, type: 3}
   entityName: Octopus Lvl 2
-  abilities: 
+  abilities: 'Create an Ink Clone on the opponent''s side, transferring all its weight
+    to the clone.
+
+
+    Clone will only spawn when its side is tilted down. Clone
+    lasts for <color=green>5s</color>.'

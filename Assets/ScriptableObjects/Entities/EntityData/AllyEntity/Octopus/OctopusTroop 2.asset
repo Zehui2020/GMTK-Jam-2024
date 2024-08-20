@@ -12,9 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f118cd2f3ba170348813f506bb5426b9, type: 3}
   m_Name: OctopusTroop 2
   m_EditorClassIdentifier: 
-  _stats: {fileID: 11400000, guid: fca025dd548fd9248a527212c5b9fc2c, type: 2}
+  _stats: {fileID: 11400000, guid: 175342995a462af459aa385905e6d4b2, type: 2}
   _entityPrefab: {fileID: 4617329641929948581, guid: b4784b2fd086e044688ff20e2a1220e7, type: 3}
   placeholderSprite: {fileID: 21300000, guid: 5b253109ef4f7b34ba6df9e19b8c430d, type: 3}
   selectionIcon: {fileID: 21300000, guid: 5b253109ef4f7b34ba6df9e19b8c430d, type: 3}
   entityName: Octopus Lvl 3
-  abilities: 
+  abilities: 'Create an Ink Clone on the opponent''s side, transferring all its weight
+    to the clone.
+
+
+    Clone will only spawn when its side is tilted down. Clone
+    lasts for <color=green>10s</color>.'

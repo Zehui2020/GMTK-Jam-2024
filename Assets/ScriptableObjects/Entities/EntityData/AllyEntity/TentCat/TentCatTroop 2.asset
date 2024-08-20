@@ -17,4 +17,8 @@ MonoBehaviour:
   placeholderSprite: {fileID: 323939268, guid: 2acf42a8657aac64ea544e46f71e5b22, type: 3}
   selectionIcon: {fileID: 21300000, guid: bd583e65f6b60554da3f6ded15cd45bf, type: 3}
   entityName: Tent Cat Lvl 3
-  abilities: 
+  abilities: 'Become Biggest!
+
+
+    Gain <color=green>MORE</color> Defence when scale
+    is tilted to player side.'

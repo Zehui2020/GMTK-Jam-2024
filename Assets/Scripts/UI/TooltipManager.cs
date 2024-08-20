@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TooltipManager : MonoBehaviour
 {
@@ -47,6 +48,9 @@ public class TooltipManager : MonoBehaviour
 
         _rectTransform.SetParent(tooltipPosition);
         _rectTransform.anchoredPosition = Vector3.zero;
+
+        LayoutRebuilder.ForceRebuildLayoutImmediate(_detailTooltip.GetComponent<RectTransform>());
+        LayoutRebuilder.ForceRebuildLayoutImmediate(_upgradeTooltip.GetComponent<RectTransform>());
     }
 
     public void HideTooltip()
