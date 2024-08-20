@@ -377,8 +377,11 @@ public class BaseEntity : MonoBehaviour
         return transform.position;
     }
 
-    private void UpdateEffectIcon()
+    protected void UpdateEffectIcon()
     {
+        if (!_effectIconController)
+            return;
+
         List<bool> showICons = new List<bool>();
 
         //don't show icons when dead
