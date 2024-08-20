@@ -19,9 +19,9 @@ MonoBehaviour:
   attackDamage: 8
   health: 20
   movementSpeed: 1.4
-  detectRange: 2
+  detectRange: 3
   minAttackRange: 0
-  maxAttackRange: 2.1
+  maxAttackRange: 3.2
   weight: 0.8
   isAreaOfEffect: 0
   attackCooldown: 3
@@ -30,3 +30,4 @@ MonoBehaviour:
   passiveTraitDuration: 0
   attackTraitPercentage: 0
   spawnCooldown: 7
+  moneyEarnedOnDeath: 0
