@@ -15,8 +15,8 @@ MonoBehaviour:
   entityName: AllyMantis2
   level: 2
   cost: 125
-  upgradeCost: 720
-  attackDamage: 8
+  upgradeCost: 500
+  attackDamage: 9
   health: 20
   movementSpeed: 1.4
   detectRange: 3

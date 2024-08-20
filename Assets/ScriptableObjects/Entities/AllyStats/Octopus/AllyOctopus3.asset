@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   entityName: AllyOctopus3
   level: 3
-  cost: 850
+  cost: 250
   upgradeCost: 0
   attackDamage: 12
   health: 200

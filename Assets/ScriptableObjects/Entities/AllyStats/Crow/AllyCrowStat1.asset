@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   entityName: AllyCrow1
   level: 1
-  cost: 300
-  upgradeCost: 600
-  attackDamage: 10
+  cost: 150
+  upgradeCost: 250
+  attackDamage: 15
   health: 10
   movementSpeed: 1.6
   detectRange: 3

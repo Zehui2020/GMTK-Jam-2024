@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   entityName: AllyMantis3
   level: 3
-  cost: 150
+  cost: 200
   upgradeCost: 0
   attackDamage: 15
   health: 24
