@@ -15,13 +15,19 @@ public class HealthLight : MonoBehaviour
     [SerializeField] private ParticleSystem flickerSparkPS;
     [SerializeField] private ParticleSystem blowSparkPS;
 
-    [SerializeField] private int flickerThreshold;
     [SerializeField] private int blowThreshold;
 
     private bool noFlicker = false;
     private float initialIntensity;
 
     private Coroutine sparksRoutine;
+
+    public event System.Action<HealthLight> OnBlowEvent;
+
+    public void SetThreshold(int threshold)
+    {
+        blowThreshold = threshold;
+    }
 
     public void Reset()
     {
@@ -48,6 +54,8 @@ public class HealthLight : MonoBehaviour
 
     private IEnumerator Flicker()
     {
+        yield return new WaitForSeconds(2f);
+
         while (!noFlicker)
         {
             _source.intensity = Mathf.Lerp(_source.intensity, Random.Range(initialIntensity - maximumDim, initialIntensity + maximumBoost), strength * Time.deltaTime);
@@ -57,14 +65,21 @@ public class HealthLight : MonoBehaviour
 
     public void BlowLight()
     {
+        if (noFlicker)
+            return;
+
         noFlicker = true;
         if (sparksRoutine != null)
             StopCoroutine(sparksRoutine);
+
+        OnBlowEvent?.Invoke(this);
         StartCoroutine(BlowRoutine());
     }
 
     private IEnumerator SparksRoutine()
     {
+        yield return new WaitForSeconds(2f);
+
         while (true)
         {
             int randNum = Random.Range(5, 15);
@@ -98,10 +113,12 @@ public class HealthLight : MonoBehaviour
 
     public void UpdateLight(int currentHealth)
     {
-        if (currentHealth <= flickerThreshold)
-            StartFlicker();
-
         if (currentHealth <= blowThreshold)
             BlowLight();
+    }
+
+    private void OnDisable()
+    {
+        OnBlowEvent = null;
     }
 }

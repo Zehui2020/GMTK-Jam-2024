@@ -9,6 +9,9 @@ public class GameController : MonoBehaviour
     [SerializeField] private ScaleController _scaleController;
     [SerializeField] private GameObject _pauseMenu;
 
+    [SerializeField] private HealthLightManager _allyHealthLights;
+    [SerializeField] private HealthLightManager _enemyHealthLights;
+
     private void Awake()
     {
         // If there is an instance, and it's not me, delete myself.
@@ -31,6 +34,8 @@ public class GameController : MonoBehaviour
         // Init components
         _entityController.Init();
         _scaleController.StartCalculation();
+        _allyHealthLights.InitHealthLights();
+        _enemyHealthLights.InitHealthLights();
     }
 
     private void Update()

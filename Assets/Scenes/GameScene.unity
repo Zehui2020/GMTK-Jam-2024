@@ -330,7 +330,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 15
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0
@@ -5752,7 +5752,6 @@ MonoBehaviour:
   blowIntensity: 8
   flickerSparkPS: {fileID: 1033657858}
   blowSparkPS: {fileID: 1692428515}
-  flickerThreshold: 0
   blowThreshold: 0
 --- !u!1 &123969207
 GameObject:
@@ -6091,7 +6090,6 @@ MonoBehaviour:
   blowIntensity: 8
   flickerSparkPS: {fileID: 1769554457}
   blowSparkPS: {fileID: 955993802}
-  flickerThreshold: 0
   blowThreshold: 0
 --- !u!114 &191388667
 MonoBehaviour:
@@ -6281,7 +6279,6 @@ MonoBehaviour:
   blowIntensity: 8
   flickerSparkPS: {fileID: 594929498}
   blowSparkPS: {fileID: 371079406}
-  flickerThreshold: 0
   blowThreshold: 0
 --- !u!114 &196059682
 MonoBehaviour:
@@ -6571,7 +6568,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 15
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0
@@ -11707,7 +11704,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 15
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0
@@ -16779,7 +16776,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 15
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0
@@ -21758,7 +21755,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 15
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0
@@ -26956,7 +26953,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 15
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0
@@ -32187,7 +32184,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 15
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0
@@ -37518,7 +37515,6 @@ MonoBehaviour:
   blowIntensity: 8
   flickerSparkPS: {fileID: 877319977}
   blowSparkPS: {fileID: 1788311689}
-  flickerThreshold: 0
   blowThreshold: 0
 --- !u!114 &725074427
 MonoBehaviour:
@@ -37624,7 +37620,6 @@ MonoBehaviour:
   blowIntensity: 8
   flickerSparkPS: {fileID: 20171320}
   blowSparkPS: {fileID: 399063382}
-  flickerThreshold: 0
   blowThreshold: 0
 --- !u!114 &787981599
 MonoBehaviour:
@@ -38617,7 +38612,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 15
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0
@@ -43524,7 +43519,7 @@ Transform:
   m_GameObject: {fileID: 922645129}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.999, y: -2.238022, z: 0}
+  m_LocalPosition: {x: -7.92, y: -2.238022, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -43958,7 +43953,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 15
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0
@@ -49039,7 +49034,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 15
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0
@@ -54047,7 +54042,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 15
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0
@@ -59145,6 +59140,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _scaleController: {fileID: 1418952084}
   _pauseMenu: {fileID: 512545886701552100}
+  _allyHealthLights: {fileID: 1865224935}
+  _enemyHealthLights: {fileID: 1416304435}
 --- !u!114 &1090087209
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60392,7 +60389,6 @@ MonoBehaviour:
   blowIntensity: 8
   flickerSparkPS: {fileID: 972978587}
   blowSparkPS: {fileID: 1802369843}
-  flickerThreshold: 0
   blowThreshold: 0
 --- !u!114 &1279362513
 MonoBehaviour:
@@ -60753,7 +60749,6 @@ MonoBehaviour:
   blowIntensity: 8
   flickerSparkPS: {fileID: 1802109324}
   blowSparkPS: {fileID: 328694227}
-  flickerThreshold: 0
   blowThreshold: 0
 --- !u!114 &1326212860
 MonoBehaviour:
@@ -61243,7 +61238,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 15
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0
@@ -66501,7 +66496,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 15
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0
@@ -72139,7 +72134,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 15
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0
@@ -77007,7 +77002,6 @@ MonoBehaviour:
   blowIntensity: 8
   flickerSparkPS: {fileID: 2091555608}
   blowSparkPS: {fileID: 507868015}
-  flickerThreshold: 0
   blowThreshold: 0
 --- !u!114 &1600135015
 MonoBehaviour:
@@ -77423,7 +77417,6 @@ MonoBehaviour:
   blowIntensity: 8
   flickerSparkPS: {fileID: 1380245963}
   blowSparkPS: {fileID: 1592890894}
-  flickerThreshold: 0
   blowThreshold: 0
 --- !u!114 &1670760010
 MonoBehaviour:
@@ -77633,7 +77626,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 15
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0
@@ -83195,7 +83188,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 15
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0
@@ -88251,7 +88244,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 15
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0
@@ -93288,7 +93281,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 15
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0
@@ -98176,7 +98169,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 15
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0
@@ -104114,7 +104107,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 70, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1936619022
 MonoBehaviour:
@@ -104136,7 +104129,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 02c3d69441e92c643901442e44a3d6ed, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -104730,7 +104723,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 15
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0
@@ -109807,7 +109800,6 @@ MonoBehaviour:
   blowIntensity: 8
   flickerSparkPS: {fileID: 1426886045}
   blowSparkPS: {fileID: 269714779}
-  flickerThreshold: 0
   blowThreshold: 0
 --- !u!114 &2147410375
 MonoBehaviour:
